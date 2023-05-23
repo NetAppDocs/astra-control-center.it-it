@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: use/manage-buckets.html 
+keywords: how to set up object storage in astra, how to set up astra buckets, s3, astra, setting up astra control, astra control center, kubernetes 
+summary: 'L"aggiunta di provider di bucket di archivi di oggetti è essenziale se si desidera eseguire il backup delle applicazioni e dello storage persistente o se si desidera clonare le applicazioni tra cluster.' 
+---
+= Gestire i bucket
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Un provider di bucket dell'archivio di oggetti è essenziale se si desidera eseguire il backup delle applicazioni e dello storage persistente o se si desidera clonare le applicazioni tra cluster. Utilizzando Astra Control Center, Aggiungi un provider di archivi di oggetti come destinazione di backup off-cluster per le tue applicazioni.
+
+Non è necessario un bucket se si clonano la configurazione dell'applicazione e lo storage persistente sullo stesso cluster.
+
+Utilizza uno dei seguenti provider di bucket Amazon Simple Storage Service (S3):
+
+* NetApp ONTAP S3
+* NetApp StorageGRID S3
+* Microsoft Azure
+* Generico S3
++
+
+NOTE: Amazon Web Services (AWS) e Google Cloud Platform (GCP) utilizzano il tipo di bucket S3 generico.
+
++
+
+NOTE: Sebbene Astra Control Center supporti Amazon S3 come provider di bucket S3 generico, Astra Control Center potrebbe non supportare tutti i vendor di archivi di oggetti che rivendicano il supporto S3 di Amazon.
+
+
+
+Un bucket può trovarsi in uno dei seguenti stati:
+
+* In sospeso: Il bucket è pianificato per il rilevamento.
+* Disponibile: La benna è disponibile per l'uso.
+* Rimosso: Il bucket non è attualmente accessibile.
+
+
+Per istruzioni su come gestire i bucket utilizzando l'API Astra Control, vedere link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation e informazioni API"^].
+
+È possibile eseguire queste attività relative alla gestione dei bucket:
+
+* link:../get-started/setup_overview.html#add-a-bucket["Aggiungi un bucket"]
+* <<Modificare un bucket>>
+* <<Impostare il bucket predefinito>>
+* <<Ruotare o rimuovere le credenziali bucket>>
+* <<Rimuovere una benna>>
+
+
+
+NOTE: I bucket S3 in Astra Control Center non riportano la capacità disponibile. Prima di eseguire il backup o la clonazione delle applicazioni gestite da Astra Control Center, controllare le informazioni del bucket nel sistema di gestione ONTAP o StorageGRID.
+
+
+
+== Modificare un bucket
+
+È possibile modificare le informazioni delle credenziali di accesso per un bucket e modificare se un bucket selezionato è il bucket predefinito.
+
+
+NOTE: Quando si aggiunge un bucket, selezionare il bucket provider corretto e fornire le credenziali corrette per tale provider. Ad esempio, l'interfaccia utente accetta come tipo NetApp ONTAP S3 e accetta le credenziali StorageGRID; tuttavia, questo causerà l'errore di tutti i backup e ripristini futuri dell'applicazione che utilizzano questo bucket. Vedere link:../release-notes/known-issues.html#selecting-a-bucket-provider-type-with-credentials-for-another-type-causes-data-protection-failures["Note di rilascio"].
+
+.Fasi
+. Dalla barra di navigazione a sinistra, selezionare *Bucket*.
+. Dal menu nella colonna *azioni*, selezionare *Modifica*.
+. Modificare qualsiasi informazione diversa dal tipo di bucket.
++
+
+TIP: Impossibile modificare il tipo di bucket.
+
+. Selezionare *Aggiorna*.
+
+
+
+
+== Impostare il bucket predefinito
+
+Quando si esegue un clone tra i cluster, Astra Control richiede un bucket predefinito. Seguire questi passaggi per impostare un bucket predefinito per tutti i cluster.
+
+.Fasi
+. Accedere a *istanze cloud*.
+. Selezionare il menu nella colonna *azioni* per l'istanza di cloud nell'elenco.
+. Selezionare *Modifica*.
+. Nell'elenco *bucket*, selezionare il bucket che si desidera impostare come predefinito.
+. Selezionare *Salva*.
+
+
+
+
+== Ruotare o rimuovere le credenziali bucket
+
+Astra Control utilizza le credenziali bucket per ottenere l'accesso e fornire chiavi segrete per un bucket S3 in modo che Astra Control Center possa comunicare con il bucket.
+
+
+
+=== Ruotare le credenziali del bucket
+
+Se si ruotano le credenziali, ruotarle durante una finestra di manutenzione quando non sono in corso backup (pianificati o on-demand).
+
+.Procedura per modificare e ruotare le credenziali
+. Dalla barra di navigazione a sinistra, selezionare *Bucket*.
+. Dal menu Opzioni nella colonna *azioni*, selezionare *Modifica*.
+. Creare la nuova credenziale.
+. Selezionare *Aggiorna*.
+
+
+
+
+=== Rimuovere le credenziali bucket
+
+È necessario rimuovere le credenziali bucket solo se sono state applicate nuove credenziali a un bucket o se il bucket non è più utilizzato attivamente.
+
+
+TIP: Il primo set di credenziali aggiunto ad Astra Control è sempre in uso perché Astra Control utilizza le credenziali per autenticare il bucket di backup. Non rimuovere queste credenziali se il bucket è in uso, in quanto ciò potrebbe causare errori di backup e indisponibilità del backup.
+
+
+NOTE: Se si rimuovono le credenziali bucket attive, vedere https://kb.netapp.com/Cloud/Astra/Control/Deleting_active_S3_bucket_credentials_leads_to_spurious_500_errors_reported_in_the_UI["risoluzione dei problemi relativi alla rimozione delle credenziali bucket"].
+
+Per istruzioni su come rimuovere le credenziali S3 utilizzando l'API Astra Control, vedere link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation e informazioni API"^].
+
+
+
+== Rimuovere una benna
+
+È possibile rimuovere un bucket che non è più in uso o che non è integro. Questa operazione può essere utile per mantenere la configurazione dell'archivio di oggetti semplice e aggiornata.
+
+
+NOTE: Non è possibile rimuovere un bucket predefinito. Se si desidera rimuovere tale bucket, selezionare prima un altro bucket come predefinito.
+
+.Prima di iniziare
+* Prima di iniziare, verificare che non vi siano backup in esecuzione o completati per questo bucket.
+* È necessario verificare che il bucket non venga utilizzato in alcuna policy di protezione attiva.
+
+
+In tal caso, non sarà possibile continuare.
+
+.Fasi
+. Dalla barra di navigazione a sinistra, selezionare *Bucket*.
+. Dal menu *azioni*, selezionare *Rimuovi*.
++
+
+NOTE: Astra Control garantisce innanzitutto che non vi siano policy di pianificazione che utilizzano il bucket per i backup e che non vi siano backup attivi nel bucket che si sta per rimuovere.
+
+. Digitare "remove" per confermare l'azione.
+. Selezionare *Sì, Rimuovi bucket*.
+
+
+
+
+== Trova ulteriori informazioni
+
+* https://docs.netapp.com/us-en/astra-automation/index.html["Utilizzare l'API di controllo Astra"^]
+

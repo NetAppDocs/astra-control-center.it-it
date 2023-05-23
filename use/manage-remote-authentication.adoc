@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: use/manage-remote-authentication.html 
+keywords: enable ldap authentication, disable, ldap, authentication, configure, manage 
+summary: 'Gestire l"autenticazione LDAP sul sistema Astra Control.' 
+---
+= Gestire l'autenticazione remota
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+LDAP è un protocollo standard di settore per l'accesso alle informazioni di directory distribuite e una scelta popolare per l'autenticazione aziendale. È possibile collegare Astra Control Center a un server LDAP per eseguire l'autenticazione per gli utenti Astra Control selezionati.
+
+Ad alto livello, la configurazione prevede l'integrazione di Astra con LDAP e la definizione degli utenti e dei gruppi Astra Control corrispondenti alle definizioni LDAP. È possibile utilizzare l'API Astra Control o l'interfaccia utente Web per configurare l'autenticazione LDAP e gli utenti e i gruppi LDAP.
+
+
+IMPORTANT: Astra Control Center utilizza l'indirizzo e-mail nell'attributo "mail" LDAP per cercare e tenere traccia degli utenti remoti. Questo attributo potrebbe essere un campo facoltativo o vuoto nella directory. In questo campo deve esistere un indirizzo e-mail per tutti gli utenti remoti che si desidera visualizzare in Astra Control Center. Questo indirizzo e-mail viene utilizzato come nome utente in Astra Control Center per l'autenticazione.
+
+
+
+== Aggiungere un certificato per l'autenticazione LDAPS
+
+Aggiungere il certificato TLS privato per il server LDAP in modo che Astra Control Center possa autenticarsi con il server LDAP quando si utilizza una connessione LDAPS. Questa operazione deve essere eseguita una sola volta o alla scadenza del certificato installato.
+
+.Fasi
+. Vai a *account*.
+. Selezionare la scheda *certificati*.
+. Selezionare *Aggiungi*.
+. Caricare il `.pem` archiviare o incollare il contenuto del file dagli appunti.
+. Selezionare la casella di controllo *attendibile*.
+. Selezionare *Aggiungi certificato*.
+
+
+
+
+== Abilitare l'autenticazione remota
+
+È possibile attivare l'autenticazione LDAP e configurare la connessione tra Astra Control e il server LDAP remoto.
+
+.Prima di iniziare
+Se si intende utilizzare LDAPS, assicurarsi che il certificato TLS privato per il server LDAP sia installato in Astra Control Center in modo che Astra Control Center possa autenticarsi con il server LDAP. Vedere <<Aggiungere un certificato per l'autenticazione LDAPS>> per istruzioni.
+
+.Fasi
+. Accedere a *account > connessioni*.
+. Nel riquadro *Remote Authentication*, selezionare il menu di configurazione.
+. Selezionare *Connect*.
+. Inserire l'indirizzo IP del server, la porta e il protocollo di connessione preferito (LDAP o LDAPS).
++
+
+NOTE: Come Best practice, utilizzare LDAPS per la connessione con il server LDAP. È necessario installare il certificato TLS privato del server LDAP in Astra Control Center prima di connettersi a LDAPS.
+
+. Inserire le credenziali dell'account di servizio nel formato e-mail (administrator@example.com). Astra Control utilizza queste credenziali per la connessione con il server LDAP.
+. Nella sezione *User Match* (corrispondenza utente), immettere il DN di base e un filtro di ricerca utente appropriato da utilizzare per il recupero delle informazioni utente dal server LDAP.
+. Nella sezione *corrispondenza gruppo*, immettere il DN della base di ricerca gruppo e un filtro di ricerca gruppo personalizzato appropriato.
++
+
+NOTE: Assicurarsi di utilizzare il nome distinto (DN) di base corretto e un filtro di ricerca appropriato per *corrispondenza utente* e *corrispondenza gruppo*. Il DN di base indica ad Astra Control a quale livello della struttura di directory avviare la ricerca e il filtro di ricerca limita le parti della struttura di directory da cui Astra Control esegue la ricerca.
+
+. Selezionare *Invia*.
+
+
+.Risultato
+Lo stato del riquadro *Remote Authentication* (autenticazione remota) passa a *Pending* (in sospeso), quindi a *Connected* (connesso) quando viene stabilita la connessione al server LDAP.
+
+
+
+== Disattiva autenticazione remota
+
+È possibile disattivare temporaneamente una connessione attiva al server LDAP.
+
+
+NOTE: Quando si disattiva una connessione a un server LDAP, vengono salvate tutte le impostazioni e vengono conservati tutti gli utenti e i gruppi remoti aggiunti ad Astra Control da tale server LDAP. È possibile riconnettersi a questo server LDAP in qualsiasi momento.
+
+.Fasi
+. Accedere a *account > connessioni*.
+. Nel riquadro *Remote Authentication*, selezionare il menu di configurazione.
+. Selezionare *Disable* (Disattiva).
+
+
+.Risultato
+Lo stato del riquadro *Remote Authentication* passa a *Disabled*. Tutte le impostazioni di autenticazione remota, gli utenti remoti e i gruppi remoti vengono preservati e la connessione può essere riattivata in qualsiasi momento.
+
+
+
+== Modificare le impostazioni di autenticazione remota
+
+Se la connessione al server LDAP è stata disattivata o il pannello *Remote Authentication* è in stato "Connection error" (errore di connessione), è possibile modificare le impostazioni di configurazione.
+
+
+NOTE: Non è possibile modificare l'URL o l'indirizzo IP del server LDAP quando il pannello *Remote Authentication* (autenticazione remota) è in stato "Disabled" (Disattivato). È necessario <<Disconnettere l'autenticazione remota>> prima di tutto.
+
+.Fasi
+. Accedere a *account > connessioni*.
+. Nel riquadro *Remote Authentication*, selezionare il menu di configurazione.
+. Selezionare *Modifica*.
+. Apportare le modifiche necessarie e selezionare *Modifica*.
+
+
+
+
+== Disconnettere l'autenticazione remota
+
+È possibile disconnettersi da un server LDAP e rimuovere le impostazioni di configurazione da Astra Control.
+
+
+CAUTION: Quando ci si disconnette dal server LDAP, tutte le impostazioni di configurazione per quel server LDAP vengono rimosse da Astra Control, così come tutti gli utenti e i gruppi remoti che sono stati aggiunti da quel server LDAP.
+
+.Fasi
+. Accedere a *account > connessioni*.
+. Nel riquadro *Remote Authentication*, selezionare il menu di configurazione.
+. Selezionare *Disconnect*.
+
+
+.Risultato
+Lo stato del riquadro *Remote Authentication* (autenticazione remota) passa a *Disconnected* (disconnesso). Le impostazioni di autenticazione remota, gli utenti remoti e i gruppi remoti vengono rimossi da Astra Control.

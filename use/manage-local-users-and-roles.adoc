@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: use/manage-local-users-and-roles.html 
+keywords: add users, edit users, remove users, delete users, manage roles 
+summary: Gestisci utenti e ruoli nel tuo sistema Astra Control Center. 
+---
+= Gestire utenti e ruoli locali
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+È possibile aggiungere, rimuovere e modificare gli utenti dell'installazione di Astra Control Center utilizzando l'interfaccia utente di Astra Control. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per gestire gli utenti.
+
+È inoltre possibile utilizzare LDAP per eseguire l'autenticazione per gli utenti selezionati.
+
+
+
+== Utilizzare LDAP
+
+LDAP è un protocollo standard di settore per l'accesso alle informazioni di directory distribuite e una scelta popolare per l'autenticazione aziendale. È possibile collegare Astra Control Center a un server LDAP per eseguire l'autenticazione per gli utenti Astra Control selezionati. Ad alto livello, la configurazione prevede l'integrazione di Astra con LDAP e la definizione degli utenti e dei gruppi Astra Control corrispondenti alle definizioni LDAP. È possibile utilizzare l'API Astra Control o l'interfaccia utente Web per configurare l'autenticazione LDAP e gli utenti e i gruppi LDAP. Per ulteriori informazioni, consultare la seguente documentazione:
+
+* https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["Utilizzare l'API Astra Control per gestire l'autenticazione remota e gli utenti"^]
+* link:manage-remote-users-groups.html["Utilizzare l'interfaccia utente di Astra Control per gestire utenti e gruppi remoti"]
+* link:manage-remote-authentication.html["Utilizzare l'interfaccia utente di Astra Control per gestire l'autenticazione remota"]
+
+
+
+
+== Aggiungere utenti
+
+Gli account Owner e gli amministratori possono aggiungere altri utenti all'installazione di Astra Control Center.
+
+.Fasi
+. Nell'area di navigazione *Gestisci account*, selezionare *account*.
+. Selezionare la scheda *utenti*.
+. Selezionare *Aggiungi utente*.
+. Immettere il nome dell'utente, l'indirizzo e-mail e una password temporanea.
++
+L'utente dovrà modificare la password al primo accesso.
+
+. Selezionare un ruolo utente con le autorizzazioni di sistema appropriate.
++
+Ciascun ruolo fornisce le seguenti autorizzazioni:
+
++
+** Un *Viewer* può visualizzare le risorse.
+** Un *Member* dispone delle autorizzazioni per il ruolo Viewer e può gestire app e cluster, annullare la gestione delle app ed eliminare snapshot e backup.
+** Un *Admin* dispone delle autorizzazioni di ruolo membro e può aggiungere e rimuovere qualsiasi altro utente ad eccezione del Proprietario.
+** Un *Owner* dispone delle autorizzazioni di ruolo Admin e può aggiungere e rimuovere qualsiasi account utente.
+
+
+. Per aggiungere vincoli a un utente con ruolo membro o visualizzatore, attivare la casella di controllo *limita ruolo ai vincoli*.
++
+Per ulteriori informazioni sull'aggiunta di vincoli, vedere link:manage-local-users-and-roles.html["Gestire utenti e ruoli locali"].
+
+. Selezionare *Aggiungi*.
+
+
+
+
+== Gestire le password
+
+Puoi gestire le password per gli account utente in Astra Control Center.
+
+
+
+=== Modificare la password
+
+È possibile modificare la password dell'account utente in qualsiasi momento.
+
+.Fasi
+. Selezionare l'icona User (utente) nella parte superiore destra della schermata.
+. Selezionare *Profilo*.
+. Dal menu Opzioni nella colonna *azioni* e selezionare *Modifica password*.
+. Immettere una password conforme ai requisiti.
+. Immettere nuovamente la password per confermare.
+. Selezionare *Cambia password*.
+
+
+
+
+=== Reimpostare la password di un altro utente
+
+Se l'account dispone delle autorizzazioni di ruolo Amministratore o Proprietario, è possibile reimpostare le password per altri account utente e per i propri. Quando si reimposta una password, si assegna una password temporanea che l'utente dovrà modificare al momento dell'accesso.
+
+.Fasi
+. Nell'area di navigazione *Gestisci account*, selezionare *account*.
+. Selezionare l'elenco a discesa *azioni*.
+. Selezionare *Reset Password* (Ripristina password).
+. Immettere una password temporanea conforme ai requisiti della password.
+. Immettere nuovamente la password per confermare.
++
+
+NOTE: Al successivo accesso, all'utente verrà richiesto di modificare la password.
+
+. Selezionare *Ripristina password*.
+
+
+
+
+== Rimuovere gli utenti
+
+Gli utenti con il ruolo Owner (Proprietario) o Admin (Amministratore) possono rimuovere altri utenti dall'account in qualsiasi momento.
+
+.Fasi
+. Nell'area di navigazione *Gestisci account*, selezionare *account*.
+. Nella scheda *utenti*, selezionare la casella di controllo nella riga di ciascun utente che si desidera rimuovere.
+. Dal menu Options (Opzioni) nella colonna *Actions* (azioni), selezionare *Remove user/s* (Rimuovi utenti).
+. Quando richiesto, confermare l'eliminazione digitando la parola "remove", quindi selezionare *Yes, Remove User* (Sì, Rimuovi utente).
+
+
+.Risultato
+Astra Control Center rimuove l'utente dall'account.
+
+
+
+== Gestire i ruoli
+
+È possibile gestire i ruoli aggiungendo vincoli dello spazio dei nomi e limitando i ruoli utente a tali vincoli. In questo modo è possibile controllare l'accesso alle risorse all'interno dell'organizzazione. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per gestire i ruoli.
+
+
+
+=== Aggiungere un vincolo dello spazio dei nomi a un ruolo
+
+Un utente Admin o Owner può aggiungere vincoli di spazio dei nomi ai ruoli Member o Viewer.
+
+.Fasi
+. Nell'area di navigazione *Gestisci account*, selezionare *account*.
+. Selezionare la scheda *utenti*.
+. Nella colonna *azioni*, selezionare il pulsante di menu per un utente con ruolo membro o visualizzatore.
+. Selezionare *Modifica ruolo*.
+. Attivare la casella di controllo *limita ruolo ai vincoli*.
++
+La casella di controllo è disponibile solo per i ruoli Member o Viewer. È possibile selezionare un ruolo diverso dall'elenco a discesa *ruolo*.
+
+. Selezionare *Aggiungi vincolo*.
++
+È possibile visualizzare l'elenco dei vincoli disponibili in base allo spazio dei nomi o all'etichetta dello spazio dei nomi.
+
+. Nell'elenco a discesa *tipo di vincolo*, selezionare *spazio dei nomi Kubernetes* o *etichetta dello spazio dei nomi Kubernetes* a seconda della configurazione degli spazi dei nomi.
+. Selezionare uno o più spazi dei nomi o etichette dall'elenco per comporre un vincolo che limiti i ruoli a tali spazi dei nomi.
+. Selezionare *Conferma*.
++
+La pagina *Modifica ruolo* visualizza l'elenco dei vincoli scelti per questo ruolo.
+
+. Selezionare *Conferma*.
++
+Nella pagina *account*, è possibile visualizzare i vincoli per qualsiasi ruolo membro o visualizzatore nella colonna *ruolo*.
+
+
+
+
+NOTE: Se si abilitano i vincoli per un ruolo e si seleziona *Conferma* senza aggiungere alcun vincolo, il ruolo viene considerato con restrizioni complete (al ruolo viene negato l'accesso a tutte le risorse assegnate agli spazi dei nomi).
+
+
+
+=== Rimuovere un vincolo dello spazio dei nomi da un ruolo
+
+Un utente Admin o Owner può rimuovere un vincolo dello spazio dei nomi da un ruolo.
+
+.Fasi
+. Nell'area di navigazione *Gestisci account*, selezionare *account*.
+. Selezionare la scheda *utenti*.
+. Nella colonna *azioni*, selezionare il pulsante di menu per un utente con ruolo membro o visualizzatore con vincoli attivi.
+. Selezionare *Modifica ruolo*.
++
+La finestra di dialogo *Modifica ruolo* visualizza i vincoli attivi per il ruolo.
+
+. Selezionare la *X* a destra del vincolo da rimuovere.
+. Selezionare *Conferma*.
+
+
+
+
+== Per ulteriori informazioni
+
+* link:../concepts/user-roles-namespaces.html["Ruoli e spazi dei nomi degli utenti"]
+

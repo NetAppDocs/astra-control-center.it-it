@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: concepts/licensing.html 
+keywords: license, licensing 
+summary: 'Scopri come le azioni che puoi eseguire con Astra Control Center differiscono in base allo stato della licenza e come l"utilizzo di Astra Control Center influisce sul consumo della licenza.' 
+---
+= Licensing
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/concepts/
+
+
+[role="lead"]
+Quando si implementa Astra Control Center, viene installato con una licenza di valutazione integrata di 90 giorni per 4,800 unità CPU. Se hai bisogno di maggiore capacità o di un periodo di valutazione più lungo, o se desideri passare a una licenza completa, puoi ottenere una licenza di valutazione o una licenza completa diversa da NetApp.
+
+Si ottiene una licenza in uno dei seguenti modi:
+
+* Se stai valutando Astra Control Center e hai bisogno di termini di valutazione diversi da quelli inclusi nella licenza di valutazione integrata, contatta NetApp per richiedere un file di licenza di valutazione diverso.
+* link:https://mysupport.netapp.com/site/["Se hai già acquistato Astra Control Center, genera il file di licenza NetApp (NLF)"^] Accedendo al NetApp Support Site e accedendo alle licenze software nel menu Systems.
+
+
+Per ulteriori informazioni sulle licenze necessarie per i backend di storage ONTAP, fare riferimento a. link:../get-started/requirements.html["backend di storage supportati"].
+
+
+NOTE: Assicurarsi che la licenza consenta di utilizzare almeno tutte le unità CPU necessarie. Se il numero di unità CPU attualmente gestite da Astra Control Center supera le unità CPU disponibili nella nuova licenza applicata, non sarà possibile applicare la nuova licenza.
+
+
+
+== Licenze di valutazione e licenze complete
+
+Una licenza di valutazione integrata viene fornita con una nuova installazione di Astra Control Center. Una licenza di valutazione offre le stesse funzionalità e funzionalità di una licenza completa per un periodo limitato (90 giorni). Dopo il periodo di valutazione, è necessaria una licenza completa per continuare con le funzionalità complete.
+
+
+
+== Scadenza della licenza
+
+Se la licenza di Astra Control Center attiva scade, le funzionalità UI e API per le seguenti funzioni non sono disponibili:
+
+* Snapshot e backup locali manuali
+* Snapshot e backup locali pianificati
+* Ripristino da uno snapshot o da un backup
+* Clonazione da uno snapshot o da uno stato corrente
+* Gestione di nuove applicazioni
+* Configurazione dei criteri di replica
+
+
+
+
+== Come viene calcolato il consumo delle licenze
+
+Quando si aggiunge un nuovo cluster ad Astra Control Center, non viene contato per ottenere licenze consumate fino a quando almeno un'applicazione in esecuzione sul cluster non viene gestita da Astra Control Center.
+
+Quando si inizia a gestire un'applicazione su un cluster, tutte le unità CPU del cluster sono incluse nel consumo di licenza di Astra Control Center, ad eccezione delle unità CPU del nodo del cluster Red Hat OpenShift segnalate da un utilizzando l'etichetta `node-role.kubernetes.io/infra: ""`.
+
+
+NOTE: I nodi dell'infrastruttura Red Hat OpenShift non consumano licenze in Astra Control Center. Per contrassegnare un nodo come nodo dell'infrastruttura, applicare l'etichetta `node-role.kubernetes.io/infra: ""` al nodo.
+
+
+
+== Trova ulteriori informazioni
+
+* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["Aggiungere una licenza quando si imposta Astra Control Center per la prima volta"]
+* link:../use/update-licenses.html["Aggiornare una licenza esistente"]
+

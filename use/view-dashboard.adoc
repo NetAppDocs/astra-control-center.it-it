@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: use/view-dashboard.html 
+keywords: dashboard, cluster health, unhealthy apps, protected apps, discovered apps 
+summary: Seleziona Dashboard per visualizzare una vista di alto livello delle tue app, del calcolo e della loro salute. 
+---
+= Visualizza un riepilogo dello stato delle applicazioni e dei cluster
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Seleziona la * dashboard* per visualizzare una vista di alto livello delle tue app, cluster, backend di storage e della loro salute.
+
+Questi non sono solo numeri statici o stati, ma puoi eseguire il drill-down da ciascuno di essi. Ad esempio, se le applicazioni non sono completamente protette, puoi passare il mouse sull'icona per identificare le applicazioni non completamente protette, il che include un motivo.
+
+
+
+== Sezione applicazioni
+
+La sezione *applicazioni* consente di identificare quanto segue:
+
+* Quante app stai attualmente gestendo con Astra.
+* Se queste applicazioni gestite sono in buona salute.
+* Se le applicazioni sono completamente protette (sono protette se sono disponibili backup recenti).
+* Il numero di applicazioni rilevate, ma non ancora gestite.
++
+Idealmente, questo numero sarebbe pari a zero perché, una volta scoperte, gestireste o ignorereste le applicazioni. Quindi, è necessario monitorare il numero di applicazioni rilevate nella dashboard per identificare quando gli sviluppatori aggiungono nuove applicazioni a un cluster.
+
+
+
+
+
+== Riquadro dei cluster
+
+Il riquadro *Clusters* fornisce dettagli simili sullo stato dei cluster gestiti tramite Astra Control Center e consente di analizzare più dettagli come con un'applicazione.
+
+
+
+== Riquadro backend storage
+
+Il riquadro *Storage backend* fornisce informazioni utili per identificare lo stato dei back-end dello storage, tra cui:
+
+* Quanti backend di storage vengono gestiti
+* Se questi backend gestiti sono in buono stato
+* Se i backend sono completamente protetti
+* Il numero di backend rilevati, ma non ancora gestiti.
+

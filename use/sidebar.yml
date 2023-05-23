@@ -1,0 +1,58 @@
+---
+section: use
+title: Utilizzare Astra Control Center
+entries:
+- title: Inizia a gestire le app
+  url: "/use/manage-apps.html"
+- title: Proteggi le app
+  entries:
+  - title: Panoramica della protezione
+    url: "/use/protection-overview.html"
+  - title: Proteggi le app
+    url: "/use/protect-apps.html"
+  - title: Ripristinare le applicazioni
+    url: "/use/restore-apps.html"
+  - title: Replica delle applicazioni su un sistema remoto
+    url: "/use/replicate_snapmirror.html"
+  - title: Clonare e migrare le applicazioni
+    url: "/use/clone-apps.html"
+  - title: Gestire gli hook di esecuzione delle applicazioni
+    url: "/use/execution-hooks.html"
+- title: Monitorare lo stato delle applicazioni e del cluster
+  entries:
+  - title: Riepilogo della dashboard
+    url: "/use/view-dashboard.html"
+  - title: Integrità e dettagli del cluster
+    url: "/use/view-clusters.html"
+  - title: Salute e dettagli dell'app
+    url: "/use/view-apps.html"
+- title: Gestisci il tuo account
+  entries:
+  - title: Gestire utenti e ruoli locali
+    url: "/use/manage-local-users-and-roles.html"
+  - title: Gestire l'autenticazione remota
+    url: "/use/manage-remote-authentication.html"
+  - title: Gestire utenti e gruppi remoti
+    url: "/use/manage-remote-users-groups.html"
+  - title: Gestire le notifiche
+    url: "/use/manage-notifications.html"
+  - title: Gestire le credenziali
+    url: "/use/manage-credentials.html"
+  - title: Monitorare l'attività dell'account
+    url: "/use/view-account-activity.html"
+  - title: Aggiornare una licenza esistente
+    url: "/use/update-licenses.html"
+- title: Gestire i bucket
+  url: "/use/manage-buckets.html"
+- title: Gestire il back-end dello storage
+  url: "/use/manage-backend.html"
+- title: Monitorare le attività in esecuzione
+  url: "/use/monitor-running-tasks.html"
+- title: Monitorare l'infrastruttura con Cloud Insights e Fluentd
+  url: "/use/monitor-protect.html"
+- title: Annulla la gestione di app e cluster
+  url: "/use/unmanage.html"
+- title: Aggiornare Astra Control Center
+  url: "/use/upgrade-acc.html"
+- title: Disinstallare Astra Control Center
+  url: "/use/uninstall_acc.html"

@@ -1,0 +1,184 @@
+---
+sidebar: sidebar 
+permalink: release-notes/known-issues.html 
+keywords: astra, control center, bugs, known issues, problems 
+summary: 'I problemi noti identificano i problemi che potrebbero impedire l"utilizzo corretto di questa versione del prodotto.' 
+---
+= Problemi noti
+:hardbreaks:
+:allow-uri-read: 
+:source-highlighter: highlight.js
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+[role="lead"]
+I problemi noti identificano i problemi che potrebbero impedire l'utilizzo corretto di questa versione del prodotto.
+
+I seguenti problemi noti riguardano la versione corrente:
+
+.Applicazioni
+* <<Il ripristino di un'applicazione comporta una dimensione PV superiore a quella del PV originale>>
+* <<I cloni delle applicazioni non riescono a utilizzare una versione specifica di PostgreSQL>>
+* <<I cloni delle applicazioni non funzionano quando si utilizzano i vincoli di contesto di protezione OCP a livello di account di servizio (SCC)>>
+* <<I cloni delle applicazioni si guastano dopo l'implementazione di un'applicazione con una classe di storage set>>
+* <<I backup e le snapshot delle applicazioni non vengono eseguiti se la classe volumesnapshotclass viene aggiunta dopo la gestione di un cluster>>
+
+
+.Cluster
+* <<La gestione di un cluster con Astra Control Center non riesce quando il file kubeconfig predefinito contiene più di un contesto>>
+* <<Alcuni pod non si avviano dopo l'aggiornamento ad Astra Control Center 23.04>>
+* <<Un pod di monitoraggio può bloccarsi negli ambienti Istio>>
+
+
+.Altri problemi
+* <<I cluster gestiti non vengono visualizzati in NetApp Cloud Insights quando ci si connette tramite un proxy>>
+* <<Le operazioni di gestione dei dati dell'app non riescono e si verificano errori di servizio interni (500) quando Astra Trident è offline>>
+
+
+
+
+== Il ripristino di un'applicazione comporta una dimensione PV superiore a quella del PV originale
+
+Se si ridimensiona un volume persistente dopo la creazione di un backup e poi si ripristina da tale backup, le dimensioni del volume persistente corrispondono alle nuove dimensioni del PV invece di utilizzare le dimensioni del backup.
+
+
+
+== I cloni delle applicazioni non riescono a utilizzare una versione specifica di PostgreSQL
+
+I cloni delle applicazioni all'interno dello stesso cluster si guastano costantemente con il grafico BitNami PostgreSQL 11.5.0. Per clonare correttamente, utilizzare una versione precedente o successiva del grafico.
+
+
+
+== I cloni delle applicazioni non funzionano quando si utilizzano i vincoli di contesto di protezione OCP a livello di account di servizio (SCC)
+
+Un clone dell'applicazione potrebbe non riuscire se i vincoli del contesto di protezione originale sono configurati a livello di account di servizio all'interno dello spazio dei nomi nel cluster OpenShift Container Platform. Quando il clone dell'applicazione non funziona, viene visualizzato nell'area delle applicazioni gestite di Astra Control Center con lo stato `Removed`. Vedere https://kb.netapp.com/Cloud/Astra/Control/Application_clone_is_failing_for_an_application_in_Astra_Control_Center["articolo della knowledge base"^] per ulteriori informazioni.
+
+
+
+== I backup e le snapshot delle applicazioni non vengono eseguiti se la classe volumesnapshotclass viene aggiunta dopo la gestione di un cluster
+
+Backup e snapshot non vengono eseguiti con un `UI 500 error` in questo scenario. Come soluzione, aggiornare l'elenco delle applicazioni.
+
+
+
+== I cloni delle applicazioni si guastano dopo l'implementazione di un'applicazione con una classe di storage set
+
+Dopo che un'applicazione è stata distribuita con una classe di storage esplicitamente impostata (ad esempio, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), i successivi tentativi di clonare l'applicazione richiedono che il cluster di destinazione abbia la classe di storage specificata in origine. La clonazione di un'applicazione con una classe di storage esplicitamente impostata su un cluster che non ha la stessa classe di storage non avrà esito positivo. In questo scenario non sono disponibili procedure di ripristino.
+
+
+
+== La gestione di un cluster con Astra Control Center non riesce quando il file kubeconfig predefinito contiene più di un contesto
+
+Non è possibile utilizzare un kubeconfig con più di un cluster e un contesto. Vedere link:https://kb.netapp.com/Cloud/Astra/Control/Managing_cluster_with_Astra_Control_Center_may_fail_when_using_default_kubeconfig_file_contains_more_than_one_context["articolo della knowledge base"^] per ulteriori informazioni.
+
+
+
+== Alcuni pod non si avviano dopo l'aggiornamento ad Astra Control Center 23.04
+
+Dopo l'aggiornamento ad Astra Control Center 23.04, alcuni pod potrebbero non avviarsi. Come soluzione alternativa, riavviare manualmente i pod interessati seguendo la procedura riportata di seguito:
+
+. Individuare i pod interessati, sostituendo <namespace> con lo spazio dei nomi corrente:
++
+[listing]
+----
+kubectl get pods -n <namespace> | grep au-pod
+----
++
+I pod interessati avranno risultati simili ai seguenti:
+
++
+[listing]
+----
+pcloud-astra-control-center-au-pod-0 0/1 CreateContainerConfigError 0 13s
+----
+. Riavviare ciascun pod interessato, sostituendo <namespace> con lo spazio dei nomi corrente:
++
+[listing]
+----
+kubectl delete pod pcloud-astra-control-center-au-pod-0 -n <namespace>
+----
+
+
+
+
+== Un pod di monitoraggio può bloccarsi negli ambienti Istio
+
+Se si associa il centro di controllo Astra a Cloud Insights in un ambiente Istio, il `telegraf-rs` pod può bloccarsi. Per risolvere il problema, attenersi alla seguente procedura:
+
+. Individuare il pod bloccato:
++
+[listing]
+----
+kubectl -n netapp-monitoring get pod | grep Error
+----
++
+L'output dovrebbe essere simile a quanto segue:
+
++
+[listing]
+----
+NAME READY STATUS RESTARTS AGE
+telegraf-rs-fhhrh 1/2 Error 2 (26s ago) 32s
+----
+. Riavviare il pod bloccato, sostituendo `<pod_name_from_output>` con il nome del pod interessato:
++
+[listing]
+----
+kubectl -n netapp-monitoring delete pod <pod_name_from_output>
+----
++
+L'output dovrebbe essere simile a quanto segue:
+
++
+[listing]
+----
+pod "telegraf-rs-fhhrh" deleted
+----
+. Verificare che il pod sia stato riavviato e che non si trovi in uno stato di errore:
++
+[listing]
+----
+kubectl -n netapp-monitoring get pod
+----
++
+L'output dovrebbe essere simile a quanto segue:
+
++
+[listing]
+----
+NAME READY STATUS RESTARTS AGE
+telegraf-rs-rrnsb 2/2 Running 0 11s
+----
+
+
+
+
+== I cluster gestiti non vengono visualizzati in NetApp Cloud Insights quando ci si connette tramite un proxy
+
+Quando il centro di controllo Astra si connette a NetApp Cloud Insights tramite un proxy, i cluster gestiti potrebbero non essere visualizzati in Cloud Insights. Come soluzione alternativa, eseguire i seguenti comandi su ciascun cluster gestito:
+
+[source, console]
+----
+kubectl get cm telegraf-conf -o yaml -n netapp-monitoring | sed '/\[\[outputs.http\]\]/c\    [[outputs.http]]\n    use_system_proxy = true' | kubectl replace -f -
+----
+[source, console]
+----
+kubectl get cm telegraf-conf-rs -o yaml -n netapp-monitoring | sed '/\[\[outputs.http\]\]/c\    [[outputs.http]]\n    use_system_proxy = true' | kubectl replace -f -
+----
+[source, console]
+----
+kubectl get pods -n netapp-monitoring --no-headers=true | grep 'telegraf-ds\|telegraf-rs' | awk '{print $1}' | xargs kubectl delete -n netapp-monitoring pod
+----
+
+
+== Le operazioni di gestione dei dati dell'app non riescono e si verificano errori di servizio interni (500) quando Astra Trident è offline
+
+Se Astra Trident su un cluster di applicazioni diventa offline (e viene riportato online) e si verificano 500 errori di servizio interni durante il tentativo di gestione dei dati dell'applicazione, riavviare tutti i nodi Kubernetes nel cluster di applicazioni per ripristinare la funzionalità.
+
+
+
+== Trova ulteriori informazioni
+
+* link:../release-notes/known-limitations.html["Limitazioni note"]
+

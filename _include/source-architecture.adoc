@@ -1,0 +1,55 @@
+= Componenti di controllo Astra
+:allow-uri-read: 
+
+
+image:astra-architecture-diagram-v5.png["Un'immagine concettuale che descrive l'architettura Astra Control e i suoi componenti"]
+
+
+
+== Componenti di controllo Astra
+
+* *Kubernetes Clusters*: Kubernetes è una piattaforma open-source portatile, estensibile per la gestione di carichi di lavoro e servizi containerizzati, che facilita sia la configurazione dichiarativa che l'automazione. Astra fornisce servizi di gestione per le applicazioni ospitate in un cluster Kubernetes.
+* * Astra Trident*: In qualità di provider di storage open source e orchestrator gestiti da NetApp, Astra Trident consente di creare volumi di storage per applicazioni containerizzate gestite da Docker e Kubernetes. Se implementato con il centro di controllo Astra, Astra Trident include un backend di storage ONTAP configurato.
+* *Storage backend*:
++
+** Astra Control Service utilizza i seguenti backend di storage:
++
+*** https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["NetApp Cloud Volumes Service per Google Cloud"^] O Google Persistent Disk come backend di storage per i cluster GKE
+*** https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] O Azure Managed Disks come backend di storage per i cluster AKS.
+*** https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store (EBS)"^] oppure https://docs.aws.amazon.com/fsx/["Amazon FSX per NetApp ONTAP"^] Come opzioni di storage back-end per i cluster EKS.
+
+
+** Astra Control Center utilizza i seguenti backend di storage:
++
+*** ONTAP AFF, FAS e ASA. In qualità di piattaforma hardware e software per lo storage, ONTAP offre servizi di storage di base, supporto per più protocolli di accesso allo storage e funzionalità di gestione dello storage, come snapshot e mirroring.
+*** Cloud Volumes ONTAP
+
+
+
+
+* *Cloud Insights*: Uno strumento di monitoraggio dell'infrastruttura cloud NetApp, Cloud Insights consente di monitorare le performance e l'utilizzo dei cluster Kubernetes gestiti dal centro di controllo Astra. Cloud Insights mette in relazione l'utilizzo dello storage con i carichi di lavoro. Quando si attiva la connessione Cloud Insights in Astra Control Center, le informazioni di telemetria vengono visualizzate nelle pagine dell'interfaccia utente di Astra Control Center.
+
+
+
+
+== Interfacce di controllo Astra
+
+È possibile completare le attività utilizzando diverse interfacce:
+
+* *Interfaccia utente Web (UI)*: Sia Astra Control Service che Astra Control Center utilizzano la stessa interfaccia utente basata sul Web, in cui è possibile gestire, migrare e proteggere le applicazioni. Utilizzare l'interfaccia utente anche per gestire gli account utente e le impostazioni di configurazione.
+* *API*: Sia Astra Control Service che Astra Control Center utilizzano la stessa API Astra Control. Utilizzando l'API, è possibile eseguire le stesse attività dell'interfaccia utente.
+
+
+Astra Control Center consente inoltre di gestire, migrare e proteggere i cluster Kubernetes in esecuzione negli ambienti delle macchine virtuali.
+
+
+
+== Per ulteriori informazioni
+
+* https://docs.netapp.com/us-en/astra/index.html["Documentazione del servizio Astra Control"^]
+* https://docs.netapp.com/us-en/astra-control-center/index.html["Documentazione di Astra Control Center"^]
+* https://docs.netapp.com/us-en/trident/index.html["Documentazione di Astra Trident"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Utilizzare l'API di controllo Astra"^]
+* https://docs.netapp.com/us-en/cloudinsights/["Documentazione Cloud Insights"^]
+* https://docs.netapp.com/us-en/ontap/index.html["Documentazione ONTAP"^]
+

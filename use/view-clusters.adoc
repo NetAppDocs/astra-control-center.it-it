@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: use/view-clusters.html 
+keywords: view cluster, edit storage class, storage class, cluster storage, cluster overview 
+summary: Dopo aver aggiunto i cluster ad Astra Control Center, è possibile visualizzare i dettagli del cluster, ad esempio la sua posizione, i nodi di lavoro, i volumi persistenti e le classi di storage. È inoltre possibile modificare le classi di storage predefinite. 
+---
+= Visualizzare lo stato dei cluster e gestire le classi di storage
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Dopo aver aggiunto i cluster da gestire da Astra Control Center, è possibile visualizzare i dettagli del cluster, ad esempio la sua posizione, i nodi di lavoro, i volumi persistenti e le classi di storage. È inoltre possibile modificare la classe di storage predefinita per i cluster gestiti.
+
+
+
+== Visualizzare lo stato e i dettagli del cluster
+
+È possibile visualizzare i dettagli del cluster, ad esempio la posizione, i nodi di lavoro, i volumi persistenti e le classi di storage.
+
+.Fasi
+. Nell'interfaccia utente di Astra Control Center, selezionare *Clusters*.
+. Nella pagina *Clusters*, selezionare il cluster di cui si desidera visualizzare i dettagli.
++
+
+NOTE: Se un cluster si trova in `removed` state Yet la connettività di rete e del cluster sembra sana (i tentativi esterni di accesso al cluster utilizzando le API di Kubernetes sono riusciti), il kubeconfig che hai fornito ad Astra Control potrebbe non essere più valido. Ciò può essere dovuto alla rotazione o alla scadenza del certificato sul cluster. Per risolvere questo problema, aggiornare le credenziali associate al cluster in Astra Control utilizzando link:https://docs.netapp.com/us-en/astra-automation/index.html["API di controllo Astra"].
+
+. Visualizzare le informazioni nelle schede *Overview*, *Storage* e *Activity* per trovare le informazioni desiderate.
++
+** *Panoramica*: Dettagli sui nodi di lavoro, incluso il loro stato.
+** *Storage*: I volumi persistenti associati al calcolo, inclusi la classe e lo stato dello storage.
+** *Attività*: Mostra le attività correlate al cluster.
+
+
+
+
+
+NOTE: È inoltre possibile visualizzare le informazioni sul cluster partendo da Astra Control Center *Dashboard*. Nella scheda *Clusters* sotto *Riepilogo risorse*, è possibile selezionare i cluster gestiti, che consentono di accedere alla pagina *Clusters*. Una volta visualizzata la pagina *Clusters*, seguire la procedura descritta in precedenza.
+
+
+
+== Modificare la classe di storage predefinita
+
+È possibile modificare la classe di storage predefinita per un cluster. Quando Astra Control gestisce un cluster, tiene traccia della classe di storage predefinita del cluster.
+
+
+NOTE: Non modificare la classe di storage utilizzando i comandi kubectl. Utilizzare questa procedura. Astra Control ripristinerà le modifiche se effettuate utilizzando kubectl.
+
+.Fasi
+. Nell'interfaccia utente Web di Astra Control Center, selezionare *Clusters*.
+. Nella pagina *Clusters*, selezionare il cluster che si desidera modificare.
+. Selezionare la scheda *Storage*.
+. Selezionare la categoria *classi di storage*.
+. Selezionare il menu *azioni* per la classe di storage che si desidera impostare come predefinita.
+. Selezionare *Imposta come predefinito*.
+

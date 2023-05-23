@@ -1,0 +1,198 @@
+---
+sidebar: sidebar 
+permalink: use/protect-apps.html 
+keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots 
+summary: Proteggi le tue applicazioni eseguendo snapshot e backup utilizzando una policy di protezione automatica o ad-hoc. 
+---
+= Proteggi le app con snapshot e backup
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Proteggi tutte le app eseguendo snapshot e backup utilizzando una policy di protezione automatica o ad-hoc. È possibile utilizzare l'interfaccia utente di Astra Control Center o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per proteggere le applicazioni.
+
+.A proposito di questa attività
+* *Helm ha implementato le app*: Se utilizzi Helm per implementare le app, Astra Control Center richiede Helm versione 3. La gestione e la clonazione delle applicazioni implementate con Helm 3 (o aggiornate da Helm 2 a Helm 3) sono completamente supportate. Le app implementate con Helm 2 non sono supportate.
+* * (Solo cluster OpenShift) Aggiungi policy*: Quando crei un progetto per ospitare un'applicazione su un cluster OpenShift, al progetto (o namespace Kubernetes) viene assegnato un UID SecurityContext. Per consentire ad Astra Control Center di proteggere la tua applicazione e spostarla in un altro cluster o progetto in OpenShift, devi aggiungere policy che consentano all'applicazione di essere eseguita come qualsiasi UID. Ad esempio, i seguenti comandi CLI di OpenShift concedono le policy appropriate a un'applicazione WordPress.
++
+`oc new-project wordpress`
+`oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
+`oc adm policy add-scc-to-user privileged -z default -n wordpress`
+
+
+
+È possibile eseguire le seguenti attività relative alla protezione dei dati dell'applicazione:
+
+* <<Configurare un criterio di protezione>>
+* <<Creare un'istantanea>>
+* <<Creare un backup>>
+* <<Visualizzare snapshot e backup>>
+* <<Eliminare le istantanee>>
+* <<Annullare i backup>>
+* <<Eliminare i backup>>
+
+
+
+
+== Configurare un criterio di protezione
+
+Una policy di protezione protegge un'applicazione creando snapshot, backup o entrambi in base a una pianificazione definita. È possibile scegliere di creare snapshot e backup ogni ora, ogni giorno, ogni settimana e ogni mese, nonché specificare il numero di copie da conservare.
+
+Se hai bisogno di backup o snapshot per eseguire più frequentemente di una volta all'ora, è possibile https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["Utilizza l'API REST di Astra Control per creare snapshot e backup"^].
+
+
+TIP: Eseguire l'offset delle pianificazioni di backup e replica per evitare sovrapposizioni di pianificazione. Ad esempio, eseguire backup all'inizio dell'ora ogni ora e pianificare la replica per iniziare con un offset di 5 minuti e un intervallo di 10 minuti.
+
+
+IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, non è possibile utilizzare policy di protezione. Utilizzare una classe di storage alternativa se si desidera un criterio di protezione.
+
+.Fasi
+. Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.
+. Selezionare *Data Protection* (protezione dati).
+. Selezionare *Configura policy di protezione*.
+. Definire un programma di protezione scegliendo il numero di snapshot e backup da conservare ogni ora, ogni giorno, ogni settimana e ogni mese.
++
+È possibile definire le pianificazioni orarie, giornaliere, settimanali e mensili contemporaneamente. Un programma non diventa attivo fino a quando non viene impostato un livello di conservazione.
+
++
+Quando si imposta un livello di conservazione per i backup, è possibile scegliere il bucket in cui si desidera memorizzare i backup.
+
++
+Nell'esempio seguente vengono impostati quattro programmi di protezione: ogni ora, ogni giorno, ogni settimana e ogni mese per snapshot e backup.
+
++
+image:screenshot-config-protection-policy.png["Schermata di una policy di configurazione di esempio in cui è possibile scegliere di eseguire snapshot e backup su base oraria, giornaliera, settimanale o mensile."]
+
+. Selezionare *Revisione*.
+. Selezionare *Imposta policy di protezione.*
+
+
+.Risultato
+Astra Control implementa la policy di protezione dei dati creando e conservando snapshot e backup utilizzando la policy di pianificazione e conservazione definita dall'utente.
+
+
+
+== Creare un'istantanea
+
+Puoi creare uno snapshot on-demand in qualsiasi momento.
+
+
+IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, le snapshot non possono essere utilizzate. Utilizzare una classe di storage alternativa per gli snapshot.
+
+.Fasi
+. Selezionare *applicazioni*.
+. Dal menu Options (Opzioni) nella colonna *Actions* (azioni) dell'applicazione desiderata, selezionare *Snapshot*.
+. Personalizzare il nome dell'istantanea, quindi selezionare *Avanti*.
+. Esaminare il riepilogo dell'istantanea e selezionare *Snapshot*.
+
+
+.Risultato
+Viene avviato il processo di snapshot. Un'istantanea ha successo quando lo stato è *integro* nella colonna *Stato* della pagina *Data Protection* > *Snapshot*.
+
+
+
+== Creare un backup
+
+Puoi anche eseguire il backup di un'applicazione in qualsiasi momento.
+
+
+NOTE: I bucket S3 in Astra Control Center non riportano la capacità disponibile. Prima di eseguire il backup o la clonazione delle applicazioni gestite da Astra Control Center, controllare le informazioni del bucket nel sistema di gestione ONTAP o StorageGRID.
+
+
+IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, assicurarsi di aver definito un `backendType` nel https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects["Oggetto storage Kubernetes"^] con un valore di `ontap-nas-economy` prima di eseguire qualsiasi operazione di protezione. Backup delle applicazioni supportate da `ontap-nas-economy` sono disruptive e l'applicazione non sarà disponibile fino al completamento dell'operazione di backup.
+
+.Fasi
+. Selezionare *applicazioni*.
+. Dal menu Opzioni nella colonna *azioni* dell'applicazione desiderata, selezionare *Backup*.
+. Personalizzare il nome del backup.
+. Scegliere se eseguire il backup dell'applicazione da uno snapshot esistente. Se si seleziona questa opzione, è possibile scegliere da un elenco di snapshot esistenti.
+. Scegliere un bucket di destinazione per il backup dall'elenco dei bucket di storage.
+. Selezionare *Avanti*.
+. Esaminare il riepilogo del backup e selezionare *Backup*.
+
+
+.Risultato
+Astra Control crea un backup dell'applicazione.
+
+
+NOTE: Se la rete presenta un'interruzione o è eccessivamente lenta, potrebbe verificarsi un timeout dell'operazione di backup. In questo modo, il backup non viene eseguito correttamente.
+
+
+NOTE: Per annullare un backup in esecuzione, seguire le istruzioni riportate in <<Annullare i backup>>. Per eliminare il backup, attendere il completamento, quindi seguire le istruzioni riportate in <<Eliminare i backup>>.
+
+
+NOTE: Dopo un'operazione di protezione dei dati (clone, backup, ripristino) e il successivo ridimensionamento persistente del volume, si verifica un ritardo di venti minuti prima che le nuove dimensioni del volume vengano visualizzate nell'interfaccia utente. L'operazione di protezione dei dati viene eseguita correttamente in pochi minuti ed è possibile utilizzare il software di gestione per il back-end dello storage per confermare la modifica delle dimensioni del volume.
+
+
+
+== Visualizzare snapshot e backup
+
+È possibile visualizzare le istantanee e i backup di un'applicazione dalla scheda Data Protection (protezione dati).
+
+.Fasi
+. Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.
+. Selezionare *Data Protection* (protezione dati).
++
+Le istantanee vengono visualizzate per impostazione predefinita.
+
+. Selezionare *Backup* per visualizzare l'elenco dei backup.
+
+
+
+
+== Eliminare le istantanee
+
+Eliminare le snapshot pianificate o on-demand non più necessarie.
+
+
+NOTE: Non è possibile eliminare uno snapshot attualmente in fase di replica.
+
+.Fasi
+. Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione gestita.
+. Selezionare *Data Protection* (protezione dati).
+. Dal menu Options (Opzioni) nella colonna *Actions* (azioni) per lo snapshot desiderato, selezionare *Delete snapshot* (Elimina snapshot).
+. Digitare la parola "DELETE" per confermare l'eliminazione, quindi selezionare *Yes, Delete snapshot*.
+
+
+.Risultato
+Astra Control elimina lo snapshot.
+
+
+
+== Annullare i backup
+
+È possibile annullare un backup in corso.
+
+
+TIP: Per annullare un backup, il backup deve essere in `Running` stato. Non è possibile annullare un backup in `Pending` stato.
+
+.Fasi
+. Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.
+. Selezionare *Data Protection* (protezione dati).
+. Selezionare *Backup*.
+. Dal menu Options (Opzioni) nella colonna *Actions* (azioni) per il backup desiderato, selezionare *Cancel* (Annulla).
+. Digitare la parola "CANCEL" per confermare l'operazione, quindi selezionare *Yes, CANCEL backup* (Sì, Annulla backup*).
+
+
+
+
+== Eliminare i backup
+
+Eliminare i backup pianificati o on-demand non più necessari.
+
+
+NOTE: Per annullare un backup in esecuzione, seguire le istruzioni riportate in <<Annullare i backup>>. Per eliminare il backup, attendere che sia stato completato, quindi seguire queste istruzioni.
+
+.Fasi
+. Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.
+. Selezionare *Data Protection* (protezione dati).
+. Selezionare *Backup*.
+. Dal menu Options (Opzioni) nella colonna *Actions* (azioni) per il backup desiderato, selezionare *Delete backup* (Elimina backup).
+. Digitare la parola "DELETE" per confermare l'eliminazione, quindi selezionare *Yes, Delete backup*.
+
+
+.Risultato
+Astra Control elimina il backup.

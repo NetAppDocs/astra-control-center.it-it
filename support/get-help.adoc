@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: support/get-help.html 
+keywords: how to get help with astra control, how to get support with astra control, astra control knowledgebase, netapp technical support, discord, phone, web, ticket, contact support, support ticket, support bundle 
+summary: 'NetApp fornisce supporto per Astra Control in diversi modi. Sono disponibili numerose opzioni di supporto self-service gratuite 24 ore su 24, 7 giorni su 7, come articoli della knowledge base (KB) e un canale di discording. Il tuo account Astra Control include il supporto tecnico remoto via web ticketing.' 
+---
+= Richiedi assistenza
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/support/
+
+
+[role="lead"]
+NetApp fornisce supporto per Astra Control in diversi modi. Sono disponibili numerose opzioni di supporto self-service gratuite 24 ore su 24, 7 giorni su 7, come articoli della knowledge base (KB) e un canale di discording. Il tuo account Astra Control include il supporto tecnico remoto via web ticketing.
+
+
+IMPORTANT: Se si dispone di una licenza di valutazione per Astra Control Center, è possibile ottenere supporto tecnico. Tuttavia, la creazione del caso tramite il NetApp Support Site (NSS) non è disponibile. Puoi contattare il supporto tramite l'opzione di feedback o utilizzare il canale di discordia per il self-service.
+
+Devi prima link:../get-started/setup_overview.html["Attivare il supporto per il numero di serie NetApp"] per utilizzare queste opzioni di supporto non self-service. È necessario un account SSO NetApp Support Site (NSS) per la chat e il web ticketing insieme alla gestione del caso.
+
+
+
+== Opzioni di supporto automatico
+
+È possibile accedere alle opzioni di supporto dall'interfaccia utente di Astra Control Center selezionando la scheda *Support* (supporto) dal menu principale.
+
+Queste opzioni sono disponibili gratuitamente, 24 ore su 24, 7 giorni su 7:
+
+* https://kb.netapp.com/Cloud/Astra/Control["*Knowledge base* (accesso richiesto)"^]: Cerca articoli, FAQ o informazioni di riparazione in caso di interruzione relative ad Astra Control.
+* *Centro di documentazione*: Questo è il sito di documentazione che stai visualizzando.
+* https://discord.gg/NetApp["*Richiedi assistenza tramite discordia*"^]: Vai ad Astra nella categoria Pub per entrare in contatto con colleghi ed esperti.
+* *Creare un caso di supporto*: Generare pacchetti di supporto da fornire al supporto NetApp per la risoluzione dei problemi.
+* *Invia un feedback su Astra Control*: Invia un'e-mail a astra.feedback@netapp.com per farci conoscere le tue opinioni, le tue idee o i tuoi dubbi.
+
+
+
+
+== Abilita il caricamento giornaliero del bundle di supporto pianificato sul supporto NetApp
+
+Durante l'installazione di Astra Control Center, se specificato `enrolled: true` per `autoSupport` Nel file CR (Custom Resource) di Astra Control Center (`astra_control_center.yaml`), i pacchetti di supporto giornalieri vengono caricati automaticamente su https://mysupport.netapp.com/site/["Sito di supporto NetApp"^].
+
+
+
+== Generare bundle di supporto da fornire al supporto NetApp
+
+Astra Control Center consente all'utente amministratore di generare bundle, che includono informazioni utili al supporto NetApp, inclusi registri, eventi per tutti i componenti dell'implementazione Astra, metriche e informazioni sulla topologia dei cluster e delle applicazioni in gestione. Se si è connessi a Internet, è possibile caricare pacchetti di supporto sul NetApp Support Site (NSS) direttamente dall'interfaccia utente di Astra Control Center.
+
+
+NOTE: Il tempo impiegato da Astra Control Center per generare il bundle dipende dalle dimensioni dell'installazione di Astra Control Center e dai parametri del bundle di supporto richiesto. La durata specificata per la richiesta di un bundle di supporto determina il tempo necessario per la generazione del bundle (ad esempio, un periodo di tempo più breve comporta una generazione più rapida del bundle).
+
+.Prima di iniziare
+Determinare se sarà richiesta una connessione proxy per caricare bundle su NSS. Se è necessaria una connessione proxy, verificare che Astra Control Center sia stato configurato per l'utilizzo di un server proxy.
+
+. Selezionare *account* > *connessioni*.
+. Controllare le impostazioni del proxy in *Impostazioni di connessione*.
+
+
+.Fasi
+. Creare un caso sul portale NSS utilizzando il numero di serie della licenza elencato nella pagina *Support* dell'interfaccia utente di Astra Control Center.
+. Per generare il bundle di supporto, attenersi alla seguente procedura utilizzando l'interfaccia utente di Astra Control Center:
++
+.. Nella sezione Support bundle della pagina *Support*, selezionare *generate*.
+.. Nella finestra *generate a Support Bundle* (genera un pacchetto di supporto), selezionare il periodo di tempo.
++
+È possibile scegliere tra tempi rapidi o personalizzati.
+
++
+
+NOTE: È possibile scegliere un intervallo di date personalizzato e specificare un periodo di tempo personalizzato durante l'intervallo di date.
+
+.. Una volta effettuate le selezioni, selezionare *Confirm* (Conferma).
+.. Selezionare la casella di controllo *caricare il bundle nel sito di supporto NetApp quando generato*.
+.. Selezionare *generate Bundle* (genera bundle).
++
+Quando il bundle di supporto è pronto, viene visualizzata una notifica nella pagina *account* > *notifica* nell'area Avvisi, nella pagina *attività* e nell'elenco delle notifiche (accessibile selezionando l'icona nella parte superiore destra dell'interfaccia utente).
+
++
+Se la generazione non riesce, viene visualizzata un'icona nella pagina generate Bundle (genera bundle). Selezionare l'icona per visualizzare il messaggio.
+
+
+
+
+
+
+TIP: L'icona delle notifiche nella parte superiore destra dell'interfaccia utente fornisce informazioni sugli eventi correlati al bundle di supporto, ad esempio quando il bundle viene creato correttamente, quando la creazione del bundle non riesce, quando il bundle non può essere caricato, quando il bundle non può essere scaricato e così via.
+
+
+
+=== Se si dispone di un'installazione con aria compressa
+
+Se si dispone di un'installazione con aria compressa, attenersi alla seguente procedura dopo la generazione del pacchetto di supporto. Quando il bundle è disponibile per il download, l'icona Download viene visualizzata accanto a *generate* nella sezione *Support Bundle* della pagina *Support*.
+
+.Fasi
+. Selezionare l'icona Download per scaricare il pacchetto localmente.
+. Caricare manualmente il bundle su NSS.
++
+A tale scopo, è possibile utilizzare uno dei seguenti metodi:
+
++
+** Utilizzare https://upload.netapp.com/sg["NetApp Authenticated file Upload (accesso richiesto)"^].
+** Collegare il bundle alla custodia direttamente su NSS.
+** Utilizza NetApp Active IQ.
+
+
+
+
+[discrete]
+== Trova ulteriori informazioni
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp["Come caricare un file su NetApp (accesso richiesto)"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_manually_upload_AutoSupport_messages_to_NetApp_in_ONTAP_9["Come caricare manualmente un file su NetApp (accesso richiesto)"^]
+

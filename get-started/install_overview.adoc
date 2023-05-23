@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: get-started/install_overview.html 
+keywords: astra installation, install astra control center, openshift, amazon web services, azure, how to install astra control, deploy, download from netapp support 
+summary: 'Hai la possibilità di scegliere l"installazione di Astra Control Center.' 
+---
+= Panoramica dell'installazione
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+[role="lead"]
+Scegliere e completare una delle seguenti procedure di installazione di Astra Control Center:
+
+* link:../get-started/install_acc.html["Installare Astra Control Center utilizzando il processo standard"]
+* link:../get-started/acc_operatorhub_install.html["(Se utilizzi Red Hat OpenShift) Installa Astra Control Center usando OpenShift OperatorHub"]
+* link:../get-started/install_acc-cvo.html["Installare il centro di controllo Astra con un backend di storage Cloud Volumes ONTAP"]
+
+
+A seconda dell'ambiente in uso, potrebbe essere necessaria una configurazione aggiuntiva dopo l'installazione di Astra Control Center:
+
+* link:../get-started/configure-after-install.html["Configurare Astra Control Center dopo l'installazione"]
+

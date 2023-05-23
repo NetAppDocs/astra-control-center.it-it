@@ -1,0 +1,6 @@
+---
+section: rest-api
+title: Automatizza con l'API REST di Astra Control
+entries:
+- title: Introduzione
+  url: "/rest-api/api-intro.html"

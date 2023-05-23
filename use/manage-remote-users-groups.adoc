@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: use/manage-remote-users-groups.html 
+keywords: import, import users, search, search users, groups, import groups 
+summary: Gestisci utenti e gruppi LDAP remoti sul tuo sistema Astra Control Center. 
+---
+= Gestire utenti e gruppi remoti
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Se è stata attivata l'autenticazione LDAP sul sistema Astra Control, è possibile cercare utenti e gruppi LDAP e includerli negli utenti approvati del sistema.
+
+
+
+== Aggiungere un utente remoto
+
+Gli account Owner e gli amministratori possono aggiungere utenti remoti ad Astra Control.
+
+
+NOTE: Non è possibile aggiungere un utente remoto se nel sistema esiste già un utente locale con lo stesso indirizzo e-mail. Per aggiungere l'utente come utente remoto, eliminare prima l'utente locale dal sistema.
+
+
+IMPORTANT: Astra Control Center utilizza l'indirizzo e-mail nell'attributo "mail" LDAP per cercare e tenere traccia degli utenti remoti. Questo attributo potrebbe essere un campo facoltativo o vuoto nella directory. In questo campo deve esistere un indirizzo e-mail per tutti gli utenti remoti che si desidera visualizzare in Astra Control Center. Questo indirizzo e-mail viene utilizzato come nome utente in Astra Control Center per l'autenticazione.
+
+.Fasi
+. Accedere all'area *account*.
+. Selezionare la scheda *utenti e gruppi*.
+. All'estrema destra della pagina, selezionare *utenti remoti*.
+. Selezionare *Aggiungi*.
+. In alternativa, cercare un utente LDAP inserendo l'indirizzo e-mail dell'utente nel campo *Filtra per email*.
+. Selezionare uno o più utenti dall'elenco.
+. Assegnare un ruolo all'utente.
++
+
+NOTE: Se si assegnano ruoli diversi a un utente e al gruppo dell'utente, il ruolo più permissivo ha la precedenza.
+
+. Facoltativamente, assegnare uno o più vincoli dello spazio dei nomi a questo utente e selezionare *limita ruolo ai vincoli* per applicarli. È possibile aggiungere un nuovo vincolo dello spazio dei nomi selezionando *Aggiungi vincolo*.
++
+
+NOTE: Quando a un utente vengono assegnati ruoli multipli tramite l'appartenenza al gruppo LDAP, i limiti nel ruolo più permissivo sono gli unici che hanno effetto. Ad esempio, se un utente con un ruolo Viewer locale unisce tre gruppi associati al ruolo Member, la somma dei vincoli dei ruoli Member ha effetto e tutti i vincoli del ruolo Viewer vengono ignorati.
+
+. Selezionare *Aggiungi*.
+
+
+.Risultato
+Il nuovo utente viene visualizzato nell'elenco degli utenti remoti. In questo elenco, è possibile visualizzare i vincoli attivi sull'utente e gestire l'utente dal menu *azioni*.
+
+
+
+== Aggiungere un gruppo remoto
+
+Per aggiungere più utenti remoti contemporaneamente, gli account Owners e gli amministratori possono aggiungere gruppi remoti ad Astra Control. Quando si aggiunge un gruppo remoto, tutti gli utenti remoti di tale gruppo vengono aggiunti ad Astra Control e ereditano lo stesso ruolo.
+
+.Fasi
+. Accedere all'area *account*.
+. Selezionare la scheda *utenti e gruppi*.
+. All'estrema destra della pagina, selezionare *gruppi remoti*.
+. Selezionare *Aggiungi*.
++
+In questa finestra, è possibile visualizzare un elenco dei nomi comuni e dei nomi distinti dei gruppi LDAP recuperati da Astra Control.
+
+. In alternativa, cercare un gruppo LDAP inserendo il nome comune del gruppo nel campo *Filtra per nome comune*.
+. Selezionare uno o più gruppi dall'elenco.
+. Assegnare un ruolo ai gruppi.
++
+
+NOTE: Il ruolo selezionato viene assegnato a tutti gli utenti di questo gruppo. Se si assegnano ruoli diversi a un utente e al gruppo dell'utente, il ruolo più permissivo ha la precedenza.
+
+. Facoltativamente, assegnare uno o più vincoli dello spazio dei nomi a questo gruppo e selezionare *limita ruolo ai vincoli* per applicarli. È possibile aggiungere un nuovo vincolo dello spazio dei nomi selezionando *Aggiungi vincolo*.
++
+
+NOTE: Quando a un utente vengono assegnati ruoli multipli tramite l'appartenenza al gruppo LDAP, i limiti nel ruolo più permissivo sono gli unici che hanno effetto. Ad esempio, se un utente con un ruolo Viewer locale unisce tre gruppi associati al ruolo Member, la somma dei vincoli dei ruoli Member ha effetto e tutti i vincoli del ruolo Viewer vengono ignorati.
+
+. Selezionare *Aggiungi*.
+
+
+.Risultato
+Il nuovo gruppo viene visualizzato nell'elenco dei gruppi remoti e tutti gli utenti remoti di questo gruppo vengono visualizzati nell'elenco degli utenti remoti. In questo elenco, è possibile visualizzare i dettagli sul gruppo e gestire il gruppo dal menu *azioni*.
