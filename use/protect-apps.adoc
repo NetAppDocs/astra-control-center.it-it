@@ -47,7 +47,7 @@ Se hai bisogno di backup o snapshot per eseguire più frequentemente di una volt
 TIP: Eseguire l'offset delle pianificazioni di backup e replica per evitare sovrapposizioni di pianificazione. Ad esempio, eseguire backup all'inizio dell'ora ogni ora e pianificare la replica per iniziare con un offset di 5 minuti e un intervallo di 10 minuti.
 
 
-IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, non è possibile utilizzare policy di protezione. Utilizzare una classe di storage alternativa se si desidera un criterio di protezione.
+IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, non è possibile utilizzare policy di protezione. Migrare a una classe di storage supportata da Astra Control se si desidera pianificare backup e snapshot.
 
 .Fasi
 . Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.
@@ -80,7 +80,7 @@ Astra Control implementa la policy di protezione dei dati creando e conservando 
 Puoi creare uno snapshot on-demand in qualsiasi momento.
 
 
-IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, le snapshot non possono essere utilizzate. Utilizzare una classe di storage alternativa per gli snapshot.
+IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, impossibile creare snapshot. Utilizzare una classe di storage alternativa per gli snapshot.
 
 .Fasi
 . Selezionare *applicazioni*.

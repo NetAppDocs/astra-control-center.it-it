@@ -80,6 +80,10 @@ NOTE: Astra Control crea nuovi spazi dei nomi di destinazione come parte dell'op
 ** Scegliere di mantenere la classe di storage originale associata all'applicazione o di selezionare una classe di storage diversa.
 +
 
+NOTE: È possibile migrare la classe di storage di un'applicazione a un cloud provider nativo di classe di storage o ad un'altra classe di storage supportata,  a una classe di storage supportata da `ontap-nas` sullo stesso cluster oppure copiare l'applicazione in un altro cluster con una classe di storage supportata da `ontap-nas-economy` driver.
+
++
+
 NOTE: Se si seleziona una classe di storage diversa e questa classe di storage non esiste al momento del ripristino, viene restituito un errore.
 
 

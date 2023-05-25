@@ -119,7 +119,7 @@ TIP: Un'etichetta è una coppia chiave/valore che è possibile assegnare agli og
 
 .A proposito di questa attività
 * Prima di iniziare, dovresti anche capire link:../use/manage-apps.html#what-about-system-namespaces["gestione degli spazi dei nomi standard e di sistema"].
-* Se intendi utilizzare più spazi dei nomi con le tue applicazioni in Astra Control, link:../use/manage-roles.html#add-a-namespace-constraint-to-a-role["modificare i ruoli utente con vincoli dello spazio dei nomi"] Dopo l'aggiornamento a una versione di Astra Control Center con supporto di più namespace.
+* Se intendi utilizzare più spazi dei nomi con le tue applicazioni in Astra Control, link:../use/manage-local-users-and-roles.html#add-a-namespace-constraint-to-a-role["modificare i ruoli utente con vincoli dello spazio dei nomi"] Dopo l'aggiornamento a una versione di Astra Control Center con supporto di più namespace.
 * Per istruzioni su come gestire le applicazioni utilizzando l'API Astra Control, vedere link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation e informazioni API"^].
 
 
@@ -132,7 +132,7 @@ TIP: Un'etichetta è una coppia chiave/valore che è possibile assegnare agli og
 
 === Definire le risorse da gestire come applicazione
 
-È possibile specificare link:../learn/app-management.html["Kubernetes risorse che compongono un'applicazione"] Che si desidera gestire con Astra Control. La definizione di un'applicazione consente di raggruppare gli elementi del cluster Kubernetes in una singola applicazione. Questa raccolta di risorse Kubernetes è organizzata in base allo spazio dei nomi e ai criteri di selezione delle etichette.
+È possibile specificare link:../concepts/app-management.html["Kubernetes risorse che compongono un'applicazione"] Che si desidera gestire con Astra Control. La definizione di un'applicazione consente di raggruppare gli elementi del cluster Kubernetes in una singola applicazione. Questa raccolta di risorse Kubernetes è organizzata in base allo spazio dei nomi e ai criteri di selezione delle etichette.
 
 La definizione di un'applicazione offre un controllo più granulare su ciò che deve essere incluso in un'operazione Astra Control, inclusi cloni, snapshot e backup.
 

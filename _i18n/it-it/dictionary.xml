@@ -76,8 +76,6 @@
   <block id="4d7c5466d2e8269a12c5fb2c17325819" category="section-title">Registro delle immagini</block>
   <block id="25f1b9b80430f180d844c37c0d1dd611" category="paragraph">È necessario disporre di un registro di immagini Docker privato in cui è possibile trasferire le immagini di build di Astra Control Center. È necessario fornire l'URL del registro delle immagini in cui verranno caricate le immagini.</block>
   <block id="315bffcf2d808a710c1be00a7f5890ca" category="section-title">Licenza Astra Control Center</block>
-  <block id="f79830bec9b778f1cf3c950471bafb95" category="inline-link-macro">Caratteristiche di Astra Control Center</block>
-  <block id="c6cd6c471555bdf8c2b0cd993805ad22" category="paragraph">Astra Control Center richiede una licenza Astra Control Center. Quando si installa Astra Control Center, viene già attivata una licenza di valutazione integrata di 90 giorni per 4,800 unità CPU. Se hai bisogno di una maggiore capacità o di termini di valutazione diversi, o se desideri passare a una licenza completa, puoi ottenere una licenza di valutazione o una licenza completa diversa da NetApp. Hai bisogno di una licenza per proteggere le tue applicazioni e i tuoi dati. Fare riferimento a. <block ref="7fcc59b1843f920708fc18c7727f8745" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">qui</block>
   <block id="00411e483ab00aafe1621b371178684f" category="paragraph">Puoi provare Astra Control Center registrandoti per una prova gratuita. Puoi iscriverti registrandoti <block ref="40bbeef53dcd6be322547bd3e190782a" category="inline-link-macro-rx"></block>.</block>
   <block id="fbd7f511b2e75e5ab019b2450e398c1d" category="inline-link-macro">utilizzare una licenza di valutazione di 90 giorni</block>
@@ -254,7 +252,6 @@
   <block id="4f1676fe8dda03f26994cd830c2d09a1" category="list-text">Creare il<block ref="cadbba5231afda9b003503d57805b87d" prefix=" " category="inline-code"></block> spazio dei nomi:</block>
   <block id="54472d1da4b0c6eadf8684e846b25dcc" category="paragraph">Risposta:</block>
   <block id="6991b18d1a4e22ab1157055468087de4" category="list-text">Creare un segreto per<block ref="cadbba5231afda9b003503d57805b87d" prefix=" " category="inline-code"></block> namespace. Aggiungere informazioni su Docker ed eseguire il seguente comando:</block>
-  <block id="26f4146beb059d78839181aff15a98e0" category="admonition">Il segnaposto<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> deve corrispondere alla posizione delle immagini caricate in precedenza (ad esempio,<block ref="147d5bc425e907e8d0d5059c73d111dd" prefix=" " category="inline-code"></block>).</block>
   <block id="6d55356ca8cb9b27cfa6e2bb46ebb089" category="paragraph">Esempio di risposta:</block>
   <block id="fba3b8edc8af9a70acd65d8e7cf9463f" category="admonition">Se si elimina lo spazio dei nomi dopo la generazione del segreto, ricreare lo spazio dei nomi e rigenerare il segreto per lo spazio dei nomi.</block>
   <block id="d9cf54d120e6c7828718763a08f6c1dc" category="list-text">Creare il<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> namespace (o personalizzato).</block>
@@ -284,7 +281,6 @@
   <block id="0e55b95a4c5cb92e244e3bd0a238beb9" category="example-title">&lt;code&gt;astraVersion&lt;/code&gt;</block>
   <block id="d13a274d958af22bed6e8d41f55d8555" category="cell"><block ref="bbdbf70444e48a34a4a7e7d708d85eec" prefix="" category="inline-code"></block></block>
   <block id="5699a5d0302dbbb9ebafb81191b2cf4e" category="cell">La versione di Astra Control Center da implementare. Non è necessaria alcuna azione per questa impostazione, in quanto il valore verrà pre-compilato.</block>
-  <block id="8ed96e019e1c613c2d6462c9d2df5228" category="cell"><block ref="fce24731ab09e877fbbef5b1b0c2f81f" prefix="" category="inline-code"></block></block>
   <block id="c7cf7bc0197d55fb58a764f376cee071" category="example-title">&lt;code&gt;astraAddress&lt;/code&gt;</block>
   <block id="2768247a17baf82ba937b52168928c48" category="cell"><block ref="d27903c79b643b2f565c31e894abb568" prefix="" category="inline-code"></block></block>
   <block id="b74df8ed66dab15b4d425c5788286114" category="inline-xref">passo successivo</block>
@@ -874,9 +870,7 @@
   <block id="9905787058ed1f891f5110340336c6f4" category="section-title">Ciò di cui hai bisogno per AWS</block>
   <block id="a5a36964a87d94d5ac0851af923c64fc" category="paragraph">Prima di implementare Astra Control Center in AWS, sono necessari i seguenti elementi:</block>
   <block id="e7e1ddd48b888f0547b40d916ec5553d" category="inline-link-macro">Requisiti di licenza di Astra Control Center</block>
-  <block id="b488bebfd7a3a01cdcc54ea5856291cb" category="list-text">Licenza Astra Control Center. Vedere <block ref="fc4957629b78fc8c58b84966810cc78b" category="inline-link-macro-rx"></block>.</block>
   <block id="962a965cf88e3974508a49a177bfab16" category="inline-link-macro">Soddisfare i requisiti di Astra Control Center</block>
-  <block id="432bc10b47ea475ecbbc50fb50d0978a" category="list-text"><block ref="cdf0380926240bc589ee0ad782ff731a" category="inline-link-macro-rx"></block>.</block>
   <block id="3a6435e71d5b3aaba8dfb2b39bf255c9" category="list-text">Account NetApp Cloud Central</block>
   <block id="fd591703833610f8e2a03221e8c218e2" category="list-text">Se si utilizza OCP, autorizzazioni Red Hat OpenShift Container Platform (OCP) (a livello di spazio dei nomi per creare i pod)</block>
   <block id="21b6348603465642d3b74890973e2947" category="list-text">Credenziali AWS, Access ID e Secret Key con autorizzazioni che consentono di creare bucket e connettori</block>
@@ -929,7 +923,6 @@
   <block id="e874bd0f330d9513016dc844dfd62e6f" category="paragraph">Seguire la documentazione di AWS per completare i seguenti passaggi. Vedere<block ref="b5a7979c22035fe192b9eb8d0cab1e4a" category="inline-link-rx"></block>.</block>
   <block id="9c7a256a23d947f541662b1e88bac33d" category="list-text">Creare una rete virtuale AWS.</block>
   <block id="92d9212a67ec9da982a091cf92cb4347" category="list-text">Esaminare le istanze di calcolo EC2. Può trattarsi di un server bare metal o di macchine virtuali in AWS.</block>
-  <block id="b881f78be517f5315cfb2d556f3448f7" category="list-text">Se il tipo di istanza non corrisponde già ai requisiti minimi di risorsa Astra per i nodi master e worker, modificare il tipo di istanza in AWS per soddisfare i requisiti Astra. Vedere <block ref="32be9c8362ea42075ea0b5d43bb3b5d0" category="inline-link-macro-rx"></block>.</block>
   <block id="b109e192f966bb3bb3e8cd30e1a59bfa" category="list-text">Creare almeno un bucket AWS S3 per memorizzare i backup.</block>
   <block id="e5c5351f3ea6206a7f110205b4155acc" category="list-text">Creare un AWS Elastic Container Registry (ECR) per ospitare tutte le immagini ACC.</block>
   <block id="9d58e473a9f64a9efe76c63ca0a30602" category="admonition">Se non si crea ECR, il centro di controllo Astra non può accedere ai dati di monitoraggio da un cluster contenente Cloud Volumes ONTAP con un backend AWS. Il problema si verifica quando il cluster che si tenta di rilevare e gestire utilizzando Astra Control Center non dispone dell'accesso ad AWS ECR.</block>
@@ -960,7 +953,6 @@
   <block id="022f3cb861d350bac16e19b15e4f1f9c" category="admonition">Cloud Volumes ONTAP può funzionare come nodo singolo o in alta disponibilità. Se ha è attivato, annotare lo stato ha e lo stato di implementazione del nodo in esecuzione in AWS.</block>
   <block id="f50f34d69af9ef9e0f87b3f7eec3c590" category="section-title">Installare Astra Control Center per AWS</block>
   <block id="d35cd0582def6a18a65ff02ce2d5ff77" category="inline-link-macro">Istruzioni di installazione di Astra Control Center</block>
-  <block id="1cb58fa5a8f36029f128e85d88276810" category="paragraph">Seguire lo standard <block ref="ef8e47848fa28ef11d8d85ade3f221ee" category="inline-link-macro-rx"></block>.</block>
   <block id="4fa3cb64c7a4d0ea493cd71172a39adf" category="admonition">AWS utilizza il tipo di bucket S3 generico.</block>
   <block id="1e1383512a183b22a38cf414944a5e6f" category="section-title">Implementare Astra Control Center nella piattaforma Google Cloud</block>
   <block id="b22e8d7dd55c8decf5f9ba74419121b1" category="paragraph">Puoi implementare Astra Control Center su un cluster Kubernetes autogestito ospitato su un cloud pubblico Google Cloud Platform (GCP).</block>
@@ -999,7 +991,6 @@
   <block id="c578b94b33bf07e688365d51671b2a15" category="paragraph">Seguire la documentazione GCP per completare i seguenti passaggi. Vedere Installazione del cluster OpenShift in GCP.</block>
   <block id="70f9b4bc984c8a51ae2377e7357c3f9c" category="list-text">Creare un progetto GCP e un VPC nel GCP che si intende utilizzare per il cluster OCP con backend CVO.</block>
   <block id="79b77f6749b1fd6847f3c81051c1a461" category="list-text">Esaminare le istanze di calcolo. Questo può essere un server bare metal o VM in GCP.</block>
-  <block id="80400c768a12e5693e6fb733e0ac97a6" category="list-text">Se il tipo di istanza non corrisponde già ai requisiti minimi di risorsa Astra per i nodi master e worker, modificare il tipo di istanza in GCP per soddisfare i requisiti Astra. Vedere <block ref="a41c664e3d2520e4c4deb907d0286272" category="inline-link-macro-rx"></block>.</block>
   <block id="84e3433d1da2695e582ef2f2de7e3312" category="list-text">Crea almeno un bucket di storage cloud GCP per memorizzare i tuoi backup.</block>
   <block id="a9d92f56cc3dae134fc1ee53e8136378" category="list-text">Creare un segreto, necessario per l'accesso al bucket.</block>
   <block id="2dd9e1f422bf892345f5cec3f5b2b2c2" category="list-text">Creare un Google Container Registry per ospitare tutte le immagini di Astra Control Center.</block>
@@ -1035,7 +1026,6 @@
   <block id="067c001dbf7480cc26099ff0edfb8bda" category="list-text">Credenziali Azure con autorizzazioni che consentono di creare bucket e connettori</block>
   <block id="a7ab880bb218b2e0b517005f90e662c8" category="section-title">Requisiti dell'ambiente operativo per Azure</block>
   <block id="ac388b858e49b0566fa15ba968147e01" category="inline-link-macro">Requisiti dell'ambiente operativo di Astra Control Center</block>
-  <block id="1e9270e08207b5c7936ac24a81e7b095" category="paragraph">Vedere <block ref="f28f34e5e5f49b6efcb4b06ae1514632" category="inline-link-macro-rx"></block>.</block>
   <block id="98c6bc51841c094bfa7f813391562f38" category="cell">Nodi di lavoro (requisito di calcolo di Azure)</block>
   <block id="e047c10f2ecd816933f9e5d910ba88e5" category="cell">FQDN (Azure DNS zone)</block>
   <block id="3a0d14b3719f12241093d9a8700561f6" category="cell">Astra Trident (installato come parte del rilevamento dei cluster Kubernetes in NetApp BlueXP)</block>
@@ -1065,8 +1055,6 @@
   <block id="55e97b9e5267c3f5615048df47e2403b" category="paragraph">Seguire la documentazione di Azure per completare i seguenti passaggi. Vedere<block ref="0e7a8da8480a9d852a625433095b0dfb" category="inline-link-rx"></block>.</block>
   <block id="52393bb21023d79ef4e0fa374e54b83d" category="list-text">Creare una rete virtuale Azure.</block>
   <block id="d03589157dd63e1aaf5497955f5058f5" category="list-text">Esaminare le istanze di calcolo. Si tratta di un server bare metal o di macchine virtuali in Azure.</block>
-  <block id="b82f3e0352c4295f8db3114c4d861a92" category="inline-link-macro">Requisiti di Astra Control Center</block>
-  <block id="8a803e817d15e18f4c26de7531681f8c" category="list-text">Se il tipo di istanza non corrisponde già ai requisiti minimi di risorsa Astra per i nodi master e worker, modificare il tipo di istanza in Azure per soddisfare i requisiti Astra. Vedere <block ref="69ebc365ae107089b5acea91d6e6ce3d" category="inline-link-macro-rx"></block>.</block>
   <block id="5df56ab7fcd23252a7ac4c7a21742e57" category="list-text">Creare almeno un container Azure Blob per memorizzare i backup.</block>
   <block id="307374e80fc7db1b05d765029543d9c8" category="list-text">Creare un account storage. Per creare un container da utilizzare come bucket in Astra Control Center è necessario un account storage.</block>
   <block id="7d8431378165cbd970da3a000187a79e" category="list-text">Creare un Azure Container Registry (ACR) per ospitare tutte le immagini di Astra Control Center.</block>
@@ -1096,9 +1084,7 @@
   <block id="a4f1bc6952ef35fa4b362d48d0bae5cf" category="list-text">Cloud Volumes ONTAP può funzionare come nodo singolo o in alta disponibilità. Se ha è attivato, annotare lo stato ha e lo stato di implementazione del nodo in esecuzione in Azure.</block>
   <block id="b24ff57a65ef73f0fc117dd330a967f3" category="section-title">Installare e configurare Astra Control Center per Azure</block>
   <block id="7586dbf5f3ac1a66383f6c201a17a341" category="inline-link-macro">istruzioni per l'installazione</block>
-  <block id="5381969706e609f872c366c6e1a670a3" category="paragraph">Installare Astra Control Center con lo standard <block ref="3dc99e8ac5a903068ed044215599aeeb" category="inline-link-macro-rx"></block>.</block>
   <block id="22a505b5cbfe40e35bb7fb0543690f0e" category="inline-link-macro">Configurare Astra Control Center e aggiungere i bucket</block>
-  <block id="7a971c76db7e65f29d30288ac83cec37" category="paragraph">Utilizzando Astra Control Center, aggiungere un bucket Azure. Vedere <block ref="84c85bd9149d8879a472dbef331261f3" category="inline-link-macro-rx"></block>.</block>
   <block id="d15664749a56effbbb05a3423ea5e504" category="summary">Se utilizzi Red Hat OpenShift, puoi installare Astra Control Center usando un operatore.</block>
   <block id="d74cdf75cddd8ade6d1b83dd387ec2f2" category="doc">Installare Astra Control Center utilizzando OpenShift OperatorHub</block>
   <block id="cd165c3825c1608d9ab0d7fb7273e21a" category="inline-link">Catalogo Red Hat Ecosystem</block>
@@ -1149,7 +1135,6 @@
   <block id="20133d30eea258b6c1550d612eb75dfc" category="list-text">Aggiungere etichette per Astra Control Center.</block>
   <block id="a90dd656b7a6b8d695097aab7d876d0e" category="list-text">Attiva o disattiva il supporto automatico. Si consiglia di mantenere la funzionalità di supporto automatico.</block>
   <block id="4039227203056b7dfe2f76bcb9aedef4" category="list-text">Inserire il nome FQDN o l'indirizzo IP di Astra Control Center. Non entrare<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> oppure<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> nel campo dell'indirizzo.</block>
-  <block id="8275cc29d67faf18fe540b46358fde84" category="list-text">Inserire la versione di Astra Control Center, ad esempio 23.04.0-22.</block>
   <block id="bb78a9da438c9bc3d6927b7e4cc397cd" category="list-text">Immettere un nome account, un indirizzo e-mail e un cognome amministratore.</block>
   <block id="dcfdd5754023d297c0d864d5eb1bf301" category="list-text">Scegliere una policy di recupero dei volumi di<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>,<block ref="6b2724e1fdbbcc2065b002943d831972" prefix=" " category="inline-code"></block>, o.<block ref="f2a6c498fb90ee345d997f888fce3b18" prefix=" " category="inline-code"></block>. Il valore predefinito è<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>.</block>
   <block id="9c71eb65f92b7f4fbb85f88f644c6613" category="list-text">Selezionare il ScaleSize dell'installazione.</block>
@@ -1488,8 +1473,6 @@
   <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Open source</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">I file di avviso forniscono informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.</block>
-  <block id="cae4ab898e0de6e692eb3d10b6a95dbf" category="inline-link-macro">Avviso per Astra Control Center</block>
-  <block id="f4431fb507c16341e3a99f8f031779bc" category="list-text"><block ref="f4431fb507c16341e3a99f8f031779bc" category="inline-link-macro-rx"></block></block>
   <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Licenza API Astra Control</block>
   <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
   <block id="51d249216b03414f10b242b851af7951" category="doc">Componenti di controllo Astra</block>
@@ -1636,7 +1619,6 @@
   <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">Utilizza l'API REST di Astra Control per creare snapshot e backup</block>
   <block id="ea4406d0295c7a1fc18318721ed0eb77" category="paragraph">Se hai bisogno di backup o snapshot per eseguire più frequentemente di una volta all'ora, è possibile<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>.</block>
   <block id="69f7fefc112d0cd0af937e058f3df889" category="admonition">Eseguire l'offset delle pianificazioni di backup e replica per evitare sovrapposizioni di pianificazione. Ad esempio, eseguire backup all'inizio dell'ora ogni ora e pianificare la replica per iniziare con un offset di 5 minuti e un intervallo di 10 minuti.</block>
-  <block id="4b81f371a950b4164e976fd95ff29363" category="admonition">Se l'applicazione utilizza una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> driver, non è possibile utilizzare policy di protezione. Utilizzare una classe di storage alternativa se si desidera un criterio di protezione.</block>
   <block id="88999cc5907cf0e9ead77c8da2e009fd" category="list-text">Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.</block>
   <block id="dea95de7f2633f161384f311ab180946" category="list-text">Selezionare *Data Protection* (protezione dati).</block>
   <block id="991b4d6d3f0be95d8e0ca4853eea90a9" category="list-text">Selezionare *Configura policy di protezione*.</block>
@@ -1651,7 +1633,6 @@
   <block id="ea4ebf424434e7ebdf07f2247bd94dd6" category="paragraph">Astra Control implementa la policy di protezione dei dati creando e conservando snapshot e backup utilizzando la policy di pianificazione e conservazione definita dall'utente.</block>
   <block id="af9c364e0933200b7b8c1e7e13947ccf" category="section-title">Creare un'istantanea</block>
   <block id="9bbdcd6083ca1f29424ab7d4e6e6d3f5" category="paragraph">Puoi creare uno snapshot on-demand in qualsiasi momento.</block>
-  <block id="c1a51552670bd89a555dfc498d58f040" category="admonition">Se l'applicazione utilizza una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> driver, le snapshot non possono essere utilizzate. Utilizzare una classe di storage alternativa per gli snapshot.</block>
   <block id="b058dacc1faf94086ef550612e83f43c" category="list-text">Selezionare *applicazioni*.</block>
   <block id="8cf5def8eede43ff4c75800399b44fb7" category="list-text">Dal menu Options (Opzioni) nella colonna *Actions* (azioni) dell'applicazione desiderata, selezionare *Snapshot*.</block>
   <block id="e731b69194fb461b61a50d70056eadeb" category="list-text">Personalizzare il nome dell'istantanea, quindi selezionare *Avanti*.</block>
@@ -1774,7 +1755,6 @@
   <block id="a7d4d20683a8972d07170d4ce5f3329b" category="inline-link-macro">gestione degli spazi dei nomi standard e di sistema</block>
   <block id="5c227ef4d58eed958f28dbf199bfbaad" category="list-text">Prima di iniziare, dovresti anche capire <block ref="8168216ca124f830e0a917cd26a29d8e" category="inline-link-macro-rx"></block>.</block>
   <block id="5024ae05715714a1f77019a1d3570662" category="inline-link-macro">modificare i ruoli utente con vincoli dello spazio dei nomi</block>
-  <block id="a43c92b1987868b5e14cb513230d1758" category="list-text">Se intendi utilizzare più spazi dei nomi con le tue applicazioni in Astra Control, <block ref="1285c07b4a10103552b4ca251af3682f" category="inline-link-macro-rx"></block> Dopo l'aggiornamento a una versione di Astra Control Center con supporto di più namespace.</block>
   <block id="eeda690c7ce6ed8c1c0aa2b723a685bf" category="inline-link-macro">Astra Automation e informazioni API</block>
   <block id="b04ceef112f40532368c375404526534" category="list-text">Per istruzioni su come gestire le applicazioni utilizzando l'API Astra Control, vedere <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>.</block>
   <block id="8e53ab6973e348c5dae1439036057fb9" category="list-title">Opzioni di gestione delle applicazioni</block>
@@ -1782,7 +1762,6 @@
   <block id="7baf29270925b2581439dadd21326420" category="list-text"><block ref="44b69c9ef9afbcb785098111df100723" category="inline-xref-macro-rx"></block></block>
   <block id="3266a93a7b63a8c6c37526e40a7dbcfc" category="section-title">Definire le risorse da gestire come applicazione</block>
   <block id="563818c781ab1eb635e013aa8f69b063" category="inline-link-macro">Kubernetes risorse che compongono un'applicazione</block>
-  <block id="36601193b249cfe8bc9e8a7e3ab3748b" category="paragraph">È possibile specificare <block ref="94e1e30856d1b3d474ebefb4ba344d8b" category="inline-link-macro-rx"></block> Che si desidera gestire con Astra Control. La definizione di un'applicazione consente di raggruppare gli elementi del cluster Kubernetes in una singola applicazione. Questa raccolta di risorse Kubernetes è organizzata in base allo spazio dei nomi e ai criteri di selezione delle etichette.</block>
   <block id="b5202d03441313e6d97a124668dc3249" category="paragraph">La definizione di un'applicazione offre un controllo più granulare su ciò che deve essere incluso in un'operazione Astra Control, inclusi cloni, snapshot e backup.</block>
   <block id="c4cb46a2957e787f5e4e5299782270f6" category="inline-xref">Scopri di più in un esempio.</block>
   <block id="e5d509b8ad96124cb3a6b0df8e2a6299" category="admonition">Quando definisci le app, assicurati di non includere una risorsa Kubernetes in più app con policy di protezione. La sovrapposizione delle policy di protezione sulle risorse Kubernetes può causare conflitti di dati. <block ref="e641e59a56328c9fa4038a349ab4087c" category="inline-xref-macro-rx"></block></block>
@@ -2609,7 +2588,6 @@
   <block id="e9f8a964cfe8d148cfb0e30848e5fa69" category="admonition">È possibile creare tutte le regole di inclusione ed esclusione delle risorse desiderate. Le regole vengono visualizzate nel riepilogo dell'applicazione di ripristino prima di avviare l'operazione.</block>
   <block id="c54289096cda6c9fdce6630f9c6f8915" category="section-title">Migrazione dallo storage ontap-nas-Economy allo storage ontap-nas</block>
   <block id="4b2c74380ba4764db896a5663121f69c" category="inline-link-macro">ripristino dell'applicazione</block>
-  <block id="b92759a8cbd45e95d0289536b80bbf56" category="paragraph">È possibile utilizzare Astra Control <block ref="8a5873c85b30e3ecf46411b2e0542bf9" category="inline-link-macro-rx"></block> operazione per migrare i volumi delle applicazioni da una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>, che consente opzioni di protezione applicativa limitate, a una classe di storage supportata da<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> Con la sua gamma completa di opzioni di protezione Astra Control. L'operazione di ripristino esegue la migrazione dei volumi basati su Qtree che utilizzano un<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> back-end per volumi standard supportati da<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>. A prescindere dal fatto che lo siano<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> supportato solo o misto, verrà migrato alla classe di storage di destinazione. Una volta completata la migrazione, le opzioni di protezione non sono più limitate.</block>
   <block id="5ca4648f1bb1157edc69a1a2d478b1ec" category="section-title">Problemi di ripristino in-place per un'applicazione che condivide le risorse con un'altra applicazione</block>
   <block id="b9c5aa5f0760c46a33739ee66fcb84b7" category="paragraph">È possibile eseguire un'operazione di ripristino in-place su un'applicazione che condivide le risorse con un'altra applicazione e produce risultati non desiderati. Tutte le risorse condivise tra le applicazioni vengono sostituite quando viene eseguito un ripristino in-place su una delle applicazioni.</block>
   <block id="76d6e00a16a4b5b026bf5cd77e765048" category="paragraph">Di seguito viene riportato uno scenario di esempio che crea una situazione indesiderabile quando si utilizza la replica di NetApp SnapMirror per un ripristino:</block>
@@ -2882,4 +2860,52 @@
   <block id="0adc618a9ad28f57db9328d47cf45165" category="sidebar">Monitorare l'infrastruttura con Cloud Insights e Fluentd</block>
   <block id="f789b438cbc1e82cd52918fc029eeb85" category="sidebar">Automatizza con l'API REST di Astra Control</block>
   <block id="0b79795d3efc95b9976c7c5b933afce2" category="sidebar">Introduzione</block>
+  <block id="fee805c99a52d5e0d8310f481585c349" category="paragraph">Astra Control Center richiede una licenza Astra Control Center. Quando si installa Astra Control Center, viene già attivata una licenza di valutazione integrata di 90 giorni per 4,800 unità CPU. Se hai bisogno di una maggiore capacità o di termini di valutazione diversi, o se desideri passare a una licenza completa, puoi ottenere una licenza di valutazione o una licenza completa diversa da NetApp. Hai bisogno di una licenza per proteggere le tue applicazioni e i tuoi dati.</block>
+  <block id="f1f90d86552f62434ab368655ada65bf" category="admonition">Il segnaposto<block ref="facf912114e23f5e3f2192e508b5894a" prefix=" " category="inline-code"></block> deve corrispondere alla posizione delle immagini caricate in precedenza (ad esempio,<block ref="9d25f36f928ac74d96f680647f332dbe" prefix=" " category="inline-code"></block>).</block>
+  <block id="934bb7959df7a88b3c9ec1d63747aa1b" category="cell"><block ref="f112ce7ab8899f4d86606a72f7fe081d" prefix="" category="inline-code"></block></block>
+  <block id="93cd878af59f865741137a58e05f2144" category="list-text">Licenza Astra Control Center. Vedere <block ref="9d8392b3d3d69d5854b01bcce1e67dcc" category="inline-link-macro-rx"></block>.</block>
+  <block id="7288e3952a556db34096b24b93385dc1" category="list-text"><block ref="c62908faf3447493ca66c05b06a828e1" category="inline-link-macro-rx"></block>.</block>
+  <block id="4231339cdb4dfc13c6b0eed298e2c3ed" category="list-text">Se il tipo di istanza non corrisponde già ai requisiti minimi di risorsa Astra per i nodi master e worker, modificare il tipo di istanza in AWS per soddisfare i requisiti Astra. Vedere <block ref="09f78935ac7c88e2178fe1d6a911634a" category="inline-link-macro-rx"></block>.</block>
+  <block id="e5517a467afb2d95f1d64912b2e0f6c0" category="paragraph">Seguire lo standard <block ref="62ba019c882e8ef47d6d25ebcbcb2b75" category="inline-link-macro-rx"></block>.</block>
+  <block id="0ba39587ea86ef82dbfa624a5a1c23e1" category="list-text">Se il tipo di istanza non corrisponde già ai requisiti minimi di risorsa Astra per i nodi master e worker, modificare il tipo di istanza in GCP per soddisfare i requisiti Astra. Vedere <block ref="09f78935ac7c88e2178fe1d6a911634a" category="inline-link-macro-rx"></block>.</block>
+  <block id="f2f0350406c1bdc0c1a8124fa3d6123d" category="paragraph">Vedere <block ref="d8e9010862e75ec2b8a867657011da93" category="inline-link-macro-rx"></block>.</block>
+  <block id="08f3193ed3d3e1e4eea12f65c3f8da59" category="list-text">Se il tipo di istanza non corrisponde già ai requisiti minimi di risorsa Astra per i nodi master e worker, modificare il tipo di istanza in Azure per soddisfare i requisiti Astra. Vedere <block ref="09f78935ac7c88e2178fe1d6a911634a" category="inline-link-macro-rx"></block>.</block>
+  <block id="677baadfa6fa8bc8c46459c6fa0cd3a1" category="paragraph">Installare Astra Control Center con lo standard <block ref="b6ac4cfeef1c22bcb70d1621ddcd2c5f" category="inline-link-macro-rx"></block>.</block>
+  <block id="1225b0a363e426c053436d4be21d15d6" category="paragraph">Utilizzando Astra Control Center, aggiungere un bucket Azure. Vedere <block ref="89e4f3ed5a430daa461d5b5082fe9398" category="inline-link-macro-rx"></block>.</block>
+  <block id="d01bb03e88099369194f670cc934880d" category="list-text">Inserire la versione di Astra Control Center, ad esempio 23.04.2-7.</block>
+  <block id="dc9d2d10b22b9ec46b7f5c5aa778f8d4" category="list-text"><block ref="54dff5fba7d0e1b6a0d5e1b1616a1d91" category="inline-xref-macro-rx"></block></block>
+  <block id="0f8e8b596b378fec7ec9a60a322624c9" category="section-title">Alcuni pod mostrano uno stato di errore dopo la fase di eliminazione dell'aggiornamento da 23.04 a 23.04.2</block>
+  <block id="f48dc887cf479ce835ef8e2bce6d51b4" category="paragraph">Dopo l'aggiornamento ad Astra Control Center 23.04.2, alcuni pod potrebbero visualizzare un errore nei log relativi a.<block ref="d48635051cf3e3bbf27ad6abca07abae" prefix=" " category="inline-code"></block>:</block>
+  <block id="adcb6f2c38c61918c42adaa1885c97e8" category="paragraph">Questo stato di errore indica che un passaggio di pulizia non è stato eseguito correttamente. L'aggiornamento generale alla versione 23.04.2 è riuscito. Eseguire il seguente comando per eliminare l'attività e rimuovere lo stato di errore:</block>
+  <block id="b37bd23859984896c3d3f841546dac73" category="section-title">18 maggio 2023 (23.04.2)</block>
+  <block id="d9464d9b156be28ce8802bc6d5f12d80" category="inline-link">Kubernetes CSI snapshotter esterno v6.1.0</block>
+  <block id="a16843a9cef62fd03908d0f2034b198a" category="paragraph">Questa patch release (23.04.2) per Astra Control Center (23.04.0) fornisce supporto per<block ref="9e98f82546df6be7f59de83a3fc62f08" category="inline-link-rx"></block> e corregge quanto segue:</block>
+  <block id="28c76783b8a39506949484919683e33a" category="list-text">Un bug con il ripristino delle applicazioni in-place quando si utilizzano gli hook di esecuzione</block>
+  <block id="9f1fbfbfc46f190c286a0f82a934ff86" category="list-text">Problemi di connessione con il servizio bucket</block>
+  <block id="d42b75fe19dabf326e6063949f271820" category="list-text"><block ref="d42b75fe19dabf326e6063949f271820" category="inline-link-macro-rx"></block></block>
+  <block id="15f99de9fca4a87464f86c86d87cfca2" category="list-text"><block ref="15f99de9fca4a87464f86c86d87cfca2" category="inline-link-macro-rx"></block></block>
+  <block id="665427957f63c3991e12d21b78eebbe5" category="list-text"><block ref="891e82a20a9e21c6525280edc929ce07" category="inline-xref-macro-rx"></block></block>
+  <block id="5a5355eda2f1cf003d25254ee2c311a3" category="section-title">Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller</block>
+  <block id="4cacedb738b5537e9f99998854279c84" category="paragraph">Le snapshot per i cluster Kubernetes che eseguono la versione 1.25 o successiva possono non riuscire se sul cluster è installata la versione v1beta1 delle API del controller di snapshot.</block>
+  <block id="2ad74d9f76ccccd37e4f9c6cb27f1cbd" category="paragraph">Per risolvere il problema, eseguire le seguenti operazioni quando si aggiornano le installazioni esistenti di Kubernetes 1.25 o versioni successive:</block>
+  <block id="d5d53109cd766da789a263c6e2051051" category="list-text">Rimuovere tutti gli Snapshot CRD esistenti e tutti gli snapshot controller esistenti.</block>
+  <block id="43f17763173fe230bdd78477152f5f7d" category="inline-link">Disinstallare Astra Trident</block>
+  <block id="478393a7bc00211c00b84b91bd7270e1" category="list-text"><block ref="ae36d1cdd520df7c3eaefc0ce2deb814" category="inline-link-rx"></block>.</block>
+  <block id="a9b10c3e99be35f3f8a9c7dc7fadd754" category="inline-link">Installare gli snapshot CRD e lo snapshot controller</block>
+  <block id="fc49eec2e1350c70e0ee83082938896c" category="list-text"><block ref="40a914e8068809539f086034e13549c6" category="inline-link-rx"></block>.</block>
+  <block id="e5b001692c70f874108d4c3517741181" category="inline-link">Installare la versione più recente di Astra Trident</block>
+  <block id="a303c00b0d0d4a1b4adf9ac86b7be2cc" category="list-text"><block ref="6b04d2c2cadce52e000fe64978797f65" category="inline-link-rx"></block>.</block>
+  <block id="48d0b044dd9368b2691ff16393a31d86" category="inline-link">Creare una classe VolumeSnapshotClass</block>
+  <block id="0fa487fe8680011a1e8590273692a729" category="list-text"><block ref="7780c580e1dcefaf97af849cafb81d68" category="inline-link-rx"></block>.</block>
+  <block id="03c93e76d1da3f91157a4ff3e62f2e96" category="inline-link-macro">Avviso per Astra Control Center 23.04.1</block>
+  <block id="13d17b4f7df69833bce96d36f023a8e6" category="list-text"><block ref="13d17b4f7df69833bce96d36f023a8e6" category="inline-link-macro-rx"></block></block>
+  <block id="8ffc20042a078d24d744309f9d7244d1" category="inline-link-macro">Avviso per Astra Control Center 23.04.2</block>
+  <block id="cd7ec3ea252e4bdb4b19d7d7757c6550" category="list-text"><block ref="cd7ec3ea252e4bdb4b19d7d7757c6550" category="inline-link-macro-rx"></block></block>
+  <block id="7b7d629ee3a588d6b640e7a6fda185b4" category="admonition">Se l'applicazione utilizza una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> driver, non è possibile utilizzare policy di protezione. Migrare a una classe di storage supportata da Astra Control se si desidera pianificare backup e snapshot.</block>
+  <block id="f48fcbd3913b071dd3dde66b31c0287b" category="admonition">Se l'applicazione utilizza una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> driver, impossibile creare snapshot. Utilizzare una classe di storage alternativa per gli snapshot.</block>
+  <block id="76b712662caf9fbe541b9d649fa54d92" category="list-text">Se intendi utilizzare più spazi dei nomi con le tue applicazioni in Astra Control, <block ref="f6af6b7c10e981a9dabaa6d78121021d" category="inline-link-macro-rx"></block> Dopo l'aggiornamento a una versione di Astra Control Center con supporto di più namespace.</block>
+  <block id="10bfff3333d286348ab49dd4a34016c2" category="paragraph">È possibile specificare <block ref="a8d926c4017c694588fa4dcb4d7e2733" category="inline-link-macro-rx"></block> Che si desidera gestire con Astra Control. La definizione di un'applicazione consente di raggruppare gli elementi del cluster Kubernetes in una singola applicazione. Questa raccolta di risorse Kubernetes è organizzata in base allo spazio dei nomi e ai criteri di selezione delle etichette.</block>
+  <block id="41a4570187d06828a974d60a4651a66b" category="admonition">È possibile migrare la classe di storage di un'applicazione a un cloud provider nativo di classe di storage o ad un'altra classe di storage supportata, <block ref="f8d9b94d50b5e98113fcda35456f34c9" category="inline-link-macro-rx"></block> a una classe di storage supportata da<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> sullo stesso cluster oppure copiare l'applicazione in un altro cluster con una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> driver.</block>
+  <block id="9e3a6ce1ccfacb25ac629fb54543636a" category="inline-link-macro">clone dell'applicazione</block>
+  <block id="90ad44e959c6022cbe5ffd18d92a13f4" category="paragraph">È possibile utilizzare Astra Control <block ref="8a5873c85b30e3ecf46411b2e0542bf9" category="inline-link-macro-rx"></block> oppure <block ref="4fe412ff620daeb2de5c384ec9480b70" category="inline-link-macro-rx"></block> operazione per migrare i volumi delle applicazioni da una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>, che consente opzioni di protezione applicativa limitate, a una classe di storage supportata da<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> Con la sua gamma completa di opzioni di protezione Astra Control. L'operazione di cloning o restore esegue la migrazione dei volumi basati su Qtree che utilizzano un<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> back-end per volumi standard supportati da<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>. A prescindere dal fatto che lo siano<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> supportato solo o misto, verrà migrato alla classe di storage di destinazione. Una volta completata la migrazione, le opzioni di protezione non sono più limitate.</block>
 </blocks>

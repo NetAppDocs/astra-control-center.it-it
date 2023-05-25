@@ -171,7 +171,7 @@ TIP: È possibile creare tutte le regole di inclusione ed esclusione delle risor
 
 == Migrazione dallo storage ontap-nas-Economy allo storage ontap-nas
 
-È possibile utilizzare Astra Control link:../use/restore-apps.html["ripristino dell'applicazione"] operazione per migrare i volumi delle applicazioni da una classe di storage supportata da `ontap-nas-economy`, che consente opzioni di protezione applicativa limitate, a una classe di storage supportata da `ontap-nas` Con la sua gamma completa di opzioni di protezione Astra Control. L'operazione di ripristino esegue la migrazione dei volumi basati su Qtree che utilizzano un `ontap-nas-economy` back-end per volumi standard supportati da `ontap-nas`. A prescindere dal fatto che lo siano `ontap-nas-economy` supportato solo o misto, verrà migrato alla classe di storage di destinazione. Una volta completata la migrazione, le opzioni di protezione non sono più limitate.
+È possibile utilizzare Astra Control link:../use/restore-apps.html["ripristino dell'applicazione"] oppure link:../use/clone-apps.html["clone dell'applicazione"^] operazione per migrare i volumi delle applicazioni da una classe di storage supportata da `ontap-nas-economy`, che consente opzioni di protezione applicativa limitate, a una classe di storage supportata da `ontap-nas` Con la sua gamma completa di opzioni di protezione Astra Control. L'operazione di cloning o restore esegue la migrazione dei volumi basati su Qtree che utilizzano un `ontap-nas-economy` back-end per volumi standard supportati da `ontap-nas`. A prescindere dal fatto che lo siano `ontap-nas-economy` supportato solo o misto, verrà migrato alla classe di storage di destinazione. Una volta completata la migrazione, le opzioni di protezione non sono più limitate.
 
 
 

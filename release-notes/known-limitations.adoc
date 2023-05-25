@@ -40,6 +40,7 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni non support
 * <<I backup e le snapshot potrebbero non essere conservati durante la rimozione di un'istanza di Astra Control Center>>
 * <<Limitazioni di utenti e gruppi LDAP>>
 * <<La pagina Activity (attività) visualizza fino a 100000 eventi>>
+* <<Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller>>
 
 
 
@@ -187,6 +188,21 @@ Astra Control Center supporta fino a 5,000 gruppi remoti e 10,000 utenti remoti.
 == La pagina Activity (attività) visualizza fino a 100000 eventi
 
 La pagina Astra Control Activity (attività di controllo Astra) può visualizzare fino a 100,000 eventi. Per visualizzare tutti gli eventi registrati, recuperare gli eventi utilizzando link:../rest-api/api-intro.html["API REST di Astra Control"^].
+
+
+
+== Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller
+
+Le snapshot per i cluster Kubernetes che eseguono la versione 1.25 o successiva possono non riuscire se sul cluster è installata la versione v1beta1 delle API del controller di snapshot.
+
+Per risolvere il problema, eseguire le seguenti operazioni quando si aggiornano le installazioni esistenti di Kubernetes 1.25 o versioni successive:
+
+. Rimuovere tutti gli Snapshot CRD esistenti e tutti gli snapshot controller esistenti.
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Disinstallare Astra Trident"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installare gli snapshot CRD e lo snapshot controller"^].
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Installare la versione più recente di Astra Trident"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["Creare una classe VolumeSnapshotClass"^].
+
 
 
 

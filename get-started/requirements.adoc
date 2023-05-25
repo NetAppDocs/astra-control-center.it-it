@@ -144,7 +144,7 @@ Per verificare se il sistema ONTAP dispone delle licenze richieste, fare riferim
 
 == Licenza Astra Control Center
 
-Astra Control Center richiede una licenza Astra Control Center. Quando si installa Astra Control Center, viene già attivata una licenza di valutazione integrata di 90 giorni per 4,800 unità CPU. Se hai bisogno di una maggiore capacità o di termini di valutazione diversi, o se desideri passare a una licenza completa, puoi ottenere una licenza di valutazione o una licenza completa diversa da NetApp. Hai bisogno di una licenza per proteggere le tue applicazioni e i tuoi dati. Fare riferimento a. link:../concepts/intro.html["Caratteristiche di Astra Control Center"] per ulteriori informazioni.
+Astra Control Center richiede una licenza Astra Control Center. Quando si installa Astra Control Center, viene già attivata una licenza di valutazione integrata di 90 giorni per 4,800 unità CPU. Se hai bisogno di una maggiore capacità o di termini di valutazione diversi, o se desideri passare a una licenza completa, puoi ottenere una licenza di valutazione o una licenza completa diversa da NetApp. Hai bisogno di una licenza per proteggere le tue applicazioni e i tuoi dati.
 
 Puoi provare Astra Control Center registrandoti per una prova gratuita. Puoi iscriverti registrandoti link:https://bluexp.netapp.com/astra-register["qui"^].
 
