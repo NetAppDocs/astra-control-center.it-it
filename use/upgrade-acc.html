@@ -1289,7 +1289,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 16:48:27 +0000">05/23/2023</time>
+    <time datetime="2023-05-25 17:02:56 +0000">05/25/2023</time>
     
   
 
@@ -1620,7 +1620,7 @@ La libreria di plugin kubectl fa parte del bundle tar e viene estratta nella car
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;MY_FULL_REGISTRY_PATH&gt;
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.0-22
+export PACKAGEVERSION=23.04.2-7
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -1639,7 +1639,7 @@ done</code></pre>
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;MY_FULL_REGISTRY_PATH&gt;
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.0-22
+export PACKAGEVERSION=23.04.2-7
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -1663,7 +1663,7 @@ Il percorso dell&#8217;immagine creato dallo script deve essere simile al seguen
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.0-22/image:version</pre>
+<pre>https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.2-7/image:version</pre>
 </div>
 </div>
 </li>
@@ -1760,7 +1760,7 @@ spec:
           value: "2"
         <strong>- name: ACCOP_HELM_UPGRADETIMEOUT</strong>
           <strong>value: 300m</strong>
-        <strong>image: [your_registry_path]/acc-operator:23.04.21</strong>
+        <strong>image: [your_registry_path]/acc-operator:23.04.36</strong>
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -1910,7 +1910,7 @@ deployment.apps/acc-operator-controller-manager configured</pre>
 <div class="listingblock">
 <div class="content">
 <pre>NAME    UUID                                      VERSION     ADDRESS         READY
-astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.04.0-22  10.111.111.111  True</pre>
+astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.04.2-7   10.111.111.111  True</pre>
 </div>
 </div>
 <div class="admonitionblock note">

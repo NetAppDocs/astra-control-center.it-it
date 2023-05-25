@@ -1289,7 +1289,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 16:48:27 +0000">05/23/2023</time>
+    <time datetime="2023-05-25 17:02:56 +0000">05/25/2023</time>
     
   
 
@@ -1369,6 +1369,9 @@
 </li>
 <li>
 <p><a href="#la-pagina-activity-attività-visualizza-fino-a-100000-eventi">La pagina Activity (attività) visualizza fino a 100000 eventi</a></p>
+</li>
+<li>
+<p><a href="#gli-snapshot-potrebbero-non-funzionare-per-i-cluster-kubernetes-1-25-o-versioni-successive-con-determinate-versioni-di-snapshot-controller">Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller</a></p>
 </li>
 </ul>
 </div>
@@ -1588,6 +1591,36 @@ Durante le operazioni di cloni, le applicazioni che necessitano di una risorsa I
 <div class="sectionbody">
 <div class="paragraph">
 <p>La pagina Astra Control Activity (attività di controllo Astra) può visualizzare fino a 100,000 eventi. Per visualizzare tutti gli eventi registrati, recuperare gli eventi utilizzando <a href="../rest-api/api-intro.html" target="_blank" rel="noopener">"API REST di Astra Control"</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gli-snapshot-potrebbero-non-funzionare-per-i-cluster-kubernetes-1-25-o-versioni-successive-con-determinate-versioni-di-snapshot-controller">Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le snapshot per i cluster Kubernetes che eseguono la versione 1.25 o successiva possono non riuscire se sul cluster è installata la versione v1beta1 delle API del controller di snapshot.</p>
+</div>
+<div class="paragraph">
+<p>Per risolvere il problema, eseguire le seguenti operazioni quando si aggiornano le installazioni esistenti di Kubernetes 1.25 o versioni successive:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Rimuovere tutti gli Snapshot CRD esistenti e tutti gli snapshot controller esistenti.</p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html" target="_blank" rel="noopener">"Disinstallare Astra Trident"</a>.</p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller" target="_blank" rel="noopener">"Installare gli snapshot CRD e lo snapshot controller"</a>.</p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html" target="_blank" rel="noopener">"Installare la versione più recente di Astra Trident"</a>.</p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass" target="_blank" rel="noopener">"Creare una classe VolumeSnapshotClass"</a>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
