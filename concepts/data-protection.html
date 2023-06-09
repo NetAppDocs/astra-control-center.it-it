@@ -1289,7 +1289,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 16:48:27 +0000">05/23/2023</time>
+    <time datetime="2023-06-09 17:38:39 +0000">06/09/2023</time>
     
   
 
@@ -1371,7 +1371,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Replica dell&#8217;applicazione</strong>: Astra Control richiede la disponibilità e la gestione dei cluster Kubernetes di origine e di destinazione con i rispettivi backend di storage ONTAP configurati per abilitare NetApp SnapMirror. Astra Control porta Snapshot, l&#8217;applicazione basata su policy, e la replica nel cluster remoto. La tecnologia NetApp SnapMirror viene utilizzata per replicare i dati del volume persistente. Per eseguire il failover, Astra Control può portare online l&#8217;applicazione replicata ricreando gli oggetti dell&#8217;applicazione sul cluster Kubernetes di destinazione con i volumi replicati sul cluster ONTAP di destinazione. Poiché i dati del volume persistente sono già presenti nel cluster ONTAP di destinazione, Astra Control può offrire tempi di ripristino rapidi per il failover.</p>
+<p><strong>Replica dell&#8217;applicazione</strong>: Astra Control richiede che i cluster Kubernetes di origine e di destinazione siano disponibili e gestiti con i rispettivi backend di storage ONTAP configurati per abilitare NetApp SnapMirror. Astra Control porta Snapshot, l&#8217;applicazione basata su policy, e la replica nel cluster remoto. La tecnologia SnapMirror di NetApp viene utilizzata per replicare i dati dei volumi persistenti. Per eseguire il failover, Astra Control può portare online l&#8217;applicazione replicata ricreando gli oggetti dell&#8217;applicazione sul cluster Kubernetes di destinazione con i volumi replicati sul cluster ONTAP di destinazione. Poiché i dati del volume persistente sono già presenti nel cluster ONTAP di destinazione, Astra Control può offrire tempi di ripristino rapidi per il failover.</p>
 </li>
 <li>
 <p><strong>Backup e ripristino dell&#8217;applicazione</strong>: Durante il backup delle applicazioni, Astra Control crea un&#8217;istantanea dei dati dell&#8217;applicazione e li memorizza in un bucket di storage a oggetti. Quando è necessario un ripristino, i dati nel bucket devono essere copiati in un volume persistente sul cluster ONTAP. L&#8217;operazione di backup/ripristino non richiede la disponibilità e la gestione del cluster Kubernetes/ONTAP secondario, ma la copia dei dati aggiuntiva può comportare tempi di ripristino più lunghi.</p>
@@ -1379,7 +1379,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Per informazioni su come replicare le applicazioni, consulta <a href="../use/replicate_snapmirror.html">"Replica delle applicazioni su un sistema remoto utilizzando la tecnologia SnapMirror"</a>.</p>
+<p>Per informazioni su come replicare le applicazioni, fare riferimento a. <a href="../use/replicate_snapmirror.html">"Replica delle applicazioni su un sistema remoto utilizzando la tecnologia SnapMirror"</a>.</p>
 </div>
 <div class="paragraph">
 <p>Le seguenti immagini mostrano il processo di backup e ripristino pianificato rispetto al processo di replica.</p>
