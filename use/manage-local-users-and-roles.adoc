@@ -54,7 +54,7 @@ Ciascun ruolo fornisce le seguenti autorizzazioni:
 
 . Per aggiungere vincoli a un utente con ruolo membro o visualizzatore, attivare la casella di controllo *limita ruolo ai vincoli*.
 +
-Per ulteriori informazioni sull'aggiunta di vincoli, vedere link:manage-local-users-and-roles.html["Gestire utenti e ruoli locali"].
+Per ulteriori informazioni sull'aggiunta di vincoli, fare riferimento a. link:manage-local-users-and-roles.html["Gestire utenti e ruoli locali"].
 
 . Selezionare *Aggiungi*.
 

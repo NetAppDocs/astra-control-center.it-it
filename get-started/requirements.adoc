@@ -150,7 +150,7 @@ Puoi provare Astra Control Center registrandoti per una prova gratuita. Puoi isc
 
 Per impostare la licenza, fare riferimento a. link:setup_overview.html["utilizzare una licenza di valutazione di 90 giorni"^].
 
-Per ulteriori informazioni sul funzionamento delle licenze, vedere link:../concepts/licensing.html["Licensing"^].
+Per ulteriori informazioni sul funzionamento delle licenze, fare riferimento a. link:../concepts/licensing.html["Licensing"^].
 
 
 
@@ -193,13 +193,13 @@ NOTE: Puoi implementare Astra Control Center in un cluster Kubernetes dual-stack
 
 NOTE: Il bilanciamento del carico deve utilizzare un indirizzo IP situato nella stessa subnet degli indirizzi IP del nodo di lavoro di Astra Control Center.
 
-Per ulteriori informazioni, vedere link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["Impostare l'ingresso per il bilanciamento del carico"^].
+Per ulteriori informazioni, fare riferimento a. link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["Impostare l'ingresso per il bilanciamento del carico"^].
 
 
 
 === Requisiti di ingresso di Google anthos
 
-Quando si ospita Astra Control Center su un cluster Google anthos, Google anthos include il bilanciamento del carico MetalLB e il servizio di ingresso Istio per impostazione predefinita, consentendo di utilizzare semplicemente le funzionalità di ingresso generiche di Astra Control Center durante l'installazione. Vedere link:install_acc.html#configure-astra-control-center["Configurare Astra Control Center"^] per ulteriori informazioni.
+Quando si ospita Astra Control Center su un cluster Google anthos, Google anthos include il bilanciamento del carico MetalLB e il servizio di ingresso Istio per impostazione predefinita, consentendo di utilizzare semplicemente le funzionalità di ingresso generiche di Astra Control Center durante l'installazione. Fare riferimento a. link:install_acc.html#configure-astra-control-center["Configurare Astra Control Center"^] per ulteriori informazioni.
 
 
 

@@ -32,7 +32,7 @@ Questa patch release (23.04.2) per Astra Control Center (23.04.0) fornisce suppo
 * link:../concepts/licensing.html["Licenza di valutazione di 90 giorni abilitata per impostazione predefinita per le nuove installazioni di Astra Control Center"^]
 * link:../use/execution-hooks.html["Funzionalità migliorata di esecuzione hook con opzioni di filtraggio aggiuntive"^]
 * link:../use/execution-hooks.html["È ora possibile eseguire gli hook di esecuzione dopo il failover della replica con Astra Control Center"^]
-* 
+* link:../use/restore-apps.html#migrate-from-ontap-nas-economy-storage-to-ontap-nas-storage["Supporto per la migrazione dei volumi dalla classe di storage 'ontap-nas-Economy' alla classe di storage 'ontap-nas'"^]
 * link:../use/restore-apps.html#filter-resources-during-an-application-restore["Supporto per l'inclusione o l'esclusione delle risorse applicative durante le operazioni di ripristino"^]
 * link:../use/manage-apps.html["Supporto per la gestione delle applicazioni solo dati"]
 

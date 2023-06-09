@@ -19,7 +19,7 @@ Durante la visualizzazione di un'attività in esecuzione o completata, è possib
 
 NOTE: Per le operazioni di cloni, le sottoattività dell'attività consistono in un'operazione di snapshot e un'operazione di ripristino dello snapshot.
 
-Per ulteriori informazioni sulle attività non riuscite, vedere link:view-account-activity.html["Monitorare l'attività dell'account"].
+Per ulteriori informazioni sulle attività non riuscite, fare riferimento a. link:view-account-activity.html["Monitorare l'attività dell'account"].
 
 .Fasi
 . Mentre un'attività è in esecuzione, passare a *applicazioni*.

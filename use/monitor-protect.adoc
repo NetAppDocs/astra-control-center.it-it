@@ -97,7 +97,7 @@ NOTE: Dopo aver attivato la connessione Cloud Insights, è possibile visualizzar
 
 
 
-TIP: Se sei un nuovo utente di Cloud Insights, familiarizza con le caratteristiche e le funzionalità. Vedere link:https://docs.netapp.com/us-en/cloudinsights/index.html["Documentazione Cloud Insights"^].
+TIP: Se sei un nuovo utente di Cloud Insights, familiarizza con le caratteristiche e le funzionalità. Fare riferimento a. link:https://docs.netapp.com/us-en/cloudinsights/index.html["Documentazione Cloud Insights"^].
 
 .Fasi
 . Accedere ad Astra Control Center utilizzando un account con privilegio *admin*/*owner*.
