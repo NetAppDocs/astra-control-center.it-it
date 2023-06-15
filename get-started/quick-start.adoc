@@ -15,7 +15,7 @@ summary: Inizia subito a utilizzare Astra Control in pochi passaggi.
 Ecco una panoramica dei passaggi necessari per iniziare a utilizzare Astra Control Center. I collegamenti all'interno di ogni passaggio consentono di accedere a una pagina che fornisce ulteriori dettagli.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Esaminare i requisiti del cluster Kubernetes
-Assicurati che il tuo ambiente soddisfi questi requisiti.
+Assicurarsi che l'ambiente soddisfi i seguenti requisiti:
 
 *Cluster Kubernetes*
 
@@ -39,12 +39,12 @@ Assicurati che il tuo ambiente soddisfi questi requisiti.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Scaricare e installare Astra Control Center
-Completare queste attività di installazione.
+Completare le seguenti attività di installazione:
 
 * https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Scarica Astra Control Center dalla pagina di download del sito di supporto NetApp"^]
 * Ottenere il file di licenza NetApp:
 +
-** Se si sta valutando Astra Control Center, è già inclusa una licenza di valutazione integrata.
+** Se si sta valutando Astra Control Center, è già inclusa una licenza di valutazione integrata
 ** link:../concepts/licensing.html["Se si è già acquistato Astra Control Center, generare il file di licenza"^]
 
 
@@ -53,7 +53,7 @@ Completare queste attività di installazione.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Completare alcune attività di configurazione iniziali
-Completa alcune attività di base per iniziare.
+Completare alcune attività di base per iniziare:
 
 * link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["Aggiungere una licenza"^]
 * link:../get-started/setup_overview.html#prepare-your-environment-for-cluster-management-using-astra-control["Prepara il tuo ambiente per la gestione dei cluster"^]
@@ -63,11 +63,11 @@ Completa alcune attività di base per iniziare.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Utilizzare Astra Control Center
-Una volta completata la configurazione di Astra Control Center, ecco cosa fare. È possibile utilizzare l'interfaccia utente di Astra Control o il https://docs.netapp.com/us-en/astra-automation/index.html["API di controllo Astra"^].
+Una volta completata la configurazione di Astra Control Center, utilizzare l'interfaccia utente di Astra Control o il https://docs.netapp.com/us-en/astra-automation/index.html["API di controllo Astra"^] per iniziare a gestire e proteggere le applicazioni:
 
-* link:../use/manage-apps.html["Gestire le applicazioni"^]
+* link:../use/manage-apps.html["Gestire le applicazioni"^]: Definire le risorse da gestire.
 * link:../use/protection-overview.html["Proteggi le app"^]: Configurare le policy di protezione e replicare, clonare e migrare le applicazioni.
-* link:../use/manage-local-users-and-roles.html["Gestire gli account"^]: Utenti, ruoli, LDAP, credenziali e altro ancora
+* link:../use/manage-local-users-and-roles.html["Gestire gli account"^]: Utenti, ruoli, LDAP, credenziali e altro ancora.
 * link:../use/monitor-protect.html#connect-to-cloud-insights["In alternativa, connettersi a Cloud Insights"^]: Consente di visualizzare le metriche sullo stato di salute del sistema.
 
 
