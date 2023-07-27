@@ -21,7 +21,6 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni non support
 
 .Limitazioni RBAC (Role-Based Access Control)
 * <<Un utente con vincoli RBAC dello spazio dei nomi può aggiungere e annullare la gestione di un cluster>>
-* <<Un membro con vincoli dello spazio dei nomi non può accedere alle applicazioni clonate o ripristinate fino a quando admin non aggiunge lo spazio dei nomi al vincolo>>
 
 
 .Limitazioni della gestione delle applicazioni
@@ -32,16 +31,16 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni non support
 * <<Le operazioni di ripristino in-place delle applicazioni che utilizzano un gestore dei certificati non sono supportate>>
 * <<Le applicazioni implementate dall'operatore CON ambito cluster e abilitato OLM non sono supportate>>
 * <<Le app implementate con Helm 2 non sono supportate>>
+* <<Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller>>
+* <<I backup e le snapshot potrebbero non essere conservati durante la rimozione di un'istanza di Astra Control Center>>
 
 
 .Limitazioni generali
+* <<Limitazioni di utenti e gruppi LDAP>>
 * <<I bucket S3 in Astra Control Center non riportano la capacità disponibile>>
 * <<Astra Control Center non convalida i dati immessi per il server proxy>>
 * <<Le connessioni esistenti a un pod Postgres causano errori>>
-* <<I backup e le snapshot potrebbero non essere conservati durante la rimozione di un'istanza di Astra Control Center>>
-* <<Limitazioni di utenti e gruppi LDAP>>
 * <<La pagina Activity (attività) visualizza fino a 100000 eventi>>
-* <<Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller>>
 
 
 
@@ -100,12 +99,6 @@ Un utente con vincoli RBAC dello spazio dei nomi non deve essere autorizzato ad 
 
 
 
-== Un membro con vincoli dello spazio dei nomi non può accedere alle applicazioni clonate o ripristinate fino a quando admin non aggiunge lo spazio dei nomi al vincolo
-
-Qualsiasi `member` Gli utenti con vincoli RBAC in base al nome/ID dello spazio dei nomi possono clonare o ripristinare un'applicazione in un nuovo spazio dei nomi nello stesso cluster o in qualsiasi altro cluster nell'account dell'organizzazione. Tuttavia, lo stesso utente non può accedere all'applicazione clonata o ripristinata nel nuovo namespace. Una volta creato un nuovo spazio dei nomi mediante un'operazione di clonazione o ripristino, l'amministratore/proprietario dell'account può modificare `member` account utente e limitazioni del ruolo di aggiornamento per consentire all'utente interessato di concedere l'accesso al nuovo spazio dei nomi.
-
-
-
 == Non è possibile ripristinare collettivamente più applicazioni in un singolo namespace in un namespace diverso
 
 Se si gestiscono più applicazioni in un singolo namespace (creando più definizioni di applicazioni in Astra Control), non è possibile ripristinare tutte le applicazioni in un singolo namespace diverso. È necessario ripristinare ogni applicazione nel proprio spazio dei nomi separato.
@@ -128,7 +121,7 @@ Astra Control non assegna automaticamente un bucket predefinito per nessuna ista
 
 Astra Control supporta le applicazioni installate con operatori con ambito namespace. Questi operatori sono generalmente progettati con un'architettura "pass-by-value" piuttosto che "pass-by-reference". Di seguito sono riportate alcune applicazioni per operatori che seguono questi modelli:
 
-* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
+* https://github.com/k8ssandra/cass-operator["Apache K8ssandra"^]
 +
 
 NOTE: Per K8ssandra, sono supportate le operazioni di ripristino in-place. Un'operazione di ripristino su un nuovo namespace o cluster richiede che l'istanza originale dell'applicazione venga tolto. In questo modo si garantisce che le informazioni del peer group trasportate non conducano a comunicazioni tra istanze. La clonazione dell'applicazione non è supportata.
@@ -162,6 +155,35 @@ Se utilizzi Helm per implementare le app, Astra Control Center richiede Helm ver
 
 
 
+== Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller
+
+Le snapshot per i cluster Kubernetes che eseguono la versione 1.25 o successiva possono non riuscire se sul cluster è installata la versione v1beta1 delle API del controller di snapshot.
+
+Per risolvere il problema, eseguire le seguenti operazioni quando si aggiornano le installazioni esistenti di Kubernetes 1.25 o versioni successive:
+
+. Rimuovere tutti gli Snapshot CRD esistenti e tutti gli snapshot controller esistenti.
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Disinstallare Astra Trident"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installare gli snapshot CRD e lo snapshot controller"^].
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Installare la versione più recente di Astra Trident"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["Creare una classe VolumeSnapshotClass"^].
+
+
+
+
+== I backup e le snapshot potrebbero non essere conservati durante la rimozione di un'istanza di Astra Control Center
+
+Se si dispone di una licenza di valutazione, assicurarsi di memorizzare l'ID account per evitare la perdita di dati in caso di guasto di Astra Control Center se non si inviano ASUP.
+
+
+
+== Limitazioni di utenti e gruppi LDAP
+
+Astra Control Center supporta fino a 5,000 gruppi remoti e 10,000 utenti remoti.
+
+Astra Control non supporta un'entità LDAP (utente o gruppo) con un DN contenente un RDN con uno spazio finale o finale.
+
+
+
 == I bucket S3 in Astra Control Center non riportano la capacità disponibile
 
 Prima di eseguire il backup o la clonazione delle applicazioni gestite da Astra Control Center, controllare le informazioni del bucket nel sistema di gestione ONTAP o StorageGRID.
@@ -180,36 +202,9 @@ Quando si eseguono operazioni su POD Postgres, non si dovrebbe connettersi diret
 
 
 
-== I backup e le snapshot potrebbero non essere conservati durante la rimozione di un'istanza di Astra Control Center
-
-Se si dispone di una licenza di valutazione, assicurarsi di memorizzare l'ID account per evitare la perdita di dati in caso di guasto di Astra Control Center se non si inviano ASUP.
-
-
-
-== Limitazioni di utenti e gruppi LDAP
-
-Astra Control Center supporta fino a 5,000 gruppi remoti e 10,000 utenti remoti.
-
-
-
 == La pagina Activity (attività) visualizza fino a 100000 eventi
 
-La pagina Astra Control Activity (attività di controllo Astra) può visualizzare fino a 100,000 eventi. Per visualizzare tutti gli eventi registrati, recuperare gli eventi utilizzando link:../rest-api/api-intro.html["API REST di Astra Control"^].
-
-
-
-== Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller
-
-Le snapshot per i cluster Kubernetes che eseguono la versione 1.25 o successiva possono non riuscire se sul cluster è installata la versione v1beta1 delle API del controller di snapshot.
-
-Per risolvere il problema, eseguire le seguenti operazioni quando si aggiornano le installazioni esistenti di Kubernetes 1.25 o versioni successive:
-
-. Rimuovere tutti gli Snapshot CRD esistenti e tutti gli snapshot controller esistenti.
-. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Disinstallare Astra Trident"^].
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installare gli snapshot CRD e lo snapshot controller"^].
-. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Installare la versione più recente di Astra Trident"^].
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["Creare una classe VolumeSnapshotClass"^].
-
+La pagina Astra Control Activity (attività di controllo Astra) può visualizzare fino a 100,000 eventi. Per visualizzare tutti gli eventi registrati, recuperare gli eventi utilizzando link:../rest-api/api-intro.html["API di controllo Astra"^].
 
 
 

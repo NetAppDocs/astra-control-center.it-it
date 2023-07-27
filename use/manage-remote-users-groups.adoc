@@ -18,13 +18,13 @@ Se è stata attivata l'autenticazione LDAP sul sistema Astra Control, è possibi
 
 == Aggiungere un utente remoto
 
-Gli account Owner e gli amministratori possono aggiungere utenti remoti ad Astra Control.
+Gli account Owner e gli amministratori possono aggiungere utenti remoti ad Astra Control. Astra Control Center supporta fino a 10,000 utenti remoti LDAP.
 
 
-NOTE: Non è possibile aggiungere un utente remoto se nel sistema esiste già un utente locale con lo stesso indirizzo e-mail. Per aggiungere l'utente come utente remoto, eliminare prima l'utente locale dal sistema.
+IMPORTANT: Astra Control Center utilizza l'attributo user login, configurato quando l'autenticazione remota è abilitata, per cercare e tenere traccia degli utenti remoti. In questo campo deve esistere un attributo di un indirizzo e-mail ("mail") o di un nome principale utente ("userPrincipalName") per qualsiasi utente remoto che si desidera visualizzare in Astra Control Center. Questo attributo viene utilizzato come nome utente in Astra Control Center per l'autenticazione e la ricerca di utenti remoti.
 
 
-IMPORTANT: Astra Control Center utilizza l'indirizzo e-mail nell'attributo "mail" LDAP per cercare e tenere traccia degli utenti remoti. Questo attributo potrebbe essere un campo facoltativo o vuoto nella directory. In questo campo deve esistere un indirizzo e-mail per tutti gli utenti remoti che si desidera visualizzare in Astra Control Center. Questo indirizzo e-mail viene utilizzato come nome utente in Astra Control Center per l'autenticazione.
+NOTE: Non è possibile aggiungere un utente remoto se nel sistema esiste già un utente locale con lo stesso indirizzo e-mail (basato sull'attributo "mail" o "nome principale utente"). Per aggiungere l'utente come utente remoto, eliminare prima l'utente locale dal sistema.
 
 .Fasi
 . Accedere all'area *account*.
@@ -53,7 +53,9 @@ Il nuovo utente viene visualizzato nell'elenco degli utenti remoti. In questo el
 
 == Aggiungere un gruppo remoto
 
-Per aggiungere più utenti remoti contemporaneamente, gli account Owners e gli amministratori possono aggiungere gruppi remoti ad Astra Control. Quando si aggiunge un gruppo remoto, tutti gli utenti remoti di tale gruppo vengono aggiunti ad Astra Control e ereditano lo stesso ruolo.
+Per aggiungere più utenti remoti contemporaneamente, gli account Owners e gli amministratori possono aggiungere gruppi remoti ad Astra Control. Quando si aggiunge un gruppo remoto, tutti gli utenti remoti di tale gruppo sono disponibili per accedere ad Astra Control e ereditano lo stesso ruolo del gruppo.
+
+Astra Control Center supporta fino a 5,000 gruppi remoti LDAP.
 
 .Fasi
 . Accedere all'area *account*.
@@ -79,4 +81,4 @@ NOTE: Quando a un utente vengono assegnati ruoli multipli tramite l'appartenenza
 
 
 .Risultato
-Il nuovo gruppo viene visualizzato nell'elenco dei gruppi remoti e tutti gli utenti remoti di questo gruppo vengono visualizzati nell'elenco degli utenti remoti. In questo elenco, è possibile visualizzare i dettagli sul gruppo e gestire il gruppo dal menu *azioni*.
+Il nuovo gruppo viene visualizzato nell'elenco dei gruppi remoti. Gli utenti remoti di questo gruppo non vengono visualizzati nell'elenco degli utenti remoti fino a quando ciascun utente remoto non effettua l'accesso. In questo elenco, è possibile visualizzare i dettagli sul gruppo e gestire il gruppo dal menu *azioni*.

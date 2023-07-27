@@ -42,15 +42,17 @@ Un _clone_ è un duplicato esatto di un'applicazione, della sua configurazione e
 
 
 
-== Replica su un cluster remoto
+== Replica tra back-end dello storage
 
-Grazie ad Astra Control, puoi creare business continuity per le tue applicazioni con un RPO (Recovery Point Objective) basso e un RTO basso (Recovery Time Objective) utilizzando le funzionalità di replica asincrona della tecnologia NetApp SnapMirror. Una volta configurata, questa opzione consente alle applicazioni di replicare le modifiche dei dati e delle applicazioni da un cluster all'altro.
+Grazie ad Astra Control, puoi creare business continuity per le tue applicazioni con un RPO (Recovery Point Objective) basso e un RTO basso (Recovery Time Objective) utilizzando le funzionalità di replica asincrona della tecnologia NetApp SnapMirror. Una volta configurata, questa opzione consente alle applicazioni di replicare le modifiche dei dati e delle applicazioni da un backend di storage all'altro, sullo stesso cluster o tra cluster diversi.
 
-Astra Control replica in modo asincrono le copie Snapshot dell'applicazione su un cluster remoto. Il processo di replica include i dati nei volumi persistenti replicati da SnapMirror e i metadati dell'applicazione protetti da Astra Control.
+È possibile eseguire la replica tra due SVM ONTAP sullo stesso cluster ONTAP o su diversi cluster ONTAP.
+
+Astra Control replica in modo asincrono le copie snapshot delle applicazioni in un cluster di destinazione. Il processo di replica include i dati nei volumi persistenti replicati da SnapMirror e i metadati dell'applicazione protetti da Astra Control.
 
 La replica dell'app è diversa dal backup e ripristino dell'app nei seguenti modi:
 
-* *Replica dell'applicazione*: Astra Control richiede che i cluster Kubernetes di origine e di destinazione siano disponibili e gestiti con i rispettivi backend di storage ONTAP configurati per abilitare NetApp SnapMirror. Astra Control porta Snapshot, l'applicazione basata su policy, e la replica nel cluster remoto. La tecnologia SnapMirror di NetApp viene utilizzata per replicare i dati dei volumi persistenti. Per eseguire il failover, Astra Control può portare online l'applicazione replicata ricreando gli oggetti dell'applicazione sul cluster Kubernetes di destinazione con i volumi replicati sul cluster ONTAP di destinazione. Poiché i dati del volume persistente sono già presenti nel cluster ONTAP di destinazione, Astra Control può offrire tempi di ripristino rapidi per il failover.
+* *Replica dell'applicazione*: Astra Control richiede che i cluster Kubernetes di origine e di destinazione (che possono essere lo stesso cluster) siano disponibili e gestiti con i rispettivi backend di storage ONTAP configurati per abilitare SnapMirror di NetApp. Astra Control prende lo snapshot applicativo basato su policy e lo replica nel back-end dello storage di destinazione. La tecnologia SnapMirror di NetApp viene utilizzata per replicare i dati dei volumi persistenti. Per eseguire il failover, Astra Control può portare online l'applicazione replicata ricreando gli oggetti dell'applicazione sul cluster Kubernetes di destinazione con i volumi replicati sul cluster ONTAP di destinazione. Poiché i dati del volume persistente sono già presenti nel cluster ONTAP di destinazione, Astra Control può offrire tempi di ripristino rapidi per il failover.
 * *Backup e ripristino dell'applicazione*: Durante il backup delle applicazioni, Astra Control crea un'istantanea dei dati dell'applicazione e li memorizza in un bucket di storage a oggetti. Quando è necessario un ripristino, i dati nel bucket devono essere copiati in un volume persistente sul cluster ONTAP. L'operazione di backup/ripristino non richiede la disponibilità e la gestione del cluster Kubernetes/ONTAP secondario, ma la copia dei dati aggiuntiva può comportare tempi di ripristino più lunghi.
 
 

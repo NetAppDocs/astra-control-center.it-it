@@ -12,7 +12,7 @@ summary: Proteggi le tue applicazioni eseguendo snapshot e backup utilizzando un
 
 
 [role="lead"]
-Proteggi tutte le app eseguendo snapshot e backup utilizzando una policy di protezione automatica o ad-hoc. È possibile utilizzare l'interfaccia utente di Astra Control Center o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per proteggere le applicazioni.
+Proteggi tutte le app eseguendo snapshot e backup utilizzando una policy di protezione automatica o ad-hoc. È possibile utilizzare l'interfaccia utente di Astra Control Center o. https://docs.netapp.com/us-en/astra-automation["L'API Astra Control"^] per proteggere le applicazioni.
 
 .A proposito di questa attività
 * *Helm ha implementato le app*: Se utilizzi Helm per implementare le app, Astra Control Center richiede Helm versione 3. La gestione e la clonazione delle applicazioni implementate con Helm 3 (o aggiornate da Helm 2 a Helm 3) sono completamente supportate. Le app implementate con Helm 2 non sono supportate.

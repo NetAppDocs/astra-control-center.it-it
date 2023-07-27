@@ -12,7 +12,7 @@ summary: È possibile convertire una licenza di valutazione in una licenza compl
 
 
 [role="lead"]
-È possibile convertire una licenza di valutazione in una licenza completa oppure aggiornare una licenza di valutazione o una licenza completa esistente con una nuova licenza. Se non si dispone di una licenza completa, rivolgersi al contatto commerciale NetApp per ottenere una licenza completa e un numero di serie. È possibile utilizzare l'interfaccia utente di Astra Control Center o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per aggiornare una licenza esistente.
+È possibile convertire una licenza di valutazione in una licenza completa oppure aggiornare una licenza di valutazione o una licenza completa esistente con una nuova licenza. Se non si dispone di una licenza completa, rivolgersi al contatto commerciale NetApp per ottenere una licenza completa e un numero di serie. È possibile utilizzare l'interfaccia utente di Astra Control Center o. https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"^] per aggiornare una licenza esistente.
 
 .Fasi
 . Accedere a. https://mysupport.netapp.com/site/["Sito di supporto NetApp"^].

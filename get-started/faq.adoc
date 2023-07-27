@@ -91,7 +91,7 @@ No Mentre Astra Control è in grado di rilevare applicazioni che utilizzano stor
 
 *Dovrei gestire Astra Control da solo?*
 
-No, non si dovrebbe gestire Astra Control da solo perché si tratta di un'applicazione di sistema.
+Per impostazione predefinita, Astra Control Center non viene visualizzato come applicazione gestibile, ma è possibile eseguire il backup e il ripristino di un'istanza di Astra Control Center utilizzando un'altra istanza di Astra Control Center.
 
 *I pod malsani influiscono sulla gestione delle applicazioni?*
 

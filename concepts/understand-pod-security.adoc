@@ -22,7 +22,7 @@ Alcune distribuzioni di Kubernetes potrebbero avere una configurazione di sicure
 
 == PSA applicati da Astra Control Center
 
-Durante l'installazione, Astra Control Center consente l'applicazione di un'ammissione di sicurezza Pod aggiungendo la seguente etichetta a `netapp-acc` o uno spazio dei nomi personalizzato:
+Astra Control Center consente l'applicazione di un'ammissione di sicurezza pod aggiungendo la seguente etichetta allo spazio dei nomi in cui Astra è installato (netapp-acc o spazio dei nomi personalizzato) e gli spazi dei nomi creati per i backup.
 
 [listing]
 ----

@@ -12,7 +12,7 @@ summary: Gestisci utenti e ruoli nel tuo sistema Astra Control Center.
 
 
 [role="lead"]
-È possibile aggiungere, rimuovere e modificare gli utenti dell'installazione di Astra Control Center utilizzando l'interfaccia utente di Astra Control. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per gestire gli utenti.
+È possibile aggiungere, rimuovere e modificare gli utenti dell'installazione di Astra Control Center utilizzando l'interfaccia utente di Astra Control. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"^] per gestire gli utenti.
 
 È inoltre possibile utilizzare LDAP per eseguire l'autenticazione per gli utenti selezionati.
 
@@ -119,7 +119,7 @@ Astra Control Center rimuove l'utente dall'account.
 
 == Gestire i ruoli
 
-È possibile gestire i ruoli aggiungendo vincoli dello spazio dei nomi e limitando i ruoli utente a tali vincoli. In questo modo è possibile controllare l'accesso alle risorse all'interno dell'organizzazione. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per gestire i ruoli.
+È possibile gestire i ruoli aggiungendo vincoli dello spazio dei nomi e limitando i ruoli utente a tali vincoli. In questo modo è possibile controllare l'accesso alle risorse all'interno dell'organizzazione. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"^] per gestire i ruoli.
 
 
 

@@ -12,10 +12,7 @@ summary: 'Astra può ripristinare la configurazione dell"applicazione e lo stora
 
 
 [role="lead"]
-Astra Control può ripristinare l'applicazione da uno snapshot o da un backup. Il ripristino da uno snapshot esistente sarà più rapido quando si ripristina l'applicazione nello stesso cluster. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation/index.html["L'API Astra Control"^] per ripristinare le applicazioni.
-
-
-NOTE: Se si aggiunge un filtro dello spazio dei nomi a un gancio di esecuzione che viene eseguito dopo un'operazione di ripristino o clonazione e l'origine e la destinazione del ripristino o del clone si trovano in spazi dei nomi diversi, il filtro dello spazio dei nomi viene applicato solo allo spazio dei nomi di destinazione.
+Astra Control può ripristinare l'applicazione da uno snapshot o da un backup. Il ripristino da uno snapshot esistente sarà più rapido quando si ripristina l'applicazione nello stesso cluster. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"^] per ripristinare le applicazioni.
 
 .A proposito di questa attività
 * *Proteggi prima le tue applicazioni*: Ti consigliamo vivamente di creare un'istantanea o un backup dell'applicazione prima di ripristinarla. In questo modo, è possibile clonare lo snapshot o il backup nel caso in cui il ripristino non abbia esito positivo.
@@ -115,7 +112,7 @@ IMPORTANT: Qualsiasi utente membro con vincoli di spazio dei nomi in base al nom
 
 È possibile aggiungere una regola di filtro a un link:../use/restore-apps.html["ripristinare"] operazione che specifica le risorse applicative esistenti da includere o escludere dall'applicazione ripristinata. È possibile includere o escludere risorse in base a uno spazio dei nomi, un'etichetta o un GVK (GroupVersionKind) specificati.
 
-.Scopri di più sugli scenari di inclusione ed esclusione
+.Espandere per ulteriori informazioni sugli scenari di inclusione ed esclusione
 [%collapsible]
 ====
 * *Si seleziona una regola di inclusione con spazi dei nomi originali (ripristino in-place)*: Le risorse applicative esistenti definite nella regola verranno eliminate e sostituite da quelle dello snapshot o del backup selezionato che si sta utilizzando per il ripristino. Tutte le risorse non specificate nella regola di inclusione resteranno invariate.

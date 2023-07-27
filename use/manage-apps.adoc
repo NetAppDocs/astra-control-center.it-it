@@ -75,7 +75,7 @@ kubectl apply -f myapp.yaml
 Di seguito sono riportate alcune applicazioni per operatori che seguono questi modelli:
 
 +
-** https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
+** https://github.com/k8ssandra/cass-operator["Apache K8ssandra"^]
 +
 
 NOTE: Per K8ssandra, sono supportate le operazioni di ripristino in-place. Un'operazione di ripristino su un nuovo namespace o cluster richiede che l'istanza originale dell'applicazione venga tolto. In questo modo si garantisce che le informazioni del peer group trasportate non conducano a comunicazioni tra istanze. La clonazione dell'applicazione non è supportata.
@@ -139,7 +139,7 @@ La definizione di un'applicazione offre un controllo più granulare su ciò che 
 
 WARNING: Quando definisci le app, assicurati di non includere una risorsa Kubernetes in più app con policy di protezione. La sovrapposizione delle policy di protezione sulle risorse Kubernetes può causare conflitti di dati. <<Esempio: Policy di protezione separata per release diverse,Scopri di più in un esempio.>>
 
-.Scopri di più sull'aggiunta di risorse con ambito cluster agli spazi dei nomi delle app.
+.Espandi per ulteriori informazioni sull'aggiunta di risorse con ambito cluster agli spazi dei nomi delle app.
 [%collapsible]
 ====
 È possibile importare risorse del cluster associate alle risorse dello spazio dei nomi oltre a quelle incluse automaticamente in Astra Control. È possibile aggiungere una regola che includerà le risorse di un gruppo specifico, un tipo, una versione e, facoltativamente, un'etichetta. Questa operazione potrebbe essere utile se ci sono risorse che Astra Control non include automaticamente.
@@ -249,7 +249,7 @@ Astra Control rileva anche gli spazi dei nomi di sistema su un cluster Kubernete
 image:acc_namespace_system.png["Una schermata che mostra l'opzione *Mostra spazi dei nomi di sistema* disponibile nella scheda spazi dei nomi."]
 
 
-TIP: Astra Control non è un'applicazione standard, ma un'applicazione di sistema. Non si dovrebbe tentare di gestire Astra Control da solo. Per impostazione predefinita, Astra Control non viene visualizzato per la gestione.
+TIP: Per impostazione predefinita, Astra Control Center non viene visualizzato come applicazione gestibile, ma è possibile eseguire il backup e il ripristino di un'istanza di Astra Control Center utilizzando un'altra istanza di Astra Control Center.
 
 
 
@@ -267,6 +267,6 @@ Per evitare possibili conflitti di dati, l'amministratore creerà due applicazio
 
 == Trova ulteriori informazioni
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["Utilizzare l'API di controllo Astra"^]
+* https://docs.netapp.com/us-en/astra-automation["Utilizzare l'API di controllo Astra"^]
 * link:../use/unmanage.html["Annullare la gestione di un'applicazione"]
 

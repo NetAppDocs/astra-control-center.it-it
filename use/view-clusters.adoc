@@ -25,7 +25,7 @@ Dopo aver aggiunto i cluster da gestire da Astra Control Center, è possibile vi
 . Nella pagina *Clusters*, selezionare il cluster di cui si desidera visualizzare i dettagli.
 +
 
-NOTE: Se un cluster si trova in `removed` state Yet la connettività di rete e del cluster sembra sana (i tentativi esterni di accesso al cluster utilizzando le API di Kubernetes sono riusciti), il kubeconfig che hai fornito ad Astra Control potrebbe non essere più valido. Ciò può essere dovuto alla rotazione o alla scadenza del certificato sul cluster. Per risolvere questo problema, aggiornare le credenziali associate al cluster in Astra Control utilizzando link:https://docs.netapp.com/us-en/astra-automation/index.html["API di controllo Astra"].
+NOTE: Se un cluster si trova in `removed` state Yet la connettività di rete e del cluster sembra sana (i tentativi esterni di accesso al cluster utilizzando le API di Kubernetes sono riusciti), il kubeconfig che hai fornito ad Astra Control potrebbe non essere più valido. Ciò può essere dovuto alla rotazione o alla scadenza del certificato sul cluster. Per risolvere questo problema, aggiornare le credenziali associate al cluster in Astra Control utilizzando https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"].
 
 . Visualizzare le informazioni nelle schede *Overview*, *Storage* e *Activity* per trovare le informazioni desiderate.
 +

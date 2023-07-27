@@ -164,5 +164,5 @@ NOTE: L'utente di cui si inseriscono le credenziali deve disporre di `ontapi` Me
 
 == Trova ulteriori informazioni
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["Utilizzare l'API di controllo Astra"^]
+* https://docs.netapp.com/us-en/astra-automation["Utilizzare l'API di controllo Astra"^]
 
