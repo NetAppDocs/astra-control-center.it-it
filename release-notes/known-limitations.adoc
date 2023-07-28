@@ -21,6 +21,7 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni non support
 
 .Limitazioni RBAC (Role-Based Access Control)
 * <<Un utente con vincoli RBAC dello spazio dei nomi può aggiungere e annullare la gestione di un cluster>>
+* <<Un membro con vincoli dello spazio dei nomi non può accedere alle applicazioni clonate o ripristinate fino a quando admin non aggiunge lo spazio dei nomi al vincolo>>
 
 
 .Limitazioni della gestione delle applicazioni
@@ -96,6 +97,12 @@ current-context: kubernetes-admin@kubernetes
 == Un utente con vincoli RBAC dello spazio dei nomi può aggiungere e annullare la gestione di un cluster
 
 Un utente con vincoli RBAC dello spazio dei nomi non deve essere autorizzato ad aggiungere o annullare la gestione dei cluster. A causa di un limite corrente, Astra non impedisce a tali utenti di annullare la gestione dei cluster.
+
+
+
+== Un membro con vincoli dello spazio dei nomi non può accedere alle applicazioni clonate o ripristinate fino a quando admin non aggiunge lo spazio dei nomi al vincolo
+
+Qualsiasi `member` Gli utenti con vincoli RBAC in base al nome/ID dello spazio dei nomi possono clonare o ripristinare un'applicazione in un nuovo spazio dei nomi nello stesso cluster o in qualsiasi altro cluster nell'account dell'organizzazione. Tuttavia, lo stesso utente non può accedere all'applicazione clonata o ripristinata nel nuovo namespace. Una volta creato un nuovo spazio dei nomi mediante un'operazione di clonazione o ripristino, l'amministratore/proprietario dell'account può modificare `member` account utente e limitazioni del ruolo di aggiornamento per consentire all'utente interessato di concedere l'accesso al nuovo spazio dei nomi.
 
 
 
