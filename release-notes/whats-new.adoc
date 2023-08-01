@@ -16,7 +16,7 @@ Siamo lieti di annunciare l'ultima release di Astra Control Center.
 
 
 
-== 26 luglio 2023 (23.07.0)
+== 31 luglio 2023 (23.07.0)
 
 .Nuove funzionalità e supporto
 * link:../get-started/requirements.html#storage-backends["Supporto per l'utilizzo di NetApp MetroCluster in una configurazione stretch come backend di storage"^]
