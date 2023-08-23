@@ -143,7 +143,6 @@ Per configurare il file LIF di MetroCluster, consultare la documentazione di Ast
 
 * https://docs.netapp.com/us-en/trident/trident-use/ontap-san-examples.html["SAN"^]
 * https://docs.netapp.com/us-en/trident/trident-use/ontap-nas-examples.html["NAS"^]
-* https://docs.netapp.com/us-en/trident/trident-use/trident-fsx-examples.html["FSX"^]
 
 
 
