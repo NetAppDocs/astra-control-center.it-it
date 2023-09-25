@@ -67,6 +67,12 @@ Prima di aggiungere un cluster, assicurarsi che siano soddisfatte le seguenti co
 .Prima di iniziare
 * Assicurarsi che i nodi di lavoro nel cluster siano configurati con i driver di storage appropriati in modo che i pod possano interagire con lo storage back-end.
 * Il tuo ambiente soddisfa i requisiti di link:../get-started/requirements.html["requisiti dell'ambiente operativo"^] Per Astra Trident e Astra Control Center.
+* Se si aggiunge il cluster utilizzando un file kubeconfig che fa riferimento a un'autorità di certificazione privata, aggiungere la riga seguente al `cluster` sezione del file kubeconfig. In questo modo si permette ad Astra Control di aggiungere il cluster:
++
+[listing]
+----
+insecure-skip-tls-verify: true
+----
 * Una versione di Astra Trident link:../get-started/requirements.html#astra-trident-requirements["Supportato da Astra Control Center"^] è installato:
 +
 

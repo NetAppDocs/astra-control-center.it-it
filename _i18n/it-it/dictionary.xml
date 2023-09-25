@@ -2929,8 +2929,6 @@ RKE 2 (v1.25.x) con Rancher 2.7</block>
   <block id="cd786c4b13b844b729ea4f82b35fb73e" category="list-text"><block ref="cd786c4b13b844b729ea4f82b35fb73e" category="inline-link-rx"></block></block>
   <block id="c07ee5debf5f3a3fef16c1ee5e8e4942" category="inline-link">NAS</block>
   <block id="a5c314c9c3a96fcd331ae9d454b5c305" category="list-text"><block ref="a5c314c9c3a96fcd331ae9d454b5c305" category="inline-link-rx"></block></block>
-  <block id="a0a52206040050c3a34065fd49730c39" category="inline-link">FSX</block>
-  <block id="2ba7db7ca1a2e1b174e10db2105a534d" category="list-text"><block ref="2ba7db7ca1a2e1b174e10db2105a534d" category="inline-link-rx"></block></block>
   <block id="8cf3b51c0706caf62937352ed2233eb9" category="example-title">Espandere per altre procedure di installazione</block>
   <block id="da34d7b3ad82100be38c4bc4758b9a28" category="inline-link-macro">restrizioni di sicurezza del pod</block>
   <block id="4e054390471dfb4ee3f141d1a5b6a77e" category="list-text">Se hai configurato o vuoi configurare le policy di sicurezza dei pod nel tuo ambiente, familiarizza con le policy di sicurezza dei pod e con il modo in cui influiscono sull'installazione di Astra Control Center. Fare riferimento a. <block ref="d77e6e5f0b1b5e8f15429de2d058f94b" category="inline-link-macro-rx"></block>.</block>
@@ -2962,4 +2960,5 @@ RKE 2 (v1.25.x) con Rancher 2.7</block>
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="dce58385777428b5d9a30460fe36730a" category="list-text">Se si aggiunge il cluster utilizzando un file kubeconfig che fa riferimento a un'autorità di certificazione privata, aggiungere la riga seguente al<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> sezione del file kubeconfig. In questo modo si permette ad Astra Control di aggiungere il cluster:</block>
 </blocks>
