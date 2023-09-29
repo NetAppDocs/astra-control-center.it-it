@@ -538,7 +538,6 @@
   <block id="d7dde07915bbe8056e6854c2b5e50480" category="inline-link">Preparare i nodi di lavoro</block>
   <block id="2facff43cb177de168322dab6df7d48c" category="list-text"><block ref="2facff43cb177de168322dab6df7d48c" category="inline-link-rx"></block></block>
   <block id="dd678a0b3a73cdc79d52e5a75a29712a" category="inline-link">Configurare il backend dello storage Astra Trident</block>
-  <block id="6b836f0beaae8e5e5b3ee7da02492481" category="list-text"><block ref="6b836f0beaae8e5e5b3ee7da02492481" category="inline-link-rx"></block></block>
   <block id="8fa7c146eed93f49403e27757627c1de" category="inline-link">Configurare le classi di storage Astra Trident</block>
   <block id="8f233a56a0bbc57a073461b666b439e1" category="list-text"><block ref="8f233a56a0bbc57a073461b666b439e1" category="inline-link-rx"></block></block>
   <block id="e4a1005c9b913ef4e65af805a3797f79" category="inline-link">Installare il controller di snapshot del volume Astra Trident</block>
@@ -2961,4 +2960,5 @@ RKE 2 (v1.25.x) con Rancher 2.7</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">Se si aggiunge il cluster utilizzando un file kubeconfig che fa riferimento a un'autorità di certificazione privata, aggiungere la riga seguente al<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> sezione del file kubeconfig. In questo modo si permette ad Astra Control di aggiungere il cluster:</block>
+  <block id="6a73c62ec3ca96f8f08220eeac3380d9" category="list-text"><block ref="6a73c62ec3ca96f8f08220eeac3380d9" category="inline-link-rx"></block></block>
 </blocks>
