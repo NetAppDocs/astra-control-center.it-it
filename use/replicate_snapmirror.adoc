@@ -55,6 +55,10 @@ La replica dell'applicazione Astra Control richiede che i seguenti prerequisiti 
 * *Peering*:
 +
 ** *Cluster e SVM*: I backend dello storage ONTAP devono essere peering. Fare riferimento a. https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["Panoramica del peering di cluster e SVM"^] per ulteriori informazioni.
++
+
+IMPORTANT: Assicurati che i nomi delle SVM utilizzati nella relazione di replica tra due cluster ONTAP siano univoci.
+
 ** * Astra Trident e SVM*: Le SVM remote con peering devono essere disponibili per Astra Trident sul cluster di destinazione.
 
 
