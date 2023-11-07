@@ -56,7 +56,7 @@ NOTE: Come Best practice, utilizzare LDAPS per la connessione con il server LDAP
 . Nella sezione *corrispondenza utente*, procedere come segue:
 +
 .. Inserire il DN di base e un filtro di ricerca utente appropriato da utilizzare per recuperare le informazioni utente dal server LDAP.
-.. (Facoltativo) se la directory utilizza l'attributo di accesso utente `userPrincipalName` invece di `mail`, invio `userPrincipalName` Nel campo *User login Attribute* (attributo di accesso utente), inserire l'attributo corretto.
+.. (Facoltativo) se la directory utilizza l'attributo di accesso utente `userPrincipalName` invece di `mail`, invio `userPrincipalName` Nell'attributo corretto nel campo *attributo di accesso utente*.
 
 
 . Nella sezione *corrispondenza gruppo*, immettere il DN della base di ricerca gruppo e un filtro di ricerca gruppo personalizzato appropriato.

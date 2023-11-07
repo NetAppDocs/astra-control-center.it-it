@@ -47,7 +47,7 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 I file di avviso forniscono informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.
 
-* link:NOTICE_AstraControlCenter_23.07.0.pdf["Avviso per Astra Control Center 23.07.0"^]
+* link:NOTICE.pdf["Avviso per Astra Control Center"^]
 
 
 

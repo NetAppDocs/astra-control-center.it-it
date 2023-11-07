@@ -65,26 +65,28 @@ NOTE: Se si dispone di una licenza di valutazione e non si inviano dati a AutoSu
 Prima di aggiungere un cluster, assicurarsi che siano soddisfatte le seguenti condizioni preliminari. È inoltre necessario eseguire controlli di idoneità per assicurarsi che il cluster sia pronto per essere aggiunto ad Astra Control Center e creare ruoli per la gestione del cluster.
 
 .Prima di iniziare
-* Assicurarsi che i nodi di lavoro nel cluster siano configurati con i driver di storage appropriati in modo che i pod possano interagire con lo storage back-end.
-* Il tuo ambiente soddisfa i requisiti di link:../get-started/requirements.html["requisiti dell'ambiente operativo"^] Per Astra Trident e Astra Control Center.
-* Se si aggiunge il cluster utilizzando un file kubeconfig che fa riferimento a un'autorità di certificazione privata, aggiungere la riga seguente al `cluster` sezione del file kubeconfig. In questo modo si permette ad Astra Control di aggiungere il cluster:
+* *Soddisfare i requisiti ambientali*: L'ambiente soddisfa i requisiti link:../get-started/requirements.html["requisiti dell'ambiente operativo"^] Per Astra Trident e Astra Control Center.
+* *Configura nodi di lavoro*: Assicurarsi di configurare i nodi di lavoro nel cluster con i driver di storage appropriati in modo che i pod possano interagire con lo storage backend.
+* *Rendere accessibile kubeconfig*: Si ha accesso al https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["default cluster kubeconfig"^] quello link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["la configurazione è stata eseguita durante l'installazione"^].
+* *Considerazioni sull'autorità di certificazione*: Se si aggiunge il cluster utilizzando un file kubeconfig che fa riferimento a un'autorità di certificazione (CA) privata, aggiungere la seguente riga al `cluster` sezione del file kubeconfig. In questo modo si permette ad Astra Control di aggiungere il cluster:
 +
 [listing]
 ----
 insecure-skip-tls-verify: true
 ----
-* Una versione di Astra Trident link:../get-started/requirements.html#astra-trident-requirements["Supportato da Astra Control Center"^] è installato:
+* *Requisiti Astra Trident*:
++
+** *Installa una versione supportata*: Una versione di Astra Trident che è link:../get-started/requirements.html#astra-trident-requirements["Supportato da Astra Control Center"^] è installato:
 +
 
 NOTE: È possibile https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Implementare Astra Trident"^] Utilizzando l'operatore Astra Trident (manualmente o utilizzando Helm Chart) o. `tridentctl`. Prima di installare o aggiornare Astra Trident, consultare https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["frontend, backend e configurazioni host supportati"^].
 
-+
-** *Astra Trident storage backend configurato*: Almeno un backend di storage Astra Trident deve essere https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["configurato"^] sul cluster.
-** *Classi di storage Astra Trident configurate*: Deve essere almeno una classe di storage Astra Trident https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["configurato"^] sul cluster. Se è configurata una classe di storage predefinita, assicurarsi che sia l'unica classe di storage con l'annotazione predefinita.
-** *Astra Trident volume snapshot controller e volume snapshot class installati e configurati*: Il volume snapshot controller deve essere https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["installato"^] In modo che le snapshot possano essere create in Astra Control. Almeno un tridente Astra `VolumeSnapshotClass` lo è stato https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["configurazione"^] da un amministratore.
+** *Configurare un backend di storage Astra Trident*: Deve essere almeno un backend di storage Astra Trident https://docs.netapp.com/us-en/trident/trident-use/backends.html["configurato"^] sul cluster.
+** *Configurare classi di storage Astra Trident*: Deve essere almeno una classe di storage Astra Trident https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["configurato"^] sul cluster. Se è configurata una classe di storage predefinita, assicurarsi che sia l'unica classe di storage con l'annotazione predefinita.
+** *Configurare un controller snapshot di volume Astra Trident e installare una classe snapshot di volume*: Il controller snapshot di volume deve essere https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["installato"^] In modo che le snapshot possano essere create in Astra Control. Almeno un tridente Astra `VolumeSnapshotClass` lo è stato https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["configurazione"^] da un amministratore.
 
 
-* *Kubbeconfig accessibile*: Hai accesso a. https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["default cluster kubeconfig"^] quello link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["la configurazione è stata eseguita durante l'installazione"^].
+* *Astra Control provisioner*: Per utilizzare funzionalità avanzate di gestione e provisioning dello storage di Astra Control Provivisioner accessibili solo agli utenti di Astra Control, devi installare Astra Trident 23,10 o versioni successive e abilitarlo link:../use/enable-acp.html["Funzionalità Astra Control Provisioner"].
 * *Credenziali ONTAP*: Per eseguire il backup e il ripristino delle applicazioni con il centro di controllo Astra sono necessarie le credenziali ONTAP e un ID utente e un superutente impostati sul sistema ONTAP di backup.
 +
 Eseguire i seguenti comandi nella riga di comando di ONTAP:
@@ -607,6 +609,7 @@ TIP: Si consiglia ad Astra Control Center di gestire il cluster su cui viene imp
 
 .Prima di iniziare
 * Prima di aggiungere un cluster, esaminare ed eseguire le operazioni necessarie <<Prepara il tuo ambiente per la gestione dei cluster utilizzando Astra Control,attività prerequisite>>.
+* Se stai utilizzando un driver SAN ONTAP, assicurati che multipath sia abilitato su tutti i tuoi cluster Kubernetes.
 
 
 .Fasi
@@ -861,11 +864,11 @@ Please enter Certificate: Press <Enter> when done
 -----END CERTIFICATE-----
 
 You should keep a copy of the CA-signed digital certificate for future reference.
-The installed certificate’s CA and serial number for reference:
+The installed certificate's CA and serial number for reference:
 
 CA:
 serial:
-The certificate’s generated name for reference:
+The certificate's generated name for reference:
 
 
 ==
@@ -968,9 +971,9 @@ NOTE: Potrebbe essere necessario aggiornare la pagina per visualizzare il backen
 Non è necessario un bucket in Astra Control se si esegue il cloning della configurazione dell'applicazione e dello storage persistente sullo stesso cluster. La funzionalità di snapshot delle applicazioni non richiede un bucket.
 
 .Prima di iniziare
-* Un bucket raggiungibile dai cluster gestiti da Astra Control Center.
-* Credenziali per il bucket.
-* Un bucket dei seguenti tipi:
+* Assicurati di avere un bucket raggiungibile dai cluster gestiti da Astra Control Center.
+* Assicurarsi di disporre delle credenziali per il bucket.
+* Assicurarsi che la benna sia di uno dei seguenti tipi:
 +
 ** NetApp ONTAP S3
 ** NetApp StorageGRID S3

@@ -126,8 +126,15 @@ Per istruzioni su come rimuovere le credenziali S3 utilizzando l'API Astra Contr
 
 È possibile rimuovere un bucket che non è più in uso o che non è integro. Questa operazione può essere utile per mantenere la configurazione dell'archivio di oggetti semplice e aggiornata.
 
+[NOTE]
+====
+* Non è possibile rimuovere un bucket predefinito. Se si desidera rimuovere tale bucket, selezionare prima un altro bucket come predefinito.
+* Non è possibile rimuovere un bucket WORM (Write Once Read Many) prima che il periodo di conservazione del cloud provider del bucket sia scaduto. Le benne A VITE SENZA FINE sono contrassegnate con "bloccate" accanto al nome della benna.
 
-NOTE: Non è possibile rimuovere un bucket predefinito. Se si desidera rimuovere tale bucket, selezionare prima un altro bucket come predefinito.
+
+====
+* Non è possibile rimuovere un bucket predefinito. Se si desidera rimuovere tale bucket, selezionare prima un altro bucket come predefinito.
+
 
 .Prima di iniziare
 * Prima di iniziare, verificare che non vi siano backup in esecuzione o completati per questo bucket.

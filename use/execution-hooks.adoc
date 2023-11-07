@@ -18,7 +18,7 @@ Un gancio di esecuzione è un'azione personalizzata che è possibile configurare
 
 == Tipi di hook di esecuzione
 
-Astra Control supporta i seguenti tipi di hook di esecuzione, in base al momento in cui possono essere eseguiti:
+Astra Control Center supporta i seguenti tipi di hook di esecuzione, in base al momento in cui possono essere eseguiti:
 
 * Pre-snapshot
 * Post-snapshot
@@ -51,6 +51,13 @@ Poiché gli hook di esecuzione spesso riducono o disattivano completamente le fu
 Se si avvia un'operazione di backup o snapshot con gli hook di esecuzione associati, ma poi si annulla, gli hook possono ancora essere eseguiti se l'operazione di backup o snapshot è già iniziata. Ciò significa che la logica utilizzata in un gancio di esecuzione post-backup non può presumere che il backup sia stato completato.
 
 ====
+* La funzionalità hook di esecuzione è disabilitata per impostazione predefinita per le nuove implementazioni di Astra Control.
++
+** È necessario attivare la funzione di hook di esecuzione prima di poter utilizzare i hook di esecuzione.
+** Gli utenti proprietari o amministratori possono attivare o disattivare la funzionalità di hook di esecuzione per tutti gli utenti definiti nell'account Astra Control corrente. Fare riferimento a. <<Attivare la funzione ganci di esecuzione>> e. <<Disattivare la funzione ganci di esecuzione>> per istruzioni.
+** Lo stato di abilitazione delle funzioni viene mantenuto durante gli aggiornamenti di Astra Control.
+
+
 * Un gancio di esecuzione deve utilizzare uno script per eseguire le azioni. Molti hook di esecuzione possono fare riferimento allo stesso script.
 * Astra Control richiede che gli script utilizzati dagli hook di esecuzione siano scritti nel formato degli script shell eseguibili.
 * La dimensione dello script è limitata a 96 KB.
@@ -62,7 +69,7 @@ Se si avvia un'operazione di backup o snapshot con gli hook di esecuzione associ
 * Se Astra Control Center esegue il failover di un'applicazione di origine replicata nell'applicazione di destinazione, tutti gli hook di esecuzione post-failover abilitati per l'applicazione di origine vengono eseguiti per l'applicazione di destinazione al termine del failover.
 +
 
-NOTE: Se hai eseguito gli hook post-restore con Astra Control Center 23.04 e hai aggiornato Astra Control Center alla versione 23.07, gli hook di esecuzione post-restore non saranno più eseguiti dopo una replica di failover. Devi creare nuovi hook di esecuzione post-failover per le tue applicazioni. In alternativa, è possibile modificare il tipo di operazione degli hook post-ripristino esistenti destinati ai failover da "post-ripristino" a "post-failover".
+NOTE: Se sono stati eseguiti hook dopo il ripristino con Astra Control Center 23,04 e l'Astra Control Center è stato aggiornato alla versione 23,07 o successiva, i hook di esecuzione post-ripristino non verranno più eseguiti dopo una replica di failover. Devi creare nuovi hook di esecuzione post-failover per le tue applicazioni. In alternativa, è possibile modificare il tipo di operazione degli hook post-ripristino esistenti destinati ai failover da "post-ripristino" a "post-failover".
 
 
 
@@ -161,6 +168,41 @@ Visitare il https://github.com/NetApp/Verda["Progetto NetApp Verda GitHub"] Per 
 
 
 
+== Attivare la funzione ganci di esecuzione
+
+Se si è un utente Proprietario o Amministratore, è possibile attivare la funzione ganci di esecuzione. Quando si attiva la funzionalità, tutti gli utenti definiti in questo account Astra Control possono utilizzare i ganci di esecuzione e visualizzare i ganci di esecuzione e gli script hook esistenti.
+
+.Fasi
+. Accedere a *applicazioni* e selezionare il nome di un'applicazione gestita.
+. Selezionare la scheda *Execution Hooks*.
+. Selezionare *Abilita ganci di esecuzione*.
++
+Viene visualizzata la scheda *account* > *Impostazioni funzioni*.
+
+. Nel riquadro *ganci di esecuzione*, selezionare il menu delle impostazioni.
+. Selezionare *Abilita*.
+. Prendere nota dell'avviso di protezione visualizzato.
+. Selezionare *Sì, abilita i ganci di esecuzione*.
+
+
+
+
+== Disattivare la funzione ganci di esecuzione
+
+Se si è un utente Proprietario o Amministratore, è possibile disattivare la funzionalità Hook di esecuzione per tutti gli utenti definiti in questo account Astra Control. È necessario eliminare tutti i ganci di esecuzione esistenti prima di disattivare la funzione ganci di esecuzione. Fare riferimento a. <<Eliminare un gancio di esecuzione>> per istruzioni sull'eliminazione di un gancio di esecuzione esistente.
+
+.Fasi
+. Andare su *account*, quindi selezionare la scheda *Impostazioni funzione*.
+. Selezionare la scheda *Execution Hooks*.
+. Nel riquadro *ganci di esecuzione*, selezionare il menu delle impostazioni.
+. Selezionare *Disable* (Disattiva).
+. Prendere nota dell'avviso visualizzato.
+. Tipo `disable` per confermare che si desidera disattivare la funzione per tutti gli utenti.
+. Selezionare *Sì, disabilita*.
+
+
+
+
 == Visualizzare gli hook di esecuzione esistenti
 
 È possibile visualizzare gli hook di esecuzione personalizzati esistenti per un'applicazione.
@@ -194,6 +236,7 @@ In questa pagina è possibile visualizzare un elenco degli script caricati. La c
 Ogni gancio di esecuzione deve utilizzare uno script per eseguire le azioni. È possibile aggiungere uno o più script a cui possono fare riferimento gli hook di esecuzione. Molti hook di esecuzione possono fare riferimento allo stesso script; ciò consente di aggiornare molti hook di esecuzione modificando solo uno script.
 
 .Fasi
+. Verificare che la funzione ganci di esecuzione sia <<Attivare la funzione ganci di esecuzione,attivato>>.
 . Vai a *account*.
 . Selezionare la scheda *script*.
 . Selezionare *Aggiungi*.
@@ -250,6 +293,7 @@ NOTE: Se lo script è associato a uno o più hook di esecuzione, l'azione *Delet
 NOTE: Quando si crea uno script shell personalizzato da utilizzare come uncino di esecuzione, ricordarsi di specificare la shell appropriata all'inizio del file, a meno che non si stiano eseguendo comandi specifici o fornendo il percorso completo di un eseguibile.
 
 .Fasi
+. Verificare che la funzione ganci di esecuzione sia <<Attivare la funzione ganci di esecuzione,attivato>>.
 . Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione gestita.
 . Selezionare la scheda *Execution Hooks*.
 . Selezionare *Aggiungi*.

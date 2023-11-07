@@ -12,13 +12,15 @@ summary: 'Dopo aver iniziato a gestire un"applicazione, Astra Control fornisce d
 
 
 [role="lead"]
-Dopo aver iniziato a gestire un'applicazione, Astra Control fornisce informazioni dettagliate sull'applicazione che consentono di identificarne lo stato (se è integro), lo stato di protezione (se è completamente protetto in caso di guasto), i pod, lo storage persistente e molto altro ancora.
+Dopo aver iniziato a gestire un'app, Astra Control fornisce dettagli sull'app che ti permette di identificarne lo stato di comunicazione (se Astra Control è in grado di comunicare con l'app), il suo stato di protezione (se è completamente protetto in caso di guasto), i pod, lo storage persistente e altro ancora.
 
 .Fasi
 . Nell'interfaccia utente di Astra Control Center, selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.
 . Esaminare le informazioni.
 +
-** *App Status*: Fornisce uno stato che riflette lo stato dell'applicazione in Kubernetes. Ad esempio, i pod e i volumi persistenti sono online? Se un'applicazione non è in buone condizioni, è necessario risolvere il problema sul cluster osservando i log di Kubernetes. Astra non fornisce informazioni utili per la risoluzione di un'applicazione guasta.
+Stato dell'app:: Fornisce uno stato che riflette se Astra Control può comunicare con l'applicazione.
++
+--
 ** *App Protection Status*: Fornisce uno stato di protezione dell'applicazione:
 +
 *** *Completamente protetto*: L'applicazione dispone di una pianificazione di backup attiva e di un backup riuscito che risale a meno di una settimana fa
@@ -38,6 +40,9 @@ _Non è possibile essere completamente protetti fino a quando non si dispone di 
 
 NOTE: È inoltre possibile visualizzare le informazioni dell'applicazione partendo da Astra Control Center *Dashboard*. Nella scheda *applicazioni* sotto *Riepilogo risorse*, è possibile selezionare le applicazioni gestite, che consentono di accedere alla pagina *applicazioni*. Una volta visualizzata la pagina *applicazioni*, seguire la procedura descritta in precedenza.
 
+
+
+--
 
 
 
