@@ -42,6 +42,8 @@ Le seguenti funzionalità sono disponibili con la release Astra Control Provisio
 
 
 
+* *Supporto per la gestione delle applicazioni che utilizzano lo storage NVMe/TCP*
+Astra Control è ora in grado di gestire le applicazioni supportate da volumi persistenti connessi tramite NVMe/TCP.
 * *I ganci di esecuzione sono disattivati per impostazione predefinita*: A partire da questa release, la funzionalità dei ganci di esecuzione può essere link:../use/execution-hooks.html#enable-the-execution-hooks-feature["attivato"] o è disattivato per maggiore protezione (è disattivato per impostazione predefinita). Se non sono ancora stati creati ganci di esecuzione da utilizzare con Astra Control, è necessario link:../use/execution-hooks.html#enable-the-execution-hooks-feature["attivare la funzione ganci di esecuzione"^] per iniziare a creare ganci. Se sono stati creati dei ganci di esecuzione prima di questa release, la funzionalità dei ganci di esecuzione rimane attivata ed è possibile utilizzare i ganci normalmente.
 
 

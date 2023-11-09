@@ -3426,4 +3426,6 @@ NOTA: Per ulteriori informazioni sul tipo di servizio "LoadBalancer" e sull'ingr
   <block id="9e586fb8e7af6f105f029bce05abcad4" category="section-title">I dati di backup rimangono nel bucket dopo l'eliminazione per bucket con criteri di conservazione scaduti</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">Utilizza Astra Control Provisioner</block>
   <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">Se elimini il backup immutabile di un'app dopo che il criterio di conservazione del bucket è scaduto, il backup viene eliminato da Astra Control ma non dal bucket. Questo problema verrà risolto in una prossima release.</block>
+  <block id="ac4da6c6894a7c36281036138b93deac" category="list-text">*Supporto per la gestione delle applicazioni che utilizzano lo storage NVMe/TCP*
+Astra Control è ora in grado di gestire le applicazioni supportate da volumi persistenti connessi tramite NVMe/TCP.</block>
 </blocks>
