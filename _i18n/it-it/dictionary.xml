@@ -3358,7 +3358,6 @@ NOTA: Per ulteriori informazioni sul tipo di servizio "LoadBalancer" e sull'ingr
   <block id="77786aa5158c2dd5c43d9bc74844fffd" category="admonition">Non utilizzare Helm per abilitare Astra Control Provisioner. Se hai utilizzato Helm per l'installazione originale e stai effettuando l'aggiornamento a 23,10, dovrai utilizzare l'operatore Trident o tridentctl per eseguire l'abilitazione di Astra Control Provisioner.</block>
   <block id="531dc1bead45003a393e1e227a07b0fa" category="list-text">Modificare il TridentOrchestrator CR e apportare le seguenti modifiche:</block>
   <block id="1dc3b7297d43967b1df8cc5f4718d2b7" category="list-text">Abilita Astra Control Provisioner <block ref="b146a884950a14beaf7f7c32ccceea96" prefix="(" category="inline-code"></block>)</block>
-  <block id="0d93f0d7110c6fcd946df3239a7be503" category="list-text">Impostare la posizione del Registro di sistema per l'immagine Astra Control Provivioner <block ref="334c0a9162c18d888fae4c3071edcbf0" prefix="(" category="inline-code"></block>).</block>
   <block id="9f28a023f26c22c040e88a7f3791d0ed" category="inline-xref">segreti di estrazione delle immagini</block>
   <block id="32c8b1c79820bf7dfd85518c9c748641" category="admonition">Se stabilito <block ref="565c9dfc4921fbeccbde323bc8a44cad" category="inline-xref-macro-rx"></block> nelle fasi precedenti di questa procedura, è possibile utilizzarle qui <block ref="ce73ad6af69d89f0704d72b9000c5650" prefix="(" category="inline-code"></block>)</block>
   <block id="aef1a8f8ac300bc418eb75e7e1e3c426" category="list-text">Aggiorna la configurazione di Astra Trident così che il nuovo<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> il container viene implementato:</block>
@@ -3428,4 +3427,5 @@ NOTA: Per ulteriori informazioni sul tipo di servizio "LoadBalancer" e sull'ingr
   <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">Se elimini il backup immutabile di un'app dopo che il criterio di conservazione del bucket è scaduto, il backup viene eliminato da Astra Control ma non dal bucket. Questo problema verrà risolto in una prossima release.</block>
   <block id="ac4da6c6894a7c36281036138b93deac" category="list-text">*Supporto per la gestione delle applicazioni che utilizzano lo storage NVMe/TCP*
 Astra Control è ora in grado di gestire le applicazioni supportate da volumi persistenti connessi tramite NVMe/TCP.</block>
+  <block id="e19d9fd02be50073f892bf959070ea25" category="list-text">Impostare la posizione del Registro di sistema per l'immagine Astra Control Provivioner <block ref="20edfaac0850c3e3743b65fa227b6f0b" prefix="(" category="inline-code"></block>).</block>
 </blocks>
