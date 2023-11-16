@@ -101,7 +101,7 @@ NOTE: Anche se non descritto, l'operatore di Astra Control Center può essere di
 .. Selezionare *Aggiungi regola di inclusione*.
 .. Selezionare queste voci, quindi selezionare *Aggiungi*:
 +
-*** Selettore etichetta: acc-crds
+*** Selettore etichette: <label name>
 *** Gruppo: ApiExtensions.k8s.io
 *** Versione: V1
 *** Tipo: CustomResourceDefinition
