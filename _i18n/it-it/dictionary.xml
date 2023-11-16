@@ -700,7 +700,6 @@
   <block id="4f870cfbd1ec8f00a52914de7f598650" category="list-text">*Certificato client*: ontap_test_client.pem</block>
   <block id="1edd3b7b81002be4593d5c2b6cf83c17" category="list-text">*Chiave privata*: ontap_test_client.key</block>
   <block id="1aa96a4cac498e6b7421caf25f59fbaf" category="list-text">*Certificato CA attendibile*: ontap_signed_cert.crt</block>
-  <block id="ff9492d1695d9e5fe8ee2d412256cd28" category="paragraph">È possibile aggiungere un backend di storage ONTAP esistente al centro di controllo Astra per gestire le proprie risorse.</block>
   <block id="eb33ac2274505b5f55f336ecd9e9a2d2" category="paragraph">La gestione dei cluster di storage in Astra Control come back-end dello storage consente di ottenere collegamenti tra volumi persistenti (PVS) e il back-end dello storage, oltre a metriche di storage aggiuntive.</block>
   <block id="e3a65d17d8453f02fd0934c0b4b04285" category="paragraph">Dopo aver impostato le credenziali o le informazioni di autenticazione del certificato, è possibile aggiungere un backend di storage ONTAP esistente a Astra Control Center per gestire le risorse.</block>
   <block id="f458d757cde06889f0974a654df0a5b7" category="list-text">Dal pannello di controllo nell'area di navigazione a sinistra, selezionare *Backend*.</block>
@@ -3428,4 +3427,5 @@ NOTA: Per ulteriori informazioni sul tipo di servizio "LoadBalancer" e sull'ingr
 Astra Control è ora in grado di gestire le applicazioni supportate da volumi persistenti connessi tramite NVMe/TCP.</block>
   <block id="e19d9fd02be50073f892bf959070ea25" category="list-text">Impostare la posizione del Registro di sistema per l'immagine Astra Control Provivioner <block ref="20edfaac0850c3e3743b65fa227b6f0b" prefix="(" category="inline-code"></block>).</block>
   <block id="2e307acdc1434ce81b546c869ac5d37c" category="list-text">Selettore etichette: &lt;label name&gt;</block>
+  <block id="aa22bb99bde532781940eb4a1e458758" category="paragraph">*_Astra Control Provisioner only_*: L'aggiunta e la gestione di backend di storage ONTAP in Astra Control Center è opzionale quando si utilizza la tecnologia NetApp SnapMirror se si è attivato Astra Control Provisioner con Astra Control Center 23,10 o versioni successive.</block>
 </blocks>

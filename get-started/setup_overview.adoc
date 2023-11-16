@@ -932,11 +932,11 @@ curl --cacert ontap_signed_cert.crt  --key ontap_test_client.key --cert ontap_te
 
 == Aggiungere un backend di storage
 
-È possibile aggiungere un backend di storage ONTAP esistente al centro di controllo Astra per gestire le proprie risorse.
+Dopo aver impostato le credenziali o le informazioni di autenticazione del certificato, è possibile aggiungere un backend di storage ONTAP esistente a Astra Control Center per gestire le risorse.
 
 La gestione dei cluster di storage in Astra Control come back-end dello storage consente di ottenere collegamenti tra volumi persistenti (PVS) e il back-end dello storage, oltre a metriche di storage aggiuntive.
 
-Dopo aver impostato le credenziali o le informazioni di autenticazione del certificato, è possibile aggiungere un backend di storage ONTAP esistente a Astra Control Center per gestire le risorse.
+*_Astra Control Provisioner only_*: L'aggiunta e la gestione di backend di storage ONTAP in Astra Control Center è opzionale quando si utilizza la tecnologia NetApp SnapMirror se si è attivato Astra Control Provisioner con Astra Control Center 23,10 o versioni successive.
 
 .Fasi
 . Dal pannello di controllo nell'area di navigazione a sinistra, selezionare *Backend*.
