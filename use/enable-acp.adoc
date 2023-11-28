@@ -26,7 +26,7 @@ Se stai abilitando Astra Control provisioner, esegui prima quanto segue:
 
 [role="tabbed-block"]
 ====
-.Utenti di Astra Control Provisioners con Astra Control Center
+.Utenti di Astra Control Provisioner con Astra Control Center
 * *Ottenere una licenza Astra Control Center*: È necessario un link:../concepts/licensing.html["Licenza Astra Control Center"] Per abilitare Astra Control Provisioner e accedere alle funzionalità fornite.
 * *Installa o esegui l'aggiornamento ad Astra Control Center 23,10*: Avrai bisogno di questa versione se hai intenzione di utilizzare Astra Control Provisioner con Astra Control.
 * *Confirmi che il tuo cluster ha un'architettura di sistema AMD64*: L'immagine Astra Control Provivisioner è fornita in entrambe le architetture CPU AMD64 e ARM64, ma solo AMD64 è supportato da Astra Control Center.
