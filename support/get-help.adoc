@@ -27,8 +27,8 @@ Devi prima link:../get-started/setup_overview.html["Attivare il supporto per il 
 
 Queste opzioni sono disponibili gratuitamente, 24 ore su 24, 7 giorni su 7:
 
-* https://kb.netapp.com/Cloud/Astra/Control["*Knowledge base* (accesso richiesto)"^]: Cerca articoli, FAQ o informazioni di riparazione in caso di interruzione relative ad Astra Control.
-* *Centro di documentazione*: Questo è il sito di documentazione che stai visualizzando.
+* https://kb.netapp.com/Cloud/Astra/Control["*Utilizzare la knowledge base* (è richiesto l'accesso)"^]: Cerca articoli, FAQ o informazioni di riparazione in caso di interruzione relative ad Astra Control.
+* *Fare riferimento alla documentazione del prodotto*: Questo è il sito della documentazione attualmente visualizzato.
 * https://discord.gg/NetApp["*Richiedi assistenza tramite discordia*"^]: Vai ad Astra nella categoria Pub per entrare in contatto con colleghi ed esperti.
 * *Creare un caso di supporto*: Generare pacchetti di supporto da fornire al supporto NetApp per la risoluzione dei problemi.
 * *Invia un feedback su Astra Control*: Invia un'e-mail a astra.feedback@netapp.com per farci conoscere le tue opinioni, le tue idee o i tuoi dubbi.

@@ -169,7 +169,7 @@ Scopri di più su come https://docs.netapp.com/us-en/astra-control-center/get-st
 * https://docs.netapp.com/us-en/astra/index.html["Documentazione del servizio Astra Control"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Documentazione di Astra Control Center"^]
 * https://docs.netapp.com/us-en/trident/index.html["Documentazione di Astra Trident"^]
-* https://docs.netapp.com/us-en/astra-automation["Utilizzare l'API di controllo Astra"^]
+* https://docs.netapp.com/us-en/astra-automation["Documentazione sull'API Astra Control"^]
 * https://docs.netapp.com/us-en/cloudinsights/["Documentazione Cloud Insights"^]
 * https://docs.netapp.com/us-en/ontap/index.html["Documentazione ONTAP"^]
 
