@@ -199,7 +199,7 @@ NOTE: Puoi implementare Astra Control Center in un cluster Kubernetes dual-stack
 | Origine | Destinazione | Porta | Protocollo | Scopo 
 
 
-| PC client | Centro di controllo Astra | 443 | HTTPS | Accesso UI/API - assicurarsi che questa porta sia aperta in entrambi i modi tra il cluster che ospita Astra Control Center e ciascun cluster gestito 
+| PC client | Centro di controllo Astra | 443 | HTTPS | Accesso UI/API - assicurarsi che questa porta sia aperta in entrambe le direzioni tra Astra Control Center e il sistema utilizzato per accedere ad Astra Control Center 
 
 
 | Metriche consumer | Nodo di lavoro Astra Control Center | 9090 | HTTPS | Comunicazione dei dati delle metriche - garantire che ciascun cluster gestito possa accedere a questa porta sul cluster che ospita Astra Control Center (è richiesta una comunicazione bidirezionale) 
@@ -212,6 +212,10 @@ NOTE: Puoi implementare Astra Control Center in un cluster Kubernetes dual-stack
 
 
 | Centro di controllo Astra | NetApp AutoSupport (https://support.netapp.com[]) | 443 | HTTPS | Comunicazioni NetApp AutoSupport 
+
+
+| Centro di controllo Astra | Cluster Kubernetes gestito | 443/6443
+*NOTA*: La porta utilizzata dal cluster gestito può variare a seconda del cluster. Fare riferimento alla documentazione fornita dal fornitore del software per cluster. | HTTPS | Comunicazione con il cluster gestito - assicurarsi che questa porta sia aperta in entrambi i modi tra il cluster che ospita Astra Control Center e ciascun cluster gestito 
 |===
 
 
