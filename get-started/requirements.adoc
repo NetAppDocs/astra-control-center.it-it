@@ -42,7 +42,7 @@ RKE 2 (v1.24.x) con Rancher 2.6
 RKE 2 (v1,26.x) con Rancher 2,7 
 
 
-| Red Hat OpenShift Container Platform | da 4.11 a 4.13 
+| Red Hat OpenShift Container Platform | da 4,11 a 4,14 
 
 
 | VMware Tanzu Kubernetes Grid Integrated Edition | 1,16.x (vedere <<Requisiti delle risorse del cluster host>>) 
