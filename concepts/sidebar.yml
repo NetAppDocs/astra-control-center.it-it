@@ -14,5 +14,3 @@ entries:
   url: "/concepts/choose-class-and-size.html"
 - title: Ruoli e spazi dei nomi degli utenti
   url: "/concepts/user-roles-namespaces.html"
-- title: Sicurezza del pod
-  url: "/concepts/understand-pod-security.html"

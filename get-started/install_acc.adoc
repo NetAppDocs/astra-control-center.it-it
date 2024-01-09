@@ -30,7 +30,8 @@ Per una dimostrazione del processo di installazione di Astra Control Center, ved
 
 TIP: Implementare Astra Control Center in un terzo dominio di errore o in un sito secondario. Questa opzione è consigliata per la replica delle applicazioni e il disaster recovery perfetto.
 
-* *Considerate i criteri di sicurezza POD*: Se avete configurato o volete configurare i criteri di sicurezza POD nel vostro ambiente, familiarizzatevi con i criteri di sicurezza POD e con come questi influiscono sull'installazione di Astra Control Center. Fare riferimento a. link:../concepts/understand-pod-security.html["restrizioni di sicurezza del pod"^].
+
+
 * *Garantire servizi integri*: Controllare che tutti i servizi API siano in buono stato e disponibili:
 +
 [source, console]
