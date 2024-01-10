@@ -47,7 +47,12 @@ Utilizzando Astra Control, è possibile eseguire le seguenti attività relative 
 La replica dell'applicazione Astra Control richiede che i seguenti prerequisiti siano soddisfatti prima di iniziare:
 
 .Cluster ONTAP
-* * Astra Trident*: Astra Trident versione 22.10 o successiva deve esistere sia sui cluster Kubernetes di origine che di destinazione che utilizzano ONTAP come backend.
+* * Astra Trident*: Astra Trident versione 22.10 o successiva deve esistere sia sui cluster Kubernetes di origine che di destinazione che utilizzano ONTAP come backend. Astra Control supporta la replica con la tecnologia NetApp SnapMirror utilizzando classi di storage supportate dai seguenti driver:
++
+** `ontap-nas`
+** `ontap-san`
+
+
 * *Licenze*: Le licenze asincrone di ONTAP SnapMirror che utilizzano il bundle di protezione dati devono essere attivate sia sul cluster ONTAP di origine che su quello di destinazione. Fare riferimento a. https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["Panoramica sulle licenze SnapMirror in ONTAP"^] per ulteriori informazioni.
 
 

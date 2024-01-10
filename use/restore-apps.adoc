@@ -24,6 +24,14 @@ Astra Control può ripristinare l'applicazione da uno snapshot o da un backup. I
 `oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
 `oc adm policy add-scc-to-user privileged -z default -n wordpress`
 
+* *Driver di classe di archiviazione supportati*: Astra Control supporta il ripristino dei backup utilizzando classi di archiviazione supportate dai seguenti driver:
++
+** `ontap-nas`
+** `ontap-nas-economy`
+** `ontap-san`
+** `ontap-san-economy`
+
+
 * * (Solo driver ontap-nas-Economy) esegue backup e ripristini*: Prima di eseguire il backup o il ripristino di un'app che utilizza una classe di storage supportata da `ontap-nas-economy` driver, verificare che link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["La directory snapshot sul backend dello storage ONTAP è nascosta"]. La mancata visualizzazione di questa directory potrebbe causare la perdita di accesso all'applicazione, in particolare se si utilizza NFSv3.
 * *Helm ha implementato le applicazioni*: Le applicazioni implementate con Helm 3 (o aggiornate da Helm 2 a Helm 3) sono completamente supportate. Le app implementate con Helm 2 non sono supportate.
 

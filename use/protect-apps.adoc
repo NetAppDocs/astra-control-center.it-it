@@ -81,6 +81,14 @@ Astra Control implementa la policy di protezione dei dati creando e conservando 
 
 Puoi creare uno snapshot on-demand in qualsiasi momento.
 
+.A proposito di questa attività
+Astra Control supporta la creazione di snapshot utilizzando classi di storage supportate dai seguenti driver:
+
+* `ontap-nas`
+* `ontap-san`
+* `ontap-san-economy`
+
+
 
 IMPORTANT: Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, impossibile creare snapshot. Utilizzare una classe di storage alternativa per gli snapshot.
 
@@ -105,6 +113,17 @@ I bucket in Astra Control non riportano la capacità disponibile. Prima di esegu
 
 Se l'applicazione utilizza una classe di storage supportata da `ontap-nas-economy` driver, è necessario <<Abilita backup e ripristino per le operazioni economiche a ontap-nas,attivare il backup e il ripristino>> funzionalità. Accertarsi di aver definito un `backendType` nel https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects["Oggetto storage Kubernetes"^] con un valore di `ontap-nas-economy` prima di eseguire qualsiasi operazione di protezione.
 
+[NOTE]
+====
+Astra Control supporta la creazione di backup utilizzando classi di storage supportate dai seguenti driver:
+
+* `ontap-nas`
+* `ontap-nas-economy`
+* `ontap-san`
+* `ontap-san-economy`
+
+
+====
 .Fasi
 . Selezionare *applicazioni*.
 . Dal menu Opzioni nella colonna *azioni* dell'applicazione desiderata, selezionare *Backup*.
