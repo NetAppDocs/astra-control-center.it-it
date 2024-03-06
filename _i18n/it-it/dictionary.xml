@@ -27,7 +27,6 @@
   <block id="00055dac2ba112b87a95a368075b9561" category="list-text"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block></block>
   <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="list-text"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block></block>
   <block id="3b7cc10179d4a03a32a20e501dfd5870" category="list-text"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block> (la replica dell'applicazione non è disponibile con questo tipo di classe di storage)</block>
-  <block id="64e73248ee4f8bc7259ec69c97e5b190" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block> (snapshot, policy di replica e policy di protezione non sono disponibili con questo tipo di classe di storage)</block>
   <block id="bd605fff7af6a2da2d78ab96c4c19217" category="section-title">Back-end dello storage</block>
   <block id="e1da14d4a8ef5675e8dac5e30712eaa1" category="paragraph">Assicurarsi di disporre di un backend supportato con capacità sufficiente.</block>
   <block id="acc45c3104df8c76c1bca22e53694a49" category="list-text">*Backend supportati*: Astra Control Center supporta i seguenti backend di storage:</block>
@@ -3508,4 +3507,5 @@ Quando si trasferisce un volume di destinazione a un volume ReadWrite regolare, 
   <block id="4eecab048a7c90cfb92e0f04884686e8" category="section-title">Aggiorna relazioni di mirroring quando ONTAP non è in linea</block>
   <block id="e3b68b1c19a14af5fcb94e147290aec6" category="paragraph">Puoi utilizzare un CRD per eseguire un update di SnapMirror senza che Astra Control disponga di connettività diretta al cluster ONTAP. Fare riferimento al seguente formato di esempio di TridentActionMirrorUpdate:</block>
   <block id="bc08468157c4a9e3a30eed7ba64cc309" category="paragraph"><block ref="1f9dfae8a369525bce4996df40963532" prefix="" category="inline-code"></block> Riflette lo stato del CRD TridentActionMirrorUpdate. Può assumere un valore da _riuscito_, _in corso_ o _non riuscito_.</block>
+  <block id="458f5933715ee2e27d64e6d1f508b6ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block> (snapshot e policy di replica non sono disponibili con questo tipo di classe di storage)</block>
 </blocks>
