@@ -38,7 +38,7 @@ NOTE: Se il cluster è configurato con l'imposizione dell'ammissione di sicurezz
 +
 [source, console]
 ----
-kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403141622/astraconnector_operator.yaml
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403151353/astraconnector_operator.yaml
 ----
 . Verificare che l'operatore sia installato e pronto:
 +

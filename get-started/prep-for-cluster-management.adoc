@@ -158,9 +158,6 @@ NOTE: Per questa procedura, non è necessario l'accesso kubectl al cluster che e
 +
 .. Creare un file di account del servizio denominato `astracontrol-service-account.yaml`.
 +
-Regolare il nome e lo spazio dei nomi in base alle esigenze. Se le modifiche vengono apportate qui, è necessario applicare le stesse modifiche nei passaggi seguenti.
-
-+
 [source, subs="specialcharacters,quotes"]
 ----
 *astracontrol-service-account.yaml*
@@ -191,9 +188,6 @@ kubectl apply -f astracontrol-service-account.yaml
 Questo ruolo contiene le autorizzazioni minime necessarie per gestire un cluster da Astra Control:
 
 .. Creare un `ClusterRole` file chiamato, ad esempio, `astra-admin-account.yaml`.
-+
-Regolare il nome e lo spazio dei nomi in base alle esigenze. Se le modifiche vengono apportate qui, è necessario applicare le stesse modifiche nei passaggi seguenti.
-
 +
 [source, subs="specialcharacters,quotes"]
 ----
@@ -311,6 +305,7 @@ rules:
   - securitycontextconstraints
   verbs:
   - use
+  - update
 ----
 .. Applicare il ruolo del cluster:
 +
@@ -329,9 +324,6 @@ Questo ruolo contiene autorizzazioni estese per un cluster da gestire con Astra 
 NOTE: Quanto segue `ClusterRole` I passaggi sono un esempio generale di Kubernetes. Consultare la documentazione della distribuzione Kubernetes per istruzioni specifiche sull'ambiente in uso.
 
 .. Creare un `ClusterRole` file chiamato, ad esempio, `astra-admin-account.yaml`.
-+
-Regolare il nome e lo spazio dei nomi in base alle esigenze. Se le modifiche vengono apportate qui, è necessario applicare le stesse modifiche nei passaggi seguenti.
-
 +
 [source, subs="specialcharacters,quotes"]
 ----
@@ -369,9 +361,6 @@ kubectl apply -f astra-admin-account.yaml
 . Creare l'associazione del ruolo del cluster all'account del servizio per il ruolo del cluster:
 +
 .. Creare un `ClusterRoleBinding` file chiamato `astracontrol-clusterrolebinding.yaml`.
-+
-Modificare i nomi e gli spazi dei nomi modificati quando si crea l'account del servizio, in base alle necessità.
-
 +
 [source, subs="specialcharacters,quotes"]
 ----
@@ -433,7 +422,7 @@ kubectl apply -f secret-astracontrol-service-account.yaml
 +
 [source, console]
 ----
-kubectl edit sa astracontrol-service-account -n <netapp-acc or custom namespace>
+kubectl edit sa astracontrol-service-account
 ----
 +
 [source, subs="verbatim,quotes"]
@@ -479,14 +468,13 @@ Gli indici di ciascun elemento in `secrets` l'array inizia con 0. Nell'esempio p
 +
 .. Creare un `create-kubeconfig.sh` file.
 .. Sostituire `TOKEN_INDEX` all'inizio del seguente script con il valore corretto.
-.. Sostituire `NAMESPACE` Con lo spazio dei nomi Astra Control Center.
 +
 [source, subs="specialcharacters,quotes"]
 ----
 *create-kubeconfig.sh*
 ----
 +
-[source, console]
+[source, subs="verbatim,quotes"]
 ----
 # Update these to match your environment.
 # Replace TOKEN_INDEX with the correct value
@@ -504,7 +492,7 @@ CONTEXT=$(kubectl config current-context)
 SECRET_NAME=$(kubectl get serviceaccount ${SERVICE_ACCOUNT_NAME} \
   --context ${CONTEXT} \
   --namespace ${NAMESPACE} \
-  -o jsonpath='{.secrets[TOKEN_INDEX].name}')
+  *-o jsonpath='{.secrets[TOKEN_INDEX].name}')
 TOKEN_DATA=$(kubectl get secret ${SECRET_NAME} \
   --context ${CONTEXT} \
   --namespace ${NAMESPACE} \
