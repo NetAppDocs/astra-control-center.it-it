@@ -1,30 +1,25 @@
-= Aggiungere le immagini al registro locale
+= 
 :allow-uri-read: 
 
 
-
-
-== Aggiungere le immagini al registro locale
-
-. Completare la sequenza di passaggi appropriata per il motore dei container:
-
-
+. Se si prevede di inviare il pacchetto Astra Control Center al registro locale, completare la sequenza di passaggi appropriata per il motore del contenitore:
++
 [role="tabbed-block"]
 ====
 .Docker
 --
-. Passare alla directory root del tarball. Viene visualizzata la `acc.manifest.bundle.yaml` file e queste directory:
+.. Passare alla directory root del tarball. Viene visualizzata la `acc.manifest.bundle.yaml` file e queste directory:
 +
 `acc/`
 `kubectl-astra/`
 `acc.manifest.bundle.yaml`
 
-. Trasferire le immagini del pacchetto nella directory delle immagini di Astra Control Center nel registro locale. Eseguire le seguenti sostituzioni prima di eseguire `push-images` comando:
+.. Trasferire le immagini del pacchetto nella directory delle immagini di Astra Control Center nel registro locale. Eseguire le seguenti sostituzioni prima di eseguire `push-images` comando:
 +
-** Sostituire <BUNDLE_FILE> con il nome del file bundle di controllo Astra (`acc.manifest.bundle.yaml`).
-** Sostituire <MY_FULL_REGISTRY_PATH> con l'URL del repository Docker; ad esempio, "https://<docker-registry>"[].
-** Sostituire <MY_REGISTRY_USER> con il nome utente.
-** Sostituire <MY_REGISTRY_TOKEN> con un token autorizzato per il registro.
+*** Sostituire <BUNDLE_FILE> con il nome del file bundle di controllo Astra (`acc.manifest.bundle.yaml`).
+*** Sostituire <MY_FULL_REGISTRY_PATH> con l'URL del repository Docker; ad esempio, "https://<docker-registry>"[].
+*** Sostituire <MY_REGISTRY_USER> con il nome utente.
+*** Sostituire <MY_REGISTRY_TOKEN> con un token autorizzato per il registro.
 +
 [source, console]
 ----
@@ -37,19 +32,19 @@ kubectl astra packages push-images -m <BUNDLE_FILE> -r <MY_FULL_REGISTRY_PATH> -
 --
 .Podman
 --
-. Passare alla directory root del tarball. Vengono visualizzati il file e la directory seguenti:
+.. Passare alla directory root del tarball. Vengono visualizzati il file e la directory seguenti:
 +
 `acc/`
 `kubectl-astra/`
 `acc.manifest.bundle.yaml`
 
-. Accedere al Registro di sistema:
+.. Accedere al Registro di sistema:
 +
 [source, console]
 ----
 podman login <YOUR_REGISTRY>
 ----
-. Preparare ed eseguire uno dei seguenti script personalizzato per la versione di Podman utilizzata. Sostituire <MY_FULL_REGISTRY_PATH> con l'URL del repository che include le sottodirectory.
+.. Preparare ed eseguire uno dei seguenti script personalizzato per la versione di Podman utilizzata. Sostituire <MY_FULL_REGISTRY_PATH> con l'URL del repository che include le sottodirectory.
 +
 [source, subs="specialcharacters,quotes"]
 ----
@@ -60,7 +55,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.10.0-68
+export PACKAGEVERSION=24.02.0-65
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -79,7 +74,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.10.0-68
+export PACKAGEVERSION=24.02.0-65
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -95,9 +90,16 @@ NOTE: Il percorso dell'immagine creato dallo script deve essere simile al seguen
 +
 [listing]
 ----
-https://downloads.example.io/docker-astra-control-prod/netapp/astra/acc/23.10.0-68/image:version
+https://downloads.example.io/docker-astra-control-prod/netapp/astra/acc/24.02.0-65/image:version
 ----
 
 
 --
 ====
+. Modificare la directory:
++
+[source, console]
+----
+cd manifests
+----
+

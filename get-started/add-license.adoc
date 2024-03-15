@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-license.html 
+keywords: set up astra control, astra control license 
+summary: 'Dopo aver installato Astra Control Center, effettuato l"accesso all"interfaccia utente e modificato la password, sarà necessario impostare una licenza.' 
+---
+= Aggiungere una licenza per Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Quando si installa Astra Control Center, è già installata una licenza di valutazione integrata. Se stai valutando Astra Control Center, puoi saltare questo passaggio.
+
+È possibile aggiungere una nuova licenza utilizzando l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"^].
+
+Le licenze di Astra Control Center misurano le risorse CPU utilizzando le unità CPU di Kubernetes e tengono conto delle risorse CPU assegnate ai nodi di lavoro di tutti i cluster Kubernetes gestiti. Le licenze si basano sull'utilizzo di vCPU. Per ulteriori informazioni sul calcolo delle licenze, fare riferimento a. link:../concepts/licensing.html["Licensing"].
+
+
+NOTE: Se l'installazione supera il numero concesso in licenza di unità CPU, Astra Control Center impedisce la gestione di nuove applicazioni. Quando viene superata la capacità, viene visualizzato un avviso.
+
+
+NOTE: Per aggiornare una licenza di valutazione o una licenza completa, fare riferimento a. link:../use/update-licenses.html["Aggiornare una licenza esistente"].
+
+.Prima di iniziare
+* Accesso a un'istanza di Astra Control Center appena installata.
+* Autorizzazioni per il ruolo di amministratore.
+* R link:../concepts/licensing.html["File di licenza NetApp"] (NLF).
+
+
+.Fasi
+. Accedere all'interfaccia utente di Astra Control Center.
+. Selezionare *account* > *licenza*.
+. Selezionare *Aggiungi licenza*.
+. Individuare il file di licenza (NLF) scaricato.
+. Selezionare *Aggiungi licenza*.
+
+
+La pagina *account* > *licenza* visualizza le informazioni sulla licenza, la data di scadenza, il numero di serie della licenza, l'ID account e le unità CPU utilizzate.
+
+
+NOTE: Se si dispone di una licenza di valutazione e non si inviano dati a AutoSupport, assicurarsi di memorizzare l'ID account per evitare la perdita di dati in caso di guasto del centro di controllo Astra.

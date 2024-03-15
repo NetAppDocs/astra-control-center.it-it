@@ -20,22 +20,15 @@ Il centro di controllo Astra supporta NetApp ONTAP e Longhorn come backend di st
 
 Astra Control Center supporta:
 
-* *Astra Trident storage classes backend supportato dallo storage ONTAP*: Se si utilizza un backend ONTAP, Astra Control Center offre la possibilità di importare il backend ONTAP per la segnalazione di varie informazioni di monitoraggio.
+* *Classi di storage supportate dallo storage ONTAP*: Se si utilizza un backend ONTAP, Astra Control Center offre la possibilità di importare il backend ONTAP per generare report sulle informazioni di monitoraggio.
 * *Classi di storage basate su CSI supportate da Longhorn*: È possibile utilizzare Longhorn con il driver CSI (Container Storage Interface) di Longhorn.
 
 
 
-NOTE: Le classi di storage Astra Trident devono essere preconfigurate all'esterno di Astra Control Center.
+NOTE: Le classi di archiviazione devono essere https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["configurato"^] Con Astra Control Provisioner.
 
 
 
 == Classi di storage
 
 Quando si aggiunge un cluster ad Astra Control Center, viene richiesto di selezionare una classe di storage precedentemente configurata su tale cluster come classe di storage predefinita. Questa classe di storage verrà utilizzata quando non viene specificata alcuna classe di storage in una dichiarazione di volume persistente (PVC). La classe di storage predefinita può essere modificata in qualsiasi momento all'interno di Astra Control Center e qualsiasi classe di storage può essere utilizzata in qualsiasi momento specificando il nome della classe di storage all'interno del grafico PVC o Helm. Assicurarsi di avere definito solo una singola classe di storage predefinita per il cluster Kubernetes.
-
-
-
-== Per ulteriori informazioni
-
-* https://docs.netapp.com/us-en/trident/index.html["Documentazione di Astra Trident"^]
-

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/manage-backend.html 
 keywords: how to use astra control, what is astra storage, how to set up astra storage backend, ontap storage in astra, backend storage in astra 
-summary: 'La gestione dei cluster di storage in Astra Control come back-end dello storage consente di ottenere collegamenti tra volumi persistenti (PVS) e il back-end dello storage, oltre a metriche di storage aggiuntive. È possibile monitorare la capacità dello storage e i dettagli relativi allo stato di salute, incluse le prestazioni, se il centro di controllo Astra è connesso a Cloud Insights.' 
+summary: 'La gestione dei cluster di storage in Astra Control come back-end dello storage consente di ottenere collegamenti tra volumi persistenti (PVS) e il back-end dello storage, oltre a metriche di storage aggiuntive. È possibile monitorare la capacità di storage e i dettagli sullo stato di salute.' 
 ---
 = Gestire il back-end dello storage
 :hardbreaks:
@@ -12,13 +12,13 @@ summary: 'La gestione dei cluster di storage in Astra Control come back-end dell
 
 
 [role="lead"]
-La gestione dei cluster di storage in Astra Control come back-end dello storage consente di ottenere collegamenti tra volumi persistenti (PVS) e il back-end dello storage, oltre a metriche di storage aggiuntive. È possibile monitorare la capacità dello storage e i dettagli relativi allo stato di salute, incluse le prestazioni, se il centro di controllo Astra è connesso a Cloud Insights.
+La gestione dei cluster di storage in Astra Control come back-end dello storage consente di ottenere collegamenti tra volumi persistenti (PVS) e il back-end dello storage, oltre a metriche di storage aggiuntive.
 
 Per istruzioni su come gestire i back-end dello storage utilizzando l'API Astra Control, vedere link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation e informazioni API"^].
 
 È possibile completare le seguenti attività relative alla gestione di un backend di storage:
 
-* link:../get-started/setup_overview.html#add-a-storage-backend["Aggiungere un backend di storage"]
+* link:../get-started/add-storage-backend.html["Aggiungere un backend di storage"]
 * <<Visualizza i dettagli del back-end dello storage>>
 * <<Modificare i dettagli dell'autenticazione back-end dello storage>>
 * <<Gestire un backend di storage rilevato>>
@@ -53,19 +53,11 @@ Per istruzioni su come gestire i back-end dello storage utilizzando l'API Astra 
 
 Visualizza informazioni sullo stato, la capacità e le performance del back-end (throughput IOPS e/o latenza).
 
-È possibile visualizzare i volumi utilizzati dalle applicazioni Kubernetes, che vengono memorizzati in un backend di storage selezionato. Con Cloud Insights, è possibile visualizzare ulteriori informazioni. Vedere https://docs.netapp.com/us-en/cloudinsights/["Documentazione Cloud Insights"^].
+È possibile visualizzare i volumi utilizzati dalle applicazioni Kubernetes, che vengono memorizzati in un backend di storage selezionato.
 
 .Fasi
 . Nell'area di navigazione a sinistra, selezionare *Backend*.
 . Selezionare il backend dello storage.
-+
-
-TIP: Se si è connessi a NetApp Cloud Insights, gli estratti di dati da Cloud Insights vengono visualizzati nella pagina backend.
-
-+
-image:../use/acc_backends_ci_connection2.png["Una schermata della pagina Backend"]
-
-. Per accedere direttamente a Cloud Insights, selezionare l'icona *Cloud Insights* accanto all'immagine delle metriche.
 
 
 
@@ -80,7 +72,7 @@ Centro di controllo Astra offre due modalità di autenticazione di un backend ON
 
 È possibile aggiornare i backend esistenti per passare da un tipo di autenticazione a un altro metodo. È supportato un solo metodo di autenticazione alla volta.
 
-Per ulteriori informazioni sull'attivazione dell'autenticazione basata su certificati, fare riferimento a. link:../get-started/setup_overview.html#enable-authentication-on-the-ontap-storage-backend["Abilitare l'autenticazione sul backend dello storage ONTAP"].
+Per ulteriori informazioni sull'attivazione dell'autenticazione basata su certificati, fare riferimento a. link:../get-started/enable-auth-ontap-backend.html["Abilitare l'autenticazione sul backend dello storage ONTAP"].
 
 .Fasi
 . Dalla barra di navigazione a sinistra, selezionare *Backend*.

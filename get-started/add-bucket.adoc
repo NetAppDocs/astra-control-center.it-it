@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-bucket.html 
+keywords: set up astra control, add bucket 
+summary: Dopo aver installato Astra Control Center, è consigliabile aggiungere un bucket come parte della configurazione. 
+---
+= Aggiungi un bucket
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+È possibile aggiungere un bucket utilizzando l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"^]. L'aggiunta di provider di bucket di archivi di oggetti è essenziale se si desidera eseguire il backup delle applicazioni e dello storage persistente o se si desidera clonare le applicazioni tra cluster. Astra Control memorizza i backup o i cloni nei bucket dell'archivio di oggetti definiti dall'utente.
+
+Non è necessario un bucket in Astra Control se si esegue il cloning della configurazione dell'applicazione e dello storage persistente sullo stesso cluster. La funzionalità di snapshot delle applicazioni non richiede un bucket.
+
+.Prima di iniziare
+* Assicurati di avere un bucket raggiungibile dai cluster gestiti da Astra Control Center.
+* Assicurarsi di disporre delle credenziali per il bucket.
+* Assicurarsi che la benna sia di uno dei seguenti tipi:
++
+** NetApp ONTAP S3
+** NetApp StorageGRID S3
+** Microsoft Azure
+** Generico S3
+
+
+
+
+
+NOTE: Amazon Web Services (AWS) e Google Cloud Platform (GCP) utilizzano il tipo di bucket S3 generico.
+
+
+NOTE: Sebbene Astra Control Center supporti Amazon S3 come provider di bucket S3 generico, Astra Control Center potrebbe non supportare tutti i vendor di archivi di oggetti che rivendicano il supporto S3 di Amazon.
+
+.Fasi
+. Nell'area di navigazione a sinistra, selezionare *Bucket*.
+. Selezionare *Aggiungi*.
+. Selezionare il tipo di bucket.
++
+
+NOTE: Quando si aggiunge un bucket, selezionare il bucket provider corretto e fornire le credenziali corrette per tale provider. Ad esempio, l'interfaccia utente accetta come tipo NetApp ONTAP S3 e accetta le credenziali StorageGRID; tuttavia, questo causerà l'errore di tutti i backup e ripristini futuri dell'applicazione che utilizzano questo bucket.
+
+. Inserire un nome bucket esistente e una descrizione opzionale.
++
+
+TIP: Il nome e la descrizione del bucket vengono visualizzati come una posizione di backup che è possibile scegliere in seguito quando si crea un backup. Il nome viene visualizzato anche durante la configurazione del criterio di protezione.
+
+. Inserire il nome o l'indirizzo IP dell'endpoint S3.
+. In *Seleziona credenziali*, selezionare la scheda *Aggiungi* o *Usa esistente*.
++
+** Se si sceglie *Aggiungi*:
++
+... Immettere un nome per la credenziale che la distingue dalle altre credenziali in Astra Control.
+... Inserire l'ID di accesso e la chiave segreta incollando il contenuto dagli Appunti.
+
+
+** Se si sceglie *Usa esistente*:
++
+... Selezionare le credenziali esistenti che si desidera utilizzare con il bucket.
+
+
+
+
+. Selezionare `Add`.
++
+
+NOTE: Quando si aggiunge un bucket, Astra Control contrassegna un bucket con l'indicatore bucket predefinito. Il primo bucket creato diventa quello predefinito. Con l'aggiunta di bucket, è possibile decidere in un secondo momento link:../use/manage-buckets.html#set-the-default-bucket["impostare un altro bucket predefinito"].
+
+

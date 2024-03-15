@@ -17,7 +17,7 @@ NetApp fornisce supporto per Astra Control in diversi modi. Sono disponibili num
 
 IMPORTANT: Se si dispone di una licenza di valutazione per Astra Control Center, è possibile ottenere supporto tecnico. Tuttavia, la creazione del caso tramite il NetApp Support Site (NSS) non è disponibile. Puoi contattare il supporto tramite l'opzione di feedback o utilizzare il canale di discordia per il self-service.
 
-Devi prima link:../get-started/setup_overview.html["Attivare il supporto per il numero di serie NetApp"] per utilizzare queste opzioni di supporto non self-service. È necessario un account SSO NetApp Support Site (NSS) per la chat e il web ticketing insieme alla gestione del caso.
+Devi prima link:../get-started/add-license.html["Attivare il supporto per il numero di serie NetApp"] per utilizzare queste opzioni di supporto non self-service. È necessario un account SSO NetApp Support Site (NSS) per la chat e il web ticketing insieme alla gestione del caso.
 
 
 

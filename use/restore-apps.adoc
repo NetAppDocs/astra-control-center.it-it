@@ -41,6 +41,14 @@ Astra Control può ripristinare l'applicazione da uno snapshot o da un backup. I
 L'esecuzione di un'operazione di ripristino in-place su un'applicazione che condivida le risorse con un'altra applicazione può avere risultati non intenzionale. Tutte le risorse condivise tra le applicazioni vengono sostituite quando viene eseguito un ripristino in-place su una delle applicazioni. Per ulteriori informazioni, vedere <<Problemi di ripristino in-place per un'applicazione che condivide le risorse con un'altra applicazione,questo esempio>>.
 
 ====
+A seconda del tipo di archivio che si desidera ripristinare, effettuare le seguenti operazioni:
+
+
+
+== Ripristinare i dati dal backup o dallo snapshot utilizzando l'interfaccia utente Web
+
+Puoi ripristinare i dati utilizzando l'interfaccia utente web di Astra Control.
+
 .Fasi
 . Selezionare *applicazioni*, quindi selezionare il nome di un'applicazione.
 . Dal menu Opzioni nella colonna azioni, selezionare *Ripristina*.
@@ -102,6 +110,303 @@ NOTE: Per ulteriori informazioni sulla configurazione delle regole di inclusione
 . Esaminare attentamente i dettagli relativi all'azione di ripristino, digitare "restore" (se richiesto) e selezionare *Restore*.
 
 
+
+
+== [Tech preview] Ripristino da backup utilizzando una risorsa personalizzata (CR)
+
+È possibile ripristinare i dati da un backup utilizzando un file di risorse personalizzato (CR) in uno spazio dei nomi diverso o nello spazio dei nomi di origine originale.
+
+[role="tabbed-block"]
+====
+.Ripristino da backup utilizzando una CR
+--
+.Fasi
+. Creare il file di risorse personalizzate (CR) e assegnargli un nome `astra-control-backup-restore-cr.yaml`. Aggiorna i valori tra parentesi <> per farli corrispondere all'ambiente Astra Control e alla configurazione del cluster:
++
+** <CR_NAME>: Il nome di questa operazione CR; scegliere un nome sensibile per il proprio ambiente.
+** <ASTRA_CONNECTOR_NAMESPACE>: Lo spazio dei nomi in cui è installato Astra Connector.
+** <APPVAULT_NAME>: Il nome dell'AppVault in cui sono memorizzati i contenuti di backup.
+** <BACKUP_PATH>: Il percorso all'interno di AppVault in cui sono memorizzati i contenuti di backup. Ad esempio:
++
+[listing]
+----
+minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+** <SOURCE_NAMESPACE>: Lo spazio dei nomi di origine dell'operazione di ripristino.
+** <DESTINATION_NAMESPACE>: Lo spazio dei nomi di destinazione dell'operazione di ripristino.
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupRestore
+metadata:
+  labels:
+  name: <CR_NAME>
+  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "target": "<DESTINATION_NAMESPACE>"}]
+----
+
+
+. (Facoltativo) se è necessario selezionare solo alcune risorse dell'applicazione da ripristinare, aggiungere un filtro che includa o escluda risorse contrassegnate con determinate etichette:
++
+** "<INCLUDE-EXCLUDE>": _(richiesto per il filtraggio)_ `include` oppure `exclude` Per includere o escludere una risorsa definita in resourceMatchers. Aggiungere i seguenti parametri resourceMatcher per definire le risorse da includere o escludere:
++
+*** <GROUP>: _(facoltativo)_ Gruppo della risorsa da filtrare.
+*** <KIND>: _(opzionale)_ tipo di risorsa da filtrare.
+*** <VERSION>: _(opzionale)_ versione della risorsa da filtrare.
+*** <NAMES>: _(opzionale)_ nomi nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <NAMESPACES>: _(opzionale)_ Namespaces nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <SELECTORS>: _(opzionale)_ stringa di selezione etichetta nel campo Kubernetes metadata.name della risorsa, come definito nella https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Documentazione Kubernetes"^]. Esempio: `"trident.netapp.io/os=linux"`.
++
+Esempio:
+
++
+[source, yaml]
+----
+spec:
+    resourceFilter:
+        resourceSelectionCriteria: "<INCLUDE-EXCLUDE>"
+        resourceMatchers:
+           group: <GROUP>
+           kind: <KIND>
+           version: <VERSION>
+           names: <NAMES>
+           namespaces: <NAMESPACES>
+           labelSelectors: <SELECTORS>
+----
+
+
+
+
+. Dopo aver popolato il `astra-control-backup-restore-cr.yaml` File con i valori corretti, applicare il CR:
++
+[source, console]
+----
+kubectl apply -f astra-control-backup-restore-cr.yaml
+----
+
+
+--
+.Eseguire il ripristino dal backup allo spazio dei nomi originale utilizzando una CR
+--
+.Fasi
+. Creare il file di risorse personalizzate (CR) e assegnargli un nome `astra-control-backup-ipr-cr.yaml`. Aggiorna i valori tra parentesi <> per farli corrispondere all'ambiente Astra Control e alla configurazione del cluster:
++
+** <CR_NAME>: Il nome di questa operazione CR; scegliere un nome sensibile per il proprio ambiente.
+** <ASTRA_CONNECTOR_NAMESPACE>: Lo spazio dei nomi in cui è installato Astra Connector. Questo dovrebbe essere lo spazio dei nomi in cui è stato creato il backup.
+** <APPVAULT_NAME>: Il nome dell'AppVault in cui sono memorizzati i contenuti di backup.
+** <BACKUP_PATH>: Il percorso all'interno di AppVault in cui sono memorizzati i contenuti di backup. Ad esempio:
++
+[listing]
+----
+minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH>
+----
+
+
+. (Facoltativo) se è necessario selezionare solo alcune risorse dell'applicazione da ripristinare, aggiungere un filtro che includa o escluda risorse contrassegnate con determinate etichette:
++
+** "<INCLUDE-EXCLUDE>": _(richiesto per il filtraggio)_ `include` oppure `exclude` Per includere o escludere una risorsa definita in resourceMatchers. Aggiungere i seguenti parametri resourceMatcher per definire le risorse da includere o escludere:
++
+*** <GROUP>: _(facoltativo)_ Gruppo della risorsa da filtrare.
+*** <KIND>: _(opzionale)_ tipo di risorsa da filtrare.
+*** <VERSION>: _(opzionale)_ versione della risorsa da filtrare.
+*** <NAMES>: _(opzionale)_ nomi nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <NAMESPACES>: _(opzionale)_ Namespaces nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <SELECTORS>: _(opzionale)_ stringa di selezione etichetta nel campo Kubernetes metadata.name della risorsa, come definito nella https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Documentazione Kubernetes"^]. Esempio: `"trident.netapp.io/os=linux"`.
++
+Esempio:
+
++
+[source, yaml]
+----
+spec:
+    resourceFilter:
+        resourceSelectionCriteria: "<INCLUDE-EXCLUDE>"
+        resourceMatchers:
+           group: <GROUP>
+           kind: <KIND>
+           version: <VERSION>
+           names: <NAMES>
+           namespaces: <NAMESPACES>
+           labelSelectors: <SELECTORS>
+----
+
+
+
+
+. Dopo aver popolato il `astra-control-backup-ipr-cr.yaml` File con i valori corretti, applicare il CR:
++
+[source, console]
+----
+kubectl apply -f astra-control-backup-ipr-cr.yaml
+----
+
+
+--
+====
+
+
+== [Anteprima tecnica] Ripristino da snapshot utilizzando una risorsa personalizzata (CR)
+
+È possibile ripristinare i dati da uno snapshot utilizzando un file di risorse personalizzato (CR) in uno spazio dei nomi diverso o nello spazio dei nomi di origine originale.
+
+[role="tabbed-block"]
+====
+.Eseguire il ripristino da uno snapshot utilizzando una CR
+--
+.Fasi
+. Creare il file di risorse personalizzate (CR) e assegnargli un nome `astra-control-snapshot-restore-cr.yaml`. Aggiorna i valori tra parentesi <> per farli corrispondere all'ambiente Astra Control e alla configurazione del cluster:
++
+** <CR_NAME>: Il nome di questa operazione CR; scegliere un nome sensibile per il proprio ambiente.
+** <ASTRA_CONNECTOR_NAMESPACE>: Lo spazio dei nomi in cui è installato Astra Connector.
+** <APPVAULT_NAME>: Il nome dell'AppVault in cui sono memorizzati i contenuti di backup.
+** <BACKUP_PATH>: Il percorso all'interno di AppVault in cui sono memorizzati i contenuti di backup. Ad esempio:
++
+[listing]
+----
+minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+** <SOURCE_NAMESPACE>: Lo spazio dei nomi di origine dell'operazione di ripristino.
+** <DESTINATION_NAMESPACE>: Lo spazio dei nomi di destinazione dell'operazione di ripristino.
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotRestore
+metadata:
+  name: <CR_NAME>
+  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}]
+----
+
+
+. (Facoltativo) se è necessario selezionare solo alcune risorse dell'applicazione da ripristinare, aggiungere un filtro che includa o escluda risorse contrassegnate con determinate etichette:
++
+** "<INCLUDE-EXCLUDE>": _(richiesto per il filtraggio)_ `include` oppure `exclude` Per includere o escludere una risorsa definita in resourceMatchers. Aggiungere i seguenti parametri resourceMatcher per definire le risorse da includere o escludere:
++
+*** <GROUP>: _(facoltativo)_ Gruppo della risorsa da filtrare.
+*** <KIND>: _(opzionale)_ tipo di risorsa da filtrare.
+*** <VERSION>: _(opzionale)_ versione della risorsa da filtrare.
+*** <NAMES>: _(opzionale)_ nomi nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <NAMESPACES>: _(opzionale)_ Namespaces nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <SELECTORS>: _(opzionale)_ stringa di selezione etichetta nel campo Kubernetes metadata.name della risorsa, come definito nella https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Documentazione Kubernetes"^]. Esempio: `"trident.netapp.io/os=linux"`.
++
+Esempio:
+
++
+[source, yaml]
+----
+spec:
+    resourceFilter:
+        resourceSelectionCriteria: "<INCLUDE-EXCLUDE>"
+        resourceMatchers:
+           group: <GROUP>
+           kind: <KIND>
+           version: <VERSION>
+           names: <NAMES>
+           namespaces: <NAMESPACES>
+           labelSelectors: <SELECTORS>
+----
+
+
+
+
+. Dopo aver popolato il `astra-control-snapshot-restore-cr.yaml` File con i valori corretti, applicare il CR:
++
+[source, console]
+----
+kubectl apply -f astra-control-snapshot-restore-cr.yaml
+----
+
+
+--
+.Eseguire il ripristino dallo snapshot allo spazio dei nomi originale utilizzando una CR
+--
+.Fasi
+. Creare il file di risorse personalizzate (CR) e assegnargli un nome `astra-control-snapshot-ipr-cr.yaml`. Aggiorna i valori tra parentesi <> per farli corrispondere all'ambiente Astra Control e alla configurazione del cluster:
++
+** <CR_NAME>: Il nome di questa operazione CR; scegliere un nome sensibile per il proprio ambiente.
+** <ASTRA_CONNECTOR_NAMESPACE>: Lo spazio dei nomi in cui è installato Astra Connector. Questo dovrebbe essere lo spazio dei nomi in cui è stato creato lo snapshot.
+** <APPVAULT_NAME>: Il nome dell'AppVault in cui sono memorizzati i contenuti di backup.
+** <BACKUP_PATH>: Il percorso all'interno di AppVault in cui sono memorizzati i contenuti di backup. Ad esempio:
++
+[listing]
+----
+minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME>
+----
+
+
+. (Facoltativo) se è necessario selezionare solo alcune risorse dell'applicazione da ripristinare, aggiungere un filtro che includa o escluda risorse contrassegnate con determinate etichette:
++
+** "<INCLUDE-EXCLUDE>": _(richiesto per il filtraggio)_ `include` oppure `exclude` Per includere o escludere una risorsa definita in resourceMatchers. Aggiungere i seguenti parametri resourceMatcher per definire le risorse da includere o escludere:
++
+*** <GROUP>: _(facoltativo)_ Gruppo della risorsa da filtrare.
+*** <KIND>: _(opzionale)_ tipo di risorsa da filtrare.
+*** <VERSION>: _(opzionale)_ versione della risorsa da filtrare.
+*** <NAMES>: _(opzionale)_ nomi nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <NAMESPACES>: _(opzionale)_ Namespaces nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <SELECTORS>: _(opzionale)_ stringa di selezione etichetta nel campo Kubernetes metadata.name della risorsa, come definito nella https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Documentazione Kubernetes"^]. Esempio: `"trident.netapp.io/os=linux"`.
++
+Esempio:
+
++
+[source, yaml]
+----
+spec:
+    resourceFilter:
+        resourceSelectionCriteria: "<INCLUDE-EXCLUDE>"
+        resourceMatchers:
+           group: <GROUP>
+           kind: <KIND>
+           version: <VERSION>
+           names: <NAMES>
+           namespaces: <NAMESPACES>
+           labelSelectors: <SELECTORS>
+----
+
+
+
+
+. Dopo aver popolato il `astra-control-snapshot-ipr-cr.yaml` File con i valori corretti, applicare il CR:
++
+[source, console]
+----
+kubectl apply -f astra-control-snapshot-ipr-cr.yaml
+----
+
+
+--
+====
 .Risultato
 Astra Control ripristina l'applicazione in base alle informazioni fornite. Se hai ripristinato l'applicazione in-place, il contenuto dei volumi persistenti esistenti viene sostituito con il contenuto dei volumi persistenti dell'applicazione ripristinata.
 

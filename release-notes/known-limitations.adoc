@@ -22,6 +22,7 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni non support
 .Limitazioni RBAC (Role-Based Access Control)
 * <<Un utente con vincoli RBAC dello spazio dei nomi può aggiungere e annullare la gestione di un cluster>>
 * <<Un membro con vincoli dello spazio dei nomi non può accedere alle applicazioni clonate o ripristinate fino a quando admin non aggiunge lo spazio dei nomi al vincolo>>
+* <<I vincoli di ruolo restrittivi possono essere ignorati per le risorse su cluster non di connettori>>
 
 
 .Limitazioni della gestione delle applicazioni
@@ -107,6 +108,14 @@ Qualsiasi `member` Gli utenti con vincoli RBAC in base al nome/ID dello spazio d
 
 
 
+== I vincoli di ruolo restrittivi possono essere ignorati per le risorse su cluster non di connettori
+
+* *Se le risorse a cui si accede appartengono ai cluster in cui è installato l'ultimo connettore Astra*: Quando a un utente vengono assegnati più ruoli tramite l'appartenenza al gruppo LDAP, i vincoli dei ruoli vengono combinati. Ad esempio, se un utente con un ruolo Visualizzatore locale unisce tre gruppi associati al ruolo membro, l'utente dispone ora dell'accesso al ruolo Visualizzatore alle risorse originali e dell'accesso al ruolo membro alle risorse acquisite tramite l'appartenenza al gruppo.
+* *Se le risorse a cui si accede appartengono ai cluster che non hanno Astra Connector installato*: Quando a un utente vengono assegnati più ruoli tramite l'appartenenza al gruppo LDAP, i vincoli del ruolo più permissivo sono gli unici che hanno effetto.
+
+
+
+
 == Non è possibile ripristinare collettivamente più applicazioni in un singolo namespace in un namespace diverso
 
 Se si gestiscono più applicazioni in un singolo namespace (creando più definizioni di applicazioni in Astra Control), non è possibile ripristinare tutte le applicazioni in un singolo namespace diverso. È necessario ripristinare ogni applicazione nel proprio spazio dei nomi separato.
@@ -171,7 +180,7 @@ Per risolvere il problema, eseguire le seguenti operazioni quando si aggiornano 
 
 . Rimuovere tutti gli Snapshot CRD esistenti e tutti gli snapshot controller esistenti.
 . https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Disinstallare Astra Trident"^].
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installare gli snapshot CRD e lo snapshot controller"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["Installare gli snapshot CRD e lo snapshot controller"^].
 . https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Installare la versione più recente di Astra Trident"^].
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["Creare una classe VolumeSnapshotClass"^].
 
@@ -212,7 +221,7 @@ Quando si eseguono operazioni su POD Postgres, non si dovrebbe connettersi diret
 
 == La pagina Activity (attività) visualizza fino a 100000 eventi
 
-La pagina Astra Control Activity (attività di controllo Astra) può visualizzare fino a 100,000 eventi. Per visualizzare tutti gli eventi registrati, recuperare gli eventi utilizzando link:../rest-api/api-intro.html["API di controllo Astra"^].
+La pagina Astra Control Activity (attività di controllo Astra) può visualizzare fino a 100,000 eventi. Per visualizzare tutti gli eventi registrati, recuperare gli eventi utilizzando https://docs.netapp.com/us-en/astra-automation/index.html["API di controllo Astra"^].
 
 
 

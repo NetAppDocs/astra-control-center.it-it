@@ -1,0 +1,36 @@
+= 
+:allow-uri-read: 
+
+
+. (Facoltativo) se è necessario selezionare solo alcune risorse dell'applicazione da ripristinare, aggiungere un filtro che includa o escluda risorse contrassegnate con determinate etichette:
++
+** "<INCLUDE-EXCLUDE>": _(richiesto per il filtraggio)_ `include` oppure `exclude` Per includere o escludere una risorsa definita in resourceMatchers. Aggiungere i seguenti parametri resourceMatcher per definire le risorse da includere o escludere:
++
+*** <GROUP>: _(facoltativo)_ Gruppo della risorsa da filtrare.
+*** <KIND>: _(opzionale)_ tipo di risorsa da filtrare.
+*** <VERSION>: _(opzionale)_ versione della risorsa da filtrare.
+*** <NAMES>: _(opzionale)_ nomi nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <NAMESPACES>: _(opzionale)_ Namespaces nel campo Kubernetes metadata.name della risorsa da filtrare.
+*** <SELECTORS>: _(opzionale)_ stringa di selezione etichetta nel campo Kubernetes metadata.name della risorsa, come definito nella https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Documentazione Kubernetes"^]. Esempio: `"trident.netapp.io/os=linux"`.
++
+Esempio:
+
++
+[source, yaml]
+----
+spec:
+    resourceFilter:
+        resourceSelectionCriteria: "<INCLUDE-EXCLUDE>"
+        resourceMatchers:
+           group: <GROUP>
+           kind: <KIND>
+           version: <VERSION>
+           names: <NAMES>
+           namespaces: <NAMESPACES>
+           labelSelectors: <SELECTORS>
+----
+
+
+
+
+

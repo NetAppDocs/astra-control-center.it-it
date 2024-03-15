@@ -17,8 +17,8 @@ Potrebbe essere necessario rimuovere i componenti di Astra Control Center se si 
 In caso di problemi con la disinstallazione, vedere <<Risoluzione dei problemi di disinstallazione>>.
 
 .Prima di iniziare
-. link:../use/unmanage.html#unmanage-an-app["Annulla gestione di tutte le applicazioni"^] sui cluster.
-. link:../use/unmanage.html#unmanage-a-cluster["Annulla gestione di tutti i cluster"^].
+. link:../use/unmanage.html#unmanage-an-app["Annulla gestione di tutte le applicazioni"] sui cluster.
+. link:../use/unmanage.html#unmanage-a-cluster["Annulla gestione di tutti i cluster"].
 
 
 .Fasi

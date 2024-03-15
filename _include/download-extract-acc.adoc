@@ -6,43 +6,45 @@
 
 == Scarica ed estrai Astra Control Center
 
-Puoi scegliere di scaricare il bundle Astra Control Center dal sito di supporto di NetApp o utilizzare Docker per estrarre il bundle dal registro delle immagini di Astra Control Service.
+Scarica le immagini di Astra Control Center da una delle seguenti posizioni:
+
+* *Registro di sistema dell'immagine del servizio di controllo Astra*: Utilizzare questa opzione se non si utilizza un registro locale con le immagini del centro di controllo Astra o se si preferisce questo metodo per il download del pacchetto dal sito di supporto NetApp.
+* *Sito di supporto NetApp*: Utilizzare questa opzione se si utilizza un registro locale con le immagini del Centro di controllo Astra.
+
 
 [role="tabbed-block"]
 ====
+.Registro delle immagini di Astra Control
+--
+. Effettua l'accesso ad Astra Control Service.
+. Nella Dashboard, selezionare *distribuire un'istanza autogestita di Astra Control*.
+. Seguire le istruzioni per accedere al registro delle immagini di Astra Control, estrarre l'immagine di installazione di Astra Control Center ed estrarre l'immagine.
+
+
+--
 .Sito di supporto NetApp
 --
 . Scarica il bundle contenente Astra Control Center (`astra-control-center-[version].tar.gz`) da https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Pagina di download di Astra Control Center"^].
 . (Consigliato ma opzionale) Scarica il bundle di certificati e firme per Astra Control Center (`astra-control-center-certs-[version].tar.gz`) per verificare la firma del bundle.
 +
-.Espandere per i dettagli
-[%collapsible]
-=====
 [source, console]
 ----
 tar -vxzf astra-control-center-certs-[version].tar.gz
 ----
++
 [source, console]
 ----
 openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
++
 Viene visualizzato l'output `Verified OK` una volta completata la verifica.
 
-=====
 . Estrarre le immagini dal bundle Astra Control Center:
 +
 [source, console]
 ----
 tar -vxzf astra-control-center-[version].tar.gz
 ----
-
-
---
-.Registro delle immagini di Astra Control
---
-. Effettua l'accesso ad Astra Control Service.
-. Nella Dashboard, selezionare *distribuire un'istanza autogestita di Astra Control*.
-. Seguire le istruzioni per accedere al registro delle immagini di Astra Control, estrarre l'immagine di installazione di Astra Control Center ed estrarre l'immagine.
 
 
 --

@@ -17,13 +17,13 @@ Quando si implementa Astra Control Center, viene installato con una licenza di v
 Si ottiene una licenza in uno dei seguenti modi:
 
 * Se stai valutando Astra Control Center e hai bisogno di termini di valutazione diversi da quelli inclusi nella licenza di valutazione integrata, contatta NetApp per richiedere un file di licenza di valutazione diverso.
-* link:https://mysupport.netapp.com/site/["Se hai già acquistato Astra Control Center, genera il file di licenza NetApp (NLF)"^] Accedendo al NetApp Support Site e accedendo alle licenze software nel menu Systems.
+* https://mysupport.netapp.com/site/["Se hai già acquistato Astra Control Center, genera il file di licenza NetApp (NLF)"^] Accedendo al NetApp Support Site e accedendo alle licenze software nel menu Systems.
 
 
 Per ulteriori informazioni sulle licenze necessarie per i backend di storage ONTAP, fare riferimento a. link:../get-started/requirements.html["backend di storage supportati"].
 
 
-NOTE: Assicurarsi che la licenza consenta di utilizzare almeno tutte le unità CPU necessarie. Se il numero di unità CPU attualmente gestite da Astra Control Center supera le unità CPU disponibili nella nuova licenza applicata, non sarà possibile applicare la nuova licenza.
+NOTE: Assicurarsi che la licenza consenta di utilizzare almeno tutte le unità CPU necessarie. Se il numero di unità CPU gestite da Astra Control Center supera le unità CPU disponibili nella nuova licenza applicata, non sarà possibile applicare la nuova licenza.
 
 
 
@@ -60,6 +60,6 @@ NOTE: I nodi dell'infrastruttura Red Hat OpenShift non consumano licenze in Astr
 
 == Trova ulteriori informazioni
 
-* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["Aggiungere una licenza quando si imposta Astra Control Center per la prima volta"]
+* link:../get-started/add-license.html["Aggiungere una licenza quando si imposta Astra Control Center per la prima volta"]
 * link:../use/update-licenses.html["Aggiornare una licenza esistente"]
 

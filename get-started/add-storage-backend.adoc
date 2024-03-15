@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-storage-backend.html 
+keywords: set up astra control, astra control license, add cluster, add storage backend, import storage, add bucket 
+summary: 'Dopo aver attivato l"autenticazione backend dello storage, è necessario selezionare un backend dello storage da gestire.' 
+---
+= Aggiungere un backend di storage
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Dopo aver impostato le credenziali o le informazioni di autenticazione del certificato, è possibile aggiungere un backend di storage ONTAP esistente a Astra Control Center per gestire le risorse.
+
+La gestione dei cluster di storage in Astra Control come back-end dello storage consente di ottenere collegamenti tra volumi persistenti (PVS) e il back-end dello storage, oltre a metriche di storage aggiuntive.
+
+L'aggiunta e la gestione dei backend di storage ONTAP in Astra Control Center sono opzionali quando si utilizza la tecnologia NetApp SnapMirror, se hai abilitato Astra Control Provivisioner.
+
+.Fasi
+. Dal pannello di controllo nell'area di navigazione a sinistra, selezionare *Backend*.
+. Selezionare *Aggiungi*.
+. Nella sezione Use existing della pagina Add storage backend, selezionare *ONTAP*.
+. Selezionare una delle seguenti opzioni:
++
+** *Usa credenziali amministratore*: Inserire l'indirizzo IP di gestione del cluster ONTAP e le credenziali di amministratore. Le credenziali devono essere credenziali a livello di cluster.
++
+
+NOTE: L'utente di cui si inseriscono le credenziali deve disporre di `ontapi` Metodo di accesso all'accesso dell'utente abilitato in Gestione di sistema di ONTAP sul cluster ONTAP. Se si intende utilizzare la replica SnapMirror, applicare le credenziali utente con il ruolo "admin", che dispone dei metodi di accesso `ontapi` e. `http`, Sui cluster ONTAP di origine e di destinazione. Fare riferimento a. https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["Gestire gli account utente nella documentazione di ONTAP"^] per ulteriori informazioni.
+
+** *Usa un certificato*: Carica il certificato `.pem` file, la chiave del certificato `.key` e, facoltativamente, il file dell'autorità di certificazione.
+
+
+. Selezionare *Avanti*.
+. Confermare i dettagli del back-end e selezionare *Manage* (Gestisci).
+
+
+.Risultato
+Il backend viene visualizzato in `online` indicare nell'elenco le informazioni di riepilogo.
+
+
+NOTE: Potrebbe essere necessario aggiornare la pagina per visualizzare il backend.

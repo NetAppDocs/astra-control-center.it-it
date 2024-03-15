@@ -74,9 +74,13 @@ NOTE: Il ruolo selezionato viene assegnato a tutti gli utenti di questo gruppo. 
 
 . Facoltativamente, assegnare uno o più vincoli dello spazio dei nomi a questo gruppo e selezionare *limita ruolo ai vincoli* per applicarli. È possibile aggiungere un nuovo vincolo dello spazio dei nomi selezionando *Aggiungi vincolo*.
 +
+[NOTE]
+====
+** *Se le risorse a cui si accede appartengono ai cluster in cui è installato l'ultimo connettore Astra*: Quando a un utente vengono assegnati più ruoli tramite l'appartenenza al gruppo LDAP, i vincoli dei ruoli vengono combinati. Ad esempio, se un utente con un ruolo Visualizzatore locale unisce tre gruppi associati al ruolo membro, l'utente dispone ora dell'accesso al ruolo Visualizzatore alle risorse originali e dell'accesso al ruolo membro alle risorse acquisite tramite l'appartenenza al gruppo.
+** *Se le risorse a cui si accede appartengono ai cluster che non hanno Astra Connector installato*: Quando a un utente vengono assegnati più ruoli tramite l'appartenenza al gruppo LDAP, i vincoli del ruolo più permissivo sono gli unici che hanno effetto.
 
-NOTE: Quando a un utente vengono assegnati ruoli multipli tramite l'appartenenza al gruppo LDAP, i limiti nel ruolo più permissivo sono gli unici che hanno effetto. Ad esempio, se un utente con un ruolo Viewer locale unisce tre gruppi associati al ruolo Member, la somma dei vincoli dei ruoli Member ha effetto e tutti i vincoli del ruolo Viewer vengono ignorati.
 
+====
 . Selezionare *Aggiungi*.
 
 

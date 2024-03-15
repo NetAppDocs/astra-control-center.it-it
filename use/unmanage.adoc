@@ -50,7 +50,7 @@ NOTE: Prima di annullare la gestione del cluster, è necessario annullare la ges
 Quando si annulla la gestione di un cluster:
 
 * Questa azione impedisce la gestione del cluster da parte di Astra Control Center. Non apporta modifiche alla configurazione del cluster e non elimina il cluster.
-* Astra Trident non verrà disinstallato dal cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Scopri come disinstallare Astra Trident"^].
+* Astra Control Provivisioner o Astra Trident non verranno disinstallati dal cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Scopri come disinstallare Astra Trident"^].
 
 
 .Fasi
@@ -64,4 +64,4 @@ Quando si annulla la gestione di un cluster:
 Lo stato del cluster cambia in *Removing* (Rimozione). In seguito, il cluster verrà rimosso dalla pagina *Clusters* e non sarà più gestito da Astra Control Center.
 
 
-IMPORTANT: *Se il centro di controllo Astra e Cloud Insights non sono connessi*, la disinstallazione del cluster rimuove tutte le risorse installate per l'invio dei dati di telemetria. *Se il centro di controllo Astra e Cloud Insights sono connessi*, la mancata gestione del cluster elimina solo il `fluentbit` e. `event-exporter` pod.
+IMPORTANT: La revoca della gestione del cluster rimuove tutte le risorse installate per l'invio di dati telemetrici.
