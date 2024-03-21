@@ -800,12 +800,10 @@
   <block id="396cd1df886b31da3577b40fa6f7cf0f" category="list-text">Completare una delle seguenti procedure per accedere alla pagina di installazione dell'operatore:</block>
   <block id="1b37bd82bf53c89bcedcfc65519416b2" category="list-text">Accedere all'interfaccia utente di OpenShift Container Platform.</block>
   <block id="d23202f3a841766e7b5d6b37777fc6c3" category="list-text">Dal menu laterale, selezionare *Operator (operatori) &gt; OperatorHub*.</block>
-  <block id="eb5ffd4ef5a8aa98e9c36b2c79cea4ed" category="list-text">Cercare e selezionare l'operatore di NetApp Astra Control Center.</block>
   <block id="ad33954d9b6a97c5e3d83a747222ea5c" category="inline-image-macro">Questa immagine mostra la pagina di installazione di Astra Control Center dall'interfaccia utente di OpenShift Container Platform</block>
   <block id="c1461863db43079243c4c84fb794292c" category="paragraph"><block ref="c1461863db43079243c4c84fb794292c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4b583376b2767b923c3e1da60d10de59" category="inline-link">operatore</block>
   <block id="91ec9a89e3a33fa6bc118cf53ef60c2e" category="list-text">Selezionare NetApp Astra Control Center<block ref="e9d5520af4877fc40e9611f3ebf55be3" category="inline-link-rx"></block>.</block>
-  <block id="13191ff715c85f59fd2da330d31c4e9f" category="list-text">Selezionare *Deploy and Use* (implementazione e utilizzo).</block>
   <block id="ae94e6397160111c3d2cf22d9a8ca3ec" category="inline-image-macro">Questa immagine mostra la pagina panoramica di Astra Control Center disponibile nel catalogo RedHat Ecosystem</block>
   <block id="a4503954adc0dc79a485e6b85ec3e042" category="paragraph"><block ref="a4503954adc0dc79a485e6b85ec3e042" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a961f7d3b56fe3f9b072af70813d6f82" category="section-title">Installare l'operatore</block>
@@ -2679,7 +2677,6 @@ Dopo che ogni backend è stato sottoposto a peering e aggiunto ad Astra Control,
   <block id="0f31c8d4b3ae834c0062c8056c4cb5b7" category="inline-link">Attivare Strict MTLS</block>
   <block id="4c6c19221d15e9ceaf813bb76e0266f7" category="list-text">(Consigliato)<block ref="bf40c5ba89ffee197f368678037a1b36" category="inline-link-rx"></block> Per la mesh di servizio Istio:</block>
   <block id="842bb2b25b0ccc10b1fb3de7084fc991" category="list-text">*Assicurare operatori di cluster e servizi API sani*:</block>
-  <block id="c2f6a0ef27a00211c21a249f0a3b79d5" category="list-text">*Ottieni autorizzazioni OpenShift*: Avrai bisogno di tutte le autorizzazioni necessarie e dell'accesso a Red Hat OpenShift Container Platform per eseguire i passaggi di installazione descritti.</block>
   <block id="1e49b9057d379a0d559e616836652580" category="list-text">Aggiungere un<block ref="c0261c4509dcb52c25794852cf3367a6" prefix=" " category="inline-code"></block> Etichetta nel namespace Astra prima di implementare Astra Control Center.</block>
   <block id="4cc3351439de416fee936093cb5a065a" category="list-text">Per i cluster Red Hat OpenShift, è necessario definire<block ref="d4ee387f8cc8e4354b61e452ecbf6a15" prefix=" " category="inline-code"></block> Su tutti i namespace Astra Control Center associati <block ref="cadbba5231afda9b003503d57805b87d" prefix="(" category="inline-code"></block>,<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block>,<block ref="aadb900c6eaeed8ade58660fe972acec" prefix=" " category="inline-code"></block> per i cluster di applicazioni o qualsiasi namespace personalizzato che sia stato sostituito).</block>
   <block id="22851966368f7a8e3c0bf121d7203ca1" category="list-text">[[generic-inection]]selezionare il tipo di ingresso:</block>
@@ -3609,4 +3606,43 @@ Astra Control provisioner viene installato automaticamente nell'ambito del proce
   <block id="da65a49714e715e3103c6d4e4765ad79" category="section-title">15 marzo 2024 (24.02.0)</block>
   <block id="3e10c4dd91af2dc1835b50343bc5fbd0" category="list-text">Immagini in uno o più registri</block>
   <block id="03af53c262f33cd7a040764e24c068eb" category="list-text">(Solo per i cluster OpenShift) aggiungere quanto segue alla fine di<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block> file:</block>
+  <block id="652aa122a3c8a61f53fecfe7a2e38472" category="summary">Utilizzando Red Hat OpenShift, è possibile aggiornare Astra Control Center utilizzando OperatorHub.</block>
+  <block id="d1810a7b7ece844661c0ebd3f6d6b734" category="doc">Aggiornare Astra Control Center utilizzando OpenShift OperatorHub</block>
+  <block id="d65f6afdd601abb375246f62e4d974af" category="paragraph">Se Astra Control Center è stato installato utilizzando il proprio operatore certificato Red Hat, è possibile aggiornare Astra Control Center utilizzando un operatore aggiornato da OperatorHub. Utilizzare questa procedura per aggiornare Astra Control Center da<block ref="a0bebb9db4c42678b95afc86229a893d" category="inline-link-rx"></block> Oppure utilizzando Red Hat OpenShift Container Platform.</block>
+  <block id="dba0214a5ff4087709345c59f18d5ecc" category="list-text">*Soddisfare i prerequisiti ambientali*: Prima di eseguire l'aggiornamento, assicurarsi che l'ambiente soddisfi ancora la <block ref="a5e730f4eb1e05ab5d051c5fbaad1711" category="inline-link-macro-rx"></block>.</block>
+  <block id="ee69e430ad6ce53b164d990d32171363" category="list-text">*Assicurarsi di aver attivato <block ref="253c06b63fbdc34e8258634f6035573c" category="inline-link-macro-rx"></block> Con Astra Trident in esecuzione*</block>
+  <block id="9e7dceeac2c1b47a8a65fc5301cfbc97" category="list-text">*OpenShift Permissions*: Avete tutti i permessi necessari e l'accesso alla piattaforma contenitore di Red Hat OpenShift per eseguire i passaggi di aggiornamento descritti.</block>
+  <block id="14d39dcccbea7ad3c78e42b59aea8467" category="list-text"><block ref="ddb3eae04adcef55bc274001e6992ab5" category="inline-xref-macro-rx"></block></block>
+  <block id="7eb5c0427d3e2c95f7a7d55cb263dcad" category="list-text"><block ref="132acb99c1ed8179266ddab65ea75c5b" category="inline-xref-macro-rx"></block></block>
+  <block id="bcbf9322019433e2070bc9f950cdfaf9" category="list-text"><block ref="0ef2d18cbf3f0253133fb82832963633" category="inline-xref-macro-rx"></block></block>
+  <block id="1b36ea2dbec733bbc7b1bcf18df08b61" category="section-title">Accedere alla pagina di installazione dell'operatore</block>
+  <block id="c3c26a3600766eef19453ba36cab80bd" category="list-text">Completare la procedura corrispondente per OpenShift Container Platform o Ecosystem Catalog:</block>
+  <block id="274eca9a1fdbeaf2cd7a241794769214" category="list-text">Cercare<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> E selezionare l'operatore NetApp Astra Control Center.</block>
+  <block id="b2a595165e0c0ce7d437b83d5749b051" category="inline-image-macro">Questa immagine mostra l'opzione di disinstallazione dalla pagina dell'operatore</block>
+  <block id="49ae0d594dc9a41982d54abc03e36805" category="paragraph"><block ref="49ae0d594dc9a41982d54abc03e36805" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="76fe74a55acaaea036adbcecca799a9c" category="list-text">Selezionare *Deploy and Use* (distribuzione e utilizzo).</block>
+  <block id="0c15ff02cb7be3c55794dcb6ef61a65e" category="section-title">Disinstallare l'operatore esistente</block>
+  <block id="99fdc785f49075cddc07fa753a02366c" category="list-text">Dalla pagina *netapp-acc-operator*, selezionare *Disinstalla* per rimuovere l'operatore esistente.</block>
+  <block id="0d1008fb06b7595c8715c6fbdbf7f070" category="list-text">Confermare l'operazione.</block>
+  <block id="5ba5f5a565d608a4c86672b4c55d2884" category="admonition">Questa operazione elimina il netapp-acc-operator, ma conserva lo spazio dei nomi e le risorse originali associate, come i segreti.</block>
+  <block id="e6143c3bb511918ab7bc7ab6a4c6313f" category="section-title">Installare l'operatore più recente</block>
+  <block id="49a6422574d0d2c657fdd914194af4bc" category="list-text">Passare a.<block ref="f156b3af9d1139da01a7b4bb0a5ad8f0" prefix=" " category="inline-code"></block> pagina operatore di nuovo.</block>
+  <block id="41091ca348ff3c35ab2e0a3ca76978cb" category="list-text">Completare la pagina *Installa operatore* e installare l'operatore più recente:</block>
+  <block id="550520c6515847a3b49e4f21211149bf" category="paragraph"><block ref="550520c6515847a3b49e4f21211149bf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c15c094418b557ddfd8a322d12f0deda" category="list-text">Selezionare l'operatore<block ref="cadbba5231afda9b003503d57805b87d" prefix=" " category="inline-code"></block> spazio dei nomi (o spazio dei nomi personalizzato) che rimane dall'installazione precedente dell'operatore eliminato.</block>
+  <block id="48512efbd6cbb72ba05990b4a58edec2" category="inline-image-macro">Questa immagine mostra l'opzione di modifica per l'Astra Control Center originale</block>
+  <block id="2c6460dd8a4dbbe1efa73f9ebeefd4ec" category="list-text">Dalla scheda dell'operatore Astra Control Center, selezionare Astra Control Center che rimane dall'installazione precedente e selezionare *Edit AstraControlCenter*.
+<block ref="9897d0c5e439746e21018ef6131a3268" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fe17b9a46bce70651034916e5ecbcf12" category="list-text">Aggiornare<block ref="1980c0ae033e18fad473fcada20addbd" prefix=" " category="inline-code"></block> YAML:</block>
+  <block id="aa3489d5761937b25dc8cd9ecbf228a7" category="list-text">Immettere la versione più recente di Astra Control Center, ad esempio 24.02.0-69.</block>
+  <block id="7246877ec7577a15a569ab8756a799b5" category="list-text">Poll<block ref="f141c732c6aae0fddd2afdfac3f75f3f" prefix=" " category="inline-code"></block>, aggiornare il percorso del registro di sistema dell'immagine come necessario:</block>
+  <block id="c89beb8febcc73c18bcf859e8544a034" category="list-text">Se si utilizza l'opzione del Registro di sistema Astra Control, modificare il percorso in<block ref="e943374c8f90757f171b7cd56af795fd" prefix=" " category="inline-code"></block>.</block>
+  <block id="c260a95d05bc62ad161afe8692c68c61" category="list-text">Se è stato configurato un registro locale, modificare o mantenere il percorso del Registro di sistema dell'immagine locale nel punto in cui sono state inviate le immagini in un passaggio precedente.</block>
+  <block id="8c7b7976b37ce7ebd902a92d017eecc8" category="admonition">Non entrare<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> oppure<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> nel campo dell'indirizzo.</block>
+  <block id="790b293d8648860acef001057e8a9691" category="list-text">Aggiornare<block ref="c6fe3b36a104e3ea913f9a6b82389050" prefix=" " category="inline-code"></block> in base alle necessità.</block>
+  <block id="e74609fc41a466140744e1cd3b6029c9" category="admonition">Il processo di disinstallazione dell'operatore non rimuove i segreti esistenti. È necessario aggiornare questo campo solo se si crea un nuovo segreto con un nome diverso da quello esistente.</block>
+  <block id="3523d7bdfad5124dba6032cbc37814c8" category="list-text">Aggiungere quanto segue al<block ref="c16ae51f09d668b952e5ab23072ad64e" prefix=" " category="inline-code"></block> configuration (configurazione)</block>
+  <block id="345e93a96b6e66cb9274dbad975c0db2" category="list-text">Salvare le modifiche.</block>
+  <block id="622f51a75f238bac126a4e3b58d91991" category="list-text">L'interfaccia utente conferma che l'aggiornamento è stato eseguito correttamente.</block>
+  <block id="ecba1fa6966e7dffc085b7fc45ca2133" category="list-text">*Ottieni autorizzazioni OpenShift*: Avrai bisogno di tutte le autorizzazioni necessarie e dell'accesso a Red Hat OpenShift Container Platform per eseguire i passaggi di installazione descritti.</block>
 </blocks>

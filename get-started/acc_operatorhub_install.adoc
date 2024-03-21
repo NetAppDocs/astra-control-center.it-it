@@ -57,6 +57,24 @@ oc create namespace netapp-acc-operator
 
 È inoltre necessario considerare quanto segue:
 
+* *Ottenere l'accesso al Registro di sistema dell'immagine di controllo Astra di NetApp*:
++
+È possibile ottenere le immagini di installazione e i miglioramenti delle funzionalità per Astra Control, come Astra Control provisioner, dal registro delle immagini di NetApp.
+
++
+.. Registrare l'ID dell'account Astra Control necessario per accedere al Registro di sistema.
++
+Puoi visualizzare l'ID dell'account nell'interfaccia utente Web di Astra Control Service. Selezionare l'icona a forma di figura in alto a destra nella pagina, selezionare *accesso API* e annotare l'ID account.
+
+.. Nella stessa pagina, selezionare *generate API token*, copiare la stringa del token API negli Appunti e salvarla nell'editor.
+.. Accedere al registro Astra Control:
++
+[source, console]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
+
+
 * *Installare una mesh di servizio per comunicazioni sicure*: Si consiglia vivamente di proteggere i canali di comunicazione del cluster host Astra Control utilizzando un link:requirements.html#service-mesh-requirements["mesh di servizio supportata"].
 +
 
@@ -313,7 +331,7 @@ cd manifests
 
 NOTE: Con questo operatore è possibile eseguire l'aggiornamento solo alla versione corrente di Astra Control Center.
 
-.. Cercare e selezionare l'operatore di NetApp Astra Control Center.
+.. Cercare `netapp-acc` E selezionare l'operatore NetApp Astra Control Center.
 +
 image:openshift_operatorhub.png["Questa immagine mostra la pagina di installazione di Astra Control Center dall'interfaccia utente di OpenShift Container Platform"]
 
@@ -323,7 +341,7 @@ image:openshift_operatorhub.png["Questa immagine mostra la pagina di installazio
 .Catalogo Red Hat Ecosystem
 --
 .. Selezionare NetApp Astra Control Center https://catalog.redhat.com/software/operators/detail/611fd22aaf489b8bb1d0f274["operatore"^].
-.. Selezionare *Deploy and Use* (implementazione e utilizzo).
+.. Selezionare *Deploy and Use* (distribuzione e utilizzo).
 +
 image:red_hat_catalog.png["Questa immagine mostra la pagina panoramica di Astra Control Center disponibile nel catalogo RedHat Ecosystem"]
 
