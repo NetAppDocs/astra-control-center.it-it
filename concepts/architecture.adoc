@@ -14,7 +14,7 @@ summary: 'Ecco una panoramica dei vari componenti dell"ambiente Astra Control.'
 [role="lead"]
 Ecco una panoramica dei vari componenti dell'ambiente Astra Control.
 
-image:astra-architecture-diagram-v6.png["Un'immagine concettuale che descrive l'architettura Astra Control e i suoi componenti"]
+image:astra-architecture-diagram-v7.png["Un'immagine concettuale che descrive l'architettura Astra Control e i suoi componenti"]
 
 
 
