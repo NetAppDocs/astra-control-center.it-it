@@ -18,10 +18,10 @@ Per un confronto tra backup/ripristini e replica, fare riferimento a. link:../co
 
 Puoi replicare le app in diversi scenari, come ad esempio i seguenti scenari on-premise, ibridi e multi-cloud:
 
-* Dal sito a on-premise al sito A on-premise
-* Dal sito a on-premise al sito B on-premise
-* On-premise per il cloud con Cloud Volumes ONTAP
-* Cloud con Cloud Volumes ONTAP in on-premise
+* Dal sito A on-premise al sito A on-premise
+* Dal sito A on-premise al sito B on-premise
+* Da on-premise al cloud con Cloud Volumes ONTAP
+* Esegui il cloud con Cloud Volumes ONTAP e passa da on-premise
 * Cloud con Cloud Volumes ONTAP al cloud (tra diverse regioni dello stesso cloud provider o a diversi cloud provider)
 
 
