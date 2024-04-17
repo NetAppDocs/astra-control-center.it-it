@@ -10,6 +10,8 @@ entries:
     url: "/use/protection-overview.html"
   - title: Proteggi le app
     url: "/use/protect-apps.html"
+  - title: Protezione di un intero cluster
+    url: "/use/back-up-full-cluster.html"
   - title: Ripristinare le applicazioni
     url: "/use/restore-apps.html"
   - title: Replicare le applicazioni tra i back-end dello storage

@@ -288,6 +288,52 @@ Astra Control crea un backup dell'applicazione.
 ====
 
 
+=== [Tech preview] Crea un backup pianificato degli spazi dei nomi
+
+È possibile creare un backup pianificato e automatico di uno o più namespace in un cluster. Questi flussi di lavoro vengono forniti da NetApp come file CR associati a uno script Python. Quando si configurano e installano i flussi di lavoro, i backup dello spazio dei nomi vengono creati automaticamente in base a una pianificazione scelta durante l'installazione. Puoi proteggere tutti i namespace su un cluster con il workflow completo del backup del cluster o solo alcuni namespace con il workflow di backup basato su etichetta.
+
+Quando al cluster viene aggiunto un nuovo namespace o un'applicazione che rientra nell'ambito della pianificazione del backup, queste vengono automaticamente protette.
+
+.Esempio: Backup completo del cluster
+Ad esempio, quando si configura e installa l'intero flusso di lavoro del backup del cluster, viene eseguito periodicamente il backup di tutte le applicazioni in qualsiasi namespace, senza ulteriori interventi da parte dell'amministratore. Lo spazio dei nomi non deve esistere al momento dell'installazione del flusso di lavoro; se in futuro viene aggiunto uno spazio dei nomi, verrà protetto.
+
+.Esempio: Backup basato su etichette
+Per una maggiore granularità, è possibile utilizzare il flusso di lavoro basato su etichette. Ad esempio, è possibile installare questo flusso di lavoro e dire agli utenti di applicare una delle diverse etichette a qualsiasi namespace che desiderano proteggere, a seconda del livello di protezione necessario. In questo modo, gli utenti possono creare lo spazio dei nomi con una di queste etichette e non devono inviare notifiche a un amministratore. Il nuovo namespace e tutte le applicazioni all'interno dell'IT sono protetti automaticamente.
+
+
+
+==== Creare un backup pianificato di tutti gli spazi dei nomi
+
+È possibile creare un backup pianificato di tutti i namespace in un cluster utilizzando il flusso di lavoro di backup completo del cluster.
+
+.Fasi
+. Scaricare i seguenti file su un computer con accesso di rete al cluster:
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/components.yaml["File CRD Components.yaml"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/protectCluster.py["protectCluster.py script Python"]
+
+
+. Per configurare e installare il toolkit, https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/fullcluster-backup/README.md["seguire le istruzioni incluse"^].
+
+
+
+
+==== Creare un backup pianificato di spazi dei nomi specifici
+
+È possibile creare un backup pianificato di spazi dei nomi specifici mediante le relative etichette utilizzando il flusso di lavoro di backup basato su etichette.
+
+.Fasi
+. Scaricare i seguenti file su un computer con accesso di rete al cluster:
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/components.yaml["File CRD Components.yaml"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/protectCluster.py["protectCluster.py script Python"]
+
+
+. Per configurare e installare il toolkit, https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/labelbased-backup/README.md["seguire le istruzioni incluse"^].
+
+
+
+
 == Abilita backup e ripristino per le operazioni economiche a ontap-nas
 
 Astra Control Provivisioner fornisce funzionalità di backup e ripristino che possono essere abilitate per i backend di storage che stanno utilizzando `ontap-nas-economy` classe di storage.
