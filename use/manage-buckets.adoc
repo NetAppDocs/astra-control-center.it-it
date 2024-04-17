@@ -48,7 +48,7 @@ Per istruzioni su come gestire i bucket utilizzando l'API Astra Control, vedere 
 * <<Impostare il bucket predefinito>>
 * <<Ruotare o rimuovere le credenziali bucket>>
 * <<Rimuovere una benna>>
-* link:../use/manage-buckets.html#manage-a-bucket-using-a-custom-resource["(Anteprima tecnica) Gestione di un bucket utilizzando una risorsa personalizzata"]
+* link:["[Anteprima tecnica] Gestione di un bucket utilizzando una risorsa personalizzata"]
 
 
 
@@ -179,19 +179,19 @@ La risorsa personalizzata bucket per Astra Control è nota come AppVault. Questo
 
 
 
-NOTE: Amazon Web Services (AWS) e Google Cloud Platform (GCP) utilizzano il tipo di bucket S3 generico.
+NOTE: Amazon Web Services (AWS) utilizza il tipo di bucket Generic S3.
 
 
 NOTE: Sebbene Astra Control Center supporti Amazon S3 come provider di bucket S3 generico, Astra Control Center potrebbe non supportare tutti i vendor di archivi di oggetti che rivendicano il supporto S3 di Amazon.
 
 .Fasi
-. Creare il file di risorse personalizzate (CR) e assegnargli un nome (ad esempio, `astra_appvault.yaml`).
+. Creare il file di risorse personalizzate (CR) e assegnargli un nome (ad esempio, `astra-appvault.yaml`).
 . Configurare i seguenti attributi:
 +
 ** *metadata.name*: _(obbligatorio)_ il nome della risorsa personalizzata AppVault.
 ** *Spec.prefix*: _(Optional)_ percorso preceduto dai nomi di tutte le entità memorizzate in AppVault.
 ** *spec.providerConfig*: _(obbligatorio)_ Memorizza la configurazione necessaria per accedere ad AppVault utilizzando il provider specificato.
-** *spec.providerCredentials*: _(opzionale)_ archivia i riferimenti a qualsiasi credenziale richiesta per accedere ad AppVault utilizzando il provider specificato.
+** *spec.providerCredentials*: _(obbligatorio)_ archivia i riferimenti a qualsiasi credenziale richiesta per accedere ad AppVault utilizzando il provider specificato.
 +
 *** *spec.providerCredentials.valueFromSecret*: _(opzionale)_ indica che il valore della credenziale deve provenire da un segreto.
 +
@@ -201,7 +201,7 @@ NOTE: Sebbene Astra Control Center supporti Amazon S3 come provider di bucket S3
 
 
 
-** *spec.providerType*: _(required)_ determina cosa fornisce il backup; ad esempio, S3 o filesystem.
+** *spec.providerType*: _(obbligatorio)_ determina cosa fornisce il backup; ad esempio, NetApp ONTAP S3 o Microsoft Azure.
 +
 Esempio YAML:
 
@@ -211,7 +211,7 @@ Esempio YAML:
 apiVersion: astra.netapp.io/v1
 kind: AppVault
 metadata:
-  name: astra_appvault
+  name: astra-appvault
 spec:
   providerType: generic-s3
   providerConfig:
@@ -231,11 +231,11 @@ spec:
 ----
 
 
-. Dopo aver popolato il `astra_appvault.yaml` File con i valori corretti, applicare il CR:
+. Dopo aver popolato il `astra-appvault.yaml` File con i valori corretti, applicare il CR:
 +
 [source, console]
 ----
-kubectl apply -f astra_appvault.yaml -n astra-connector
+kubectl apply -f astra-appvault.yaml -n astra-connector
 ----
 +
 
