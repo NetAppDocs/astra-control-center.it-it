@@ -3677,4 +3677,48 @@ Astra Control provisioner viene installato automaticamente nell'ambito del proce
   <block id="369842d22c436a81bf21800576abee8b" category="paragraph-title">Posso utilizzare le funzionalità di gestione e provisioning dello storage di Astra Control senza installare e utilizzare tutto Astra Control?</block>
   <block id="daab2094276c52a4b52a45f95303d09e" category="paragraph-title">In che modo posso passare dall'essere un utente Astra Trident esistente a Astra Control per utilizzare la funzionalità avanzata di provisioning e gestione dello storage?</block>
   <block id="63bdba47639989b6e534ecb34c5f142e" category="paragraph-title">Come faccio a sapere se Astra Control Provivisioner ha sostituito Astra Trident nel mio cluster?</block>
+  <block id="82ec2cd6fda87713f588da75c3b1d0ed" category="doc">Funzionalità</block>
+  <block id="9323549177620e1dd794512ee7cc0748" category="paragraph">Astra Control è una soluzione di gestione del ciclo di vita dei dati delle applicazioni Kubernetes che semplifica le operazioni per le applicazioni stateful e ti aiuta a memorizzare, proteggere e spostare i carichi di lavoro Kubernetes negli ambienti ibridi e multi-cloud.</block>
+  <block id="953ad711b5d812e3876fb8a28266ba3e" category="paragraph">*Negozio*:</block>
+  <block id="1cc20f69146066d58ea30c167da06503" category="list-text">Provisioning dello storage dinamico per i carichi di lavoro in container</block>
+  <block id="40f0627cce837b232dcada830895754a" category="list-text">Crittografia in-flight dei dati da container a volumi persistenti</block>
+  <block id="4d8ebc166f514bc42ed5a5c421a85b7b" category="list-text">Replica tra aree e aree</block>
+  <block id="f748216a486ca824f2e1350704fdf7cd" category="paragraph">*Protezione*:</block>
+  <block id="5eea249d5621961399d6b0e6cd549b2a" category="list-text">Rilevamento automatizzato e protezione integrata con l'applicazione di un'intera applicazione e dei relativi dati</block>
+  <block id="0905306fb359d754b2fb6b91b4b687b6" category="list-text">Ripristino istantaneo di un'applicazione da qualsiasi versione snapshot in base alle esigenze dell'organizzazione</block>
+  <block id="43130eaaed6187a0c013e3badf7d841a" category="list-text">Failover rapido tra zone, aree e cloud provider</block>
+  <block id="1b329bb5f586d96aac9b868339b54d3c" category="paragraph">*Sposta*:</block>
+  <block id="fc1049d8b413380216308212cf5b9cd9" category="list-text">Mobilità completa di applicazioni e dati all'interno e tra cluster Kubernetes e cloud</block>
+  <block id="1f86e32e0eaaa822d13a5b9730c85ab7" category="list-text">Cloni istantanei di intere applicazioni e dati</block>
+  <block id="b54bcca0ec823f9bf8916580d0df9186" category="list-text">Migrazione delle applicazioni con un solo clic tramite API e UI web coerenti</block>
+  <block id="2d242bb36ec91b32005f9296ff03a912" category="section-title">Architettura</block>
+  <block id="56da5995454440513c0c0a111bb3b132" category="paragraph">L'architettura di Astra Control consente all'IT di fornire funzionalità avanzate di gestione dei dati che migliorano sia la funzionalità che la disponibilità delle applicazioni Kubernetes, semplificano la gestione, la protezione e lo spostamento dei carichi di lavoro in container nei cloud pubblici e negli ambienti on-premise. inoltre, offre funzionalità di automazione tramite API REST e SDK, consentendo l'accesso programmatico per un'integrazione perfetta con i flussi di lavoro esistenti.</block>
+  <block id="f0f6f0fb4331084912739b8873eea074" category="paragraph">Astra Control è nativo di Kubernetes e consente workflow di data Protection che utilizzano risorse personalizzate pur rimanendo compatibile con le versioni precedenti dell'API e dell'SDK esistenti. La data Protection nativa di Kubernetes offre vantaggi significativi: Con l'integrazione perfetta con le risorse e le API Kubernetes, la data Protection può diventare una parte integrante del ciclo di vita delle applicazioni attraverso gli strumenti ci/CD e/o GitOps esistenti dell'organizzazione.</block>
+  <block id="3e9fd553c2a72f2fea1001b682208a54" category="inline-image-macro">Architettura Astra Control</block>
+  <block id="28a0c6c94cda259516d07dedb9c854ef" category="paragraph"><block ref="28a0c6c94cda259516d07dedb9c854ef" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8103c53d603644d4ee7cc959e53cf3a4" category="paragraph">Astra Control è costruito su quattro componenti complementari:</block>
+  <block id="4f16f53fe0ab96995516c186edf87fe6" category="list-text">*Astra Control*: Astra Control è un servizio di gestione centralizzato per tutti i cluster gestiti, che fornisce workload orchestrati per la protezione e la mobilità delle applicazioni nel cloud e on-premise, nonché le seguenti funzionalità:</block>
+  <block id="51fed4624a5a53152693a41ce5efa15a" category="list-text">Vista combinata di cluster e cloud multipli</block>
+  <block id="e046b9c3be3479bde3b3259db738a78f" category="list-text">Protezione dei flussi di lavoro orchestrati</block>
+  <block id="8dc1680125686fe1458b22e1961b1899" category="list-text">Visualizzazione e selezione granulare delle risorse</block>
+  <block id="4568e5d7e97ee5d6e4866ccd0c1dc770" category="list-text">*Astra Connector*: Astra Connector raggruppa Astra Control per fornire una connessione sicura a ciascun cluster gestito, offrendo l'esecuzione locale delle operazioni pianificate indipendentemente dallo stato della connessione e le seguenti funzionalità:</block>
+  <block id="7655b1a562ca01e9844b38904e5aa812" category="list-text">Esecuzione locale delle operazioni pianificate indipendentemente dallo stato della connessione</block>
+  <block id="e41d9e394671a0a661bcca4d52b1926b" category="list-text">Operazioni locali che distribuiscono e ottimizzano l'utilizzo delle risorse di sistema di Astra tra i cluster</block>
+  <block id="579304cbfdd1e8dd005de8205aa02d54" category="list-text">Installazione locale che consente l'accesso con privilegi minimi al cluster per una maggiore sicurezza</block>
+  <block id="389aa9334cd9e108116e432d44e3be76" category="list-text">*Astra Control Provisioner*: Astra Control Provisioner offre funzionalità di provisioning CSI core e capacità di gestione dello storage avanzate per una maggiore sicurezza e configurazione di disaster recovery, nonché le seguenti capacità:</block>
+  <block id="c965b0e84a84d7b5a6b37d24fb0c0ebd" category="list-text">Gestione avanzata dello storage:</block>
+  <block id="6b7d4094418426d522e44a55d578c055" category="list-text">Crittografia in-flight dei dati da container a PV</block>
+  <block id="378d291dd5c8d9b13457391d74a1c166" category="list-text">Funzionalità SnapMirror Cloud con replica tra aree e zone</block>
+  <block id="0aa3c724313cb48f6cecfc8393736174" category="list-text">*Astra Custom Resources*: Le risorse personalizzate utilizzate su ogni cluster forniscono un approccio nativo per Kubernetes per l'esecuzione delle operazioni in locale, semplificando l'integrazione con altri tool e automazione compatibili con Kubernetes e fornendo le seguenti funzionalità:</block>
+  <block id="427ee8760fb4e2d4c8d849fa36bab15b" category="list-text">Flussi di lavoro diretti di automazione e integrazione degli strumenti dell'ecosistema</block>
+  <block id="c7349a414c37176e5941afbe8fd1bf31" category="list-text">Primitive di livello inferiore che abilitano flussi di lavoro personalizzati</block>
+  <block id="15bdafd183c9dcdccccb2ef960342018" category="paragraph">Astra Control è disponibile in due modelli di implementazione.</block>
+  <block id="e2a57f6b4c1a4fc07e57320580de76c4" category="inline-image-macro">Modelli di implementazione Astra</block>
+  <block id="ed910480be660ce44964d26abfc6a0d8" category="paragraph"><block ref="ed910480be660ce44964d26abfc6a0d8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b7372905cd310308af0541e07ef5175f" category="list-text">*Astra Control Service*: Un servizio gestito da NetApp che offre la gestione dei dati application-aware dei cluster Kubernetes in ambienti di cloud provider multipli e cluster Kubernetes autogestiti.</block>
+  <block id="db7cdbe16748f17a4795bd3e96b798a0" category="list-text">*Astra Control Center*: Software autogestito che fornisce la gestione dei dati applicativa dei cluster Kubernetes in esecuzione nel tuo ambiente on-premise. Il centro di controllo Astra può essere installato anche in ambienti di cloud provider multipli con un backend di storage NetApp Cloud Volumes ONTAP.</block>
+  <block id="281db70ca8dfcac9ebe6166029058548" category="paragraph"><block ref="281db70ca8dfcac9ebe6166029058548" category="inline-link-rx"></block></block>
+  <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
+  <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Documentazione Cloud Insights</block>
+  <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
 </blocks>
