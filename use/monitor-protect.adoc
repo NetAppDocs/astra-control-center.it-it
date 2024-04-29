@@ -156,6 +156,9 @@ NOTE: Se sono stati raccolti più dati del cluster, le metriche di ciascun clust
 
 È possibile inviare registri (eventi Kubernetes) da un sistema monitorato da Astra Control Center all'endpoint Fluentd. La connessione Fluentd è disattivata per impostazione predefinita.
 
+
+NOTE: Le connessioni Fluentd non sono supportate per i cluster gestiti con flussi di lavoro Kubernetes dichiarativi. Puoi collegare Fluentd solo ai cluster gestiti con flussi di lavoro non nativi di Kubernetes.
+
 image:fluentbit.png["Questo è un diagramma concettuale dei registri degli eventi che vanno da Astra a Fluentd."]
 
 
