@@ -382,7 +382,6 @@
   <block id="181e1260b62d0667dd25d8e26eba83f5" category="paragraph">Il piano gratuito di Astra Control ti consente di gestire fino a 10 spazi dei nomi nel tuo account. Se desideri gestire più di 10, dovrai impostare la fatturazione eseguendo l'aggiornamento dal piano gratuito al piano Premium.</block>
   <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Come funziona Astra Control Center</block>
   <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra Control Center viene eseguito localmente nel tuo cloud privato.</block>
-  <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Il centro di controllo Astra è completamente integrato nell'ecosistema AutoSupport e Active IQ per fornire agli utenti e al supporto NetApp informazioni sulla risoluzione dei problemi e sull'utilizzo.</block>
   <block id="e4a6d61b6602f5e6d6468645b096f45e" category="paragraph">Puoi provare Astra Control Center utilizzando una licenza di valutazione integrata della durata di 90 giorni. Mentre stai valutando Astra Control Center, puoi ottenere supporto tramite e-mail e opzioni della community. Inoltre, puoi accedere agli articoli e alla documentazione della Knowledge base dalla dashboard di supporto all'interno del prodotto.</block>
   <block id="ebd65e27e034512530c808d2d0aa364d" category="paragraph">Per installare e utilizzare Astra Control Center, è necessario soddisfare determinati requisiti<block ref="0a14e0fc52cf8d6c6274f9c6e777d67d" category="inline-link-rx"></block>.</block>
   <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">Ad alto livello, Astra Control Center funziona come segue:</block>
@@ -866,7 +865,6 @@
   <block id="35f3a2f7a0f2c01d03afedb95ece66ab" category="inline-link">NetApp Authenticated file Upload (accesso richiesto)</block>
   <block id="1c2989d4329c8aeec5e01506816fb04e" category="list-text">Utilizzare<block ref="4b0bc63f683ccbf4dcf0ba2a6a1b561f" category="inline-link-rx"></block>.</block>
   <block id="94bcffc8ff8a109a8267202d2aaa5526" category="list-text">Collegare il bundle alla custodia direttamente su NSS.</block>
-  <block id="4345f2150d39e38a6a11ee7ee57bed28" category="list-text">Utilizza NetApp Active IQ.</block>
   <block id="4be9b50faf5ab46a9d28ac23f7713bec" category="inline-link">Come caricare un file su NetApp (accesso richiesto)</block>
   <block id="3b6bf15bbdfc90c8dc6d6778808539e1" category="list-text"><block ref="3b6bf15bbdfc90c8dc6d6778808539e1" category="inline-link-rx"></block></block>
   <block id="a921a3947d243a28982ffc8a6f357d21" category="inline-link">Come caricare manualmente un file su NetApp (accesso richiesto)</block>
@@ -3319,7 +3317,6 @@ Se è stata installata una mesh di servizio Istio durante l'installazione di Ast
 
 NOTA: Non utilizzare<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> oppure<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> nell'indirizzo. Copiare questo FQDN per utilizzarlo in un <block ref="39c8566ec35b62823c898c5e38a4b78c" category="inline-xref-macro-rx"></block>.</block>
   <block id="5398d7dab242bfea13c044912cacfd10" category="example-title">AutoSupport</block>
-  <block id="0ce9b2186063c7d6c825ba5631c6f471" category="paragraph">Le selezioni effettuate in questa sezione determinano se parteciperai all'applicazione di supporto proattivo di NetApp, NetApp Active IQ, e dove vengono inviati i dati. È necessaria una connessione a Internet (porta 442) e tutti i dati di supporto sono resi anonimi.</block>
   <block id="0c83f57c786a0b4a39efab23731c7ebc" category="example-title">e-mail</block>
   <block id="ed89387bcd11937a7a92a99a2cbfb5d7" category="example-title">Nome</block>
   <block id="539c5300bf48f8a3e3009ce33d49a240" category="example-title">Cognome</block>
@@ -3717,4 +3714,7 @@ Astra Control provisioner viene installato automaticamente nell'ambito del proce
   <block id="adeac59ad1862a3e0c4f40cfe863ae90" category="list-text"><block ref="adeac59ad1862a3e0c4f40cfe863ae90" category="inline-link-macro-rx"></block></block>
   <block id="a8d3d65f332ebd25e2d0cd4a39fa56bb" category="admonition">Le connessioni Fluentd non sono supportate per i cluster gestiti con flussi di lavoro Kubernetes dichiarativi. Puoi collegare Fluentd solo ai cluster gestiti con flussi di lavoro non nativi di Kubernetes.</block>
   <block id="a4c308fa75b477e34ffefe1e02628412" category="list-text">*Soddisfare i prerequisiti ambientali*: Prima di eseguire l'aggiornamento, assicurarsi che l'ambiente soddisfi ancora la <block ref="7b0354d91aa605027490ffc0bb4c260d" category="inline-link-macro-rx"></block>.</block>
+  <block id="a9cf730f8ab04a5b52f1d19c74c1483c" category="paragraph">Astra Control Center è completamente integrato nell'ecosistema di consulente digitale di AutoSupport e Active IQ (detto anche Digital Advisor) per fornire agli utenti e al supporto NetApp informazioni su risoluzione dei problemi e utilizzo.</block>
+  <block id="10c74eb5a029f34a100ad38aab60e5a3" category="paragraph">Le selezioni effettuate in questa sezione determinano se parteciperai all'applicazione di supporto proattivo di NetApp, Digital Advisor e dove vengono inviati i dati. È necessaria una connessione a Internet (porta 442) e tutti i dati di supporto sono resi anonimi.</block>
+  <block id="3cf9bc07c0ae31018d3336b8f32de6c8" category="list-text">Utilizzare Digital Advisor.</block>
 </blocks>

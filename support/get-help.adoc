@@ -100,7 +100,7 @@ A tale scopo, è possibile utilizzare uno dei seguenti metodi:
 +
 ** Utilizzare https://upload.netapp.com/sg["NetApp Authenticated file Upload (accesso richiesto)"^].
 ** Collegare il bundle alla custodia direttamente su NSS.
-** Utilizza NetApp Active IQ.
+** Utilizzare Digital Advisor.
 
 
 
