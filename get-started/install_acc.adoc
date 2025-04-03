@@ -14,7 +14,7 @@ summary: Per installare Astra Control Center dopo aver affrontato alcuni prerequ
 [role="lead"]
 Per installare Astra Control Center, scaricare le immagini di installazione ed eseguire i seguenti passaggi. È possibile utilizzare questa procedura per installare Astra Control Center in ambienti connessi a Internet o con connessione ad aria.
 
-Per una dimostrazione del processo di installazione di Astra Control Center, vedere https://www.youtube.com/watch?v=eurMV80b0Ks&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["questo video"^].
+Per una dimostrazione del processo di installazione di Astra Control Center, vedere https://www.youtube.com/watch?v=kfmQDqPi9fU&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["questo video"^].
 
 .Prima di iniziare
 * *Soddisfare i requisiti ambientali*: link:requirements.html["Prima di iniziare l'installazione, preparare l'ambiente per l'implementazione di Astra Control Center"].

@@ -111,7 +111,6 @@
   <block id="7c90d436f62a080a98e02874957865e0" category="inline-link-macro">queste procedure</block>
   <block id="41bdd90cead20f2dddf0647e2f48fc13" category="list-text">*Installare nel cloud pubblico con backend Cloud Volumes ONTAP*: Utilizzare <block ref="cdbba4f6294205e74dc04d0ee99d1d1f" category="inline-link-macro-rx"></block> Per installare Astra Control Center in Amazon Web Services (AWS), Google Cloud Platform (GCP) o Microsoft Azure con un backend di storage Cloud Volumes ONTAP.</block>
   <block id="201e09e85ad81db8a19ef9f20c05d1a5" category="inline-link">questo video</block>
-  <block id="259f3be9b6c8eefb44e844c2b70333dc" category="paragraph">Per una dimostrazione del processo di installazione di Astra Control Center, vedere<block ref="cbbdec23221803dc148346abe5a297c0" category="inline-link-rx"></block>.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">Prima di iniziare</block>
   <block id="2b305f607904d67cd2da521366334e8c" category="inline-link-macro">Prima di iniziare l'installazione, preparare l'ambiente per l'implementazione di Astra Control Center</block>
   <block id="c7a6b30f3874b15dc6f9794ebff2cd4b" category="list-text">Assicurarsi che tutti i servizi API siano in buono stato e disponibili:</block>
@@ -3717,4 +3716,5 @@ Astra Control provisioner viene installato automaticamente nell'ambito del proce
   <block id="a9cf730f8ab04a5b52f1d19c74c1483c" category="paragraph">Astra Control Center è completamente integrato nell'ecosistema di consulente digitale di AutoSupport e Active IQ (detto anche Digital Advisor) per fornire agli utenti e al supporto NetApp informazioni su risoluzione dei problemi e utilizzo.</block>
   <block id="10c74eb5a029f34a100ad38aab60e5a3" category="paragraph">Le selezioni effettuate in questa sezione determinano se parteciperai all'applicazione di supporto proattivo di NetApp, Digital Advisor e dove vengono inviati i dati. È necessaria una connessione a Internet (porta 442) e tutti i dati di supporto sono resi anonimi.</block>
   <block id="3cf9bc07c0ae31018d3336b8f32de6c8" category="list-text">Utilizzare Digital Advisor.</block>
+  <block id="285c7fb54a928cf8e9ca78a83740ce60" category="paragraph">Per una dimostrazione del processo di installazione di Astra Control Center, vedere<block ref="d97427b76746d487a682c110ed41c817" category="inline-link-rx"></block>.</block>
 </blocks>
