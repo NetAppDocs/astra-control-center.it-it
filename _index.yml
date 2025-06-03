@@ -41,14 +41,6 @@ indexpage:
       url: https://docs.netapp.com/us-en/astra-automation/reference/overview.html
     - title: Flussi di lavoro API
       url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html
-  - title: Utilizzare Astra Control Service
-    links:
-    - title: Scopri di più su Astra Control Service
-      url: https://docs.netapp.com/us-en/astra/get-started/intro.html
-    - title: Novità di Astra Control Service
-      url: https://docs.netapp.com/us-en/astra/release-notes/whats-new.html
-    - title: Avvio rapido per Astra Control Service
-      url: https://docs.netapp.com/us-en/astra/get-started/quick-start.html
   - title: Descrizioni delle soluzioni
     links:
     - title: PostgreSQL DBaaS con Astra Control
