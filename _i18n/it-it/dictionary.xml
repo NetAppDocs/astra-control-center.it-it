@@ -96,7 +96,6 @@
   <block id="cdb2726825d8ca6b1fbc495e1769be38" category="inline-link-macro">Annulla la gestione delle applicazioni da Astra Control</block>
   <block id="bfde4228559e1dc730ccb3f1710371f6" category="list-text"><block ref="819731d94d9a0720df36a3fc1b85d024" category="inline-link-macro-rx"></block>.</block>
   <block id="e63154c624567c5cf9bd389230c703ee" category="inline-link-macro">Annullare la gestione del cluster da Astra Control</block>
-  <block id="532f06fc1e312d6659de4b8386cc2689" category="list-text"><block ref="fee7c2b0377fd57e3be010ddfbcf91f6" category="inline-link-macro-rx"></block>.</block>
   <block id="8ce424856922443bb79c34a944daacaf" category="paragraph">La rimozione di un cluster da Astra Control non apporta alcuna modifica alla configurazione del cluster (applicazioni e storage persistente). Eventuali snapshot di Astra Control o backup delle applicazioni su quel cluster non saranno disponibili per il ripristino. I backup persistenti dello storage creati da Astra Control rimangono all'interno di Astra Control, ma non sono disponibili per il ripristino.</block>
   <block id="03d32d7daecae8d532e26e0c040b4ff0" category="admonition">Rimuovere sempre un cluster da Astra Control prima di eliminarlo con altri metodi. L'eliminazione di un cluster utilizzando un altro tool mentre viene ancora gestito da Astra Control può causare problemi all'account Astra Control.</block>
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">Gestione delle applicazioni</block>
@@ -365,8 +364,6 @@
   <block id="29346571353a36c4c8e378195149db77" category="paragraph">Ad alto livello, Astra Control Service funziona come segue:</block>
   <block id="5e44a260fc47d95ab78eb0e97efe4e7d" category="list-text">Per iniziare a utilizzare Astra Control Service, devi configurare il tuo cloud provider e registrarti per un account Astra.</block>
   <block id="a3b5183ae6f5c3f1d6644448f795b5cb" category="inline-link">NetApp Cloud Volumes Service per Google Cloud</block>
-  <block id="052766753c4902f7b4dda44f55923c85" category="list-text">Per i cluster GKE, Astra Control Service utilizza<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> O Google Persistent Disks come back-end di storage per i volumi persistenti.</block>
-  <block id="450dcc356e2c75be5bfea7bc913558bb" category="list-text">Per i cluster AKS, Astra Control Service utilizza<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> O Azure Managed Disks come back-end di storage per i volumi persistenti.</block>
   <block id="4b6ccd94421822eaaf7bd027992018af" category="inline-link">Amazon Elastic Block Store</block>
   <block id="7a3f533a65a34319a327318673651449" category="list-text">Per i cluster Amazon EKS, Astra Control Service utilizza<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> oppure<block ref="554e81ff0c0b44a91e38efe479d6c57c" category="inline-link-rx"></block> come back-end di storage per i volumi persistenti.</block>
   <block id="1ae8e0ca715d9854cf1c69ead32e4931" category="list-text">Aggiungi il tuo primo calcolo Kubernetes ad Astra Control Service. Astra Control Service esegue le seguenti operazioni:</block>
@@ -592,7 +589,6 @@
   <block id="80d49eac5df92c5527de1fd14b44adf5" category="list-text">Selezionare le credenziali esistenti che si desidera utilizzare con il bucket.</block>
   <block id="5b14710f01c3e6173bd4434e71fdcd62" category="list-text">Selezionare<block ref="ec211f7c20af43e742bf2570c3cb84f9" prefix=" " category="inline-code"></block>.</block>
   <block id="e9a2cf6bcc4b5dac4132bd23653461f4" category="inline-link-macro">impostare un altro bucket predefinito</block>
-  <block id="70c54cfcee3c9263e59ee7de13eaba8a" category="admonition">Quando si aggiunge un bucket, Astra Control contrassegna un bucket con l'indicatore bucket predefinito. Il primo bucket creato diventa quello predefinito. Con l'aggiunta di bucket, è possibile decidere in un secondo momento <block ref="f83337d9020c8fbb1074e1310043d277" category="inline-link-macro-rx"></block>.</block>
   <block id="998b4dab2853378d7a7c2b1789837311" category="inline-link-macro">Gestire utenti e ruoli locali</block>
   <block id="5420601ecf79fbee6e1e870faab8d5a6" category="list-text"><block ref="5420601ecf79fbee6e1e870faab8d5a6" category="inline-link-macro-rx"></block></block>
   <block id="32139554c6b5c9a48dcfdd0ff983a9eb" category="inline-link-macro">Inizia a gestire le app</block>
@@ -1005,7 +1001,6 @@
   <block id="14d00b766289611c8b24e20d70ee5f18" category="list-text"><block ref="56fa2c12ee64f725e22e81b9cfe9a196" category="inline-xref-macro-rx"></block></block>
   <block id="733442372849ffb7318ed29ca9c55aaa" category="section-title">Lo stesso cluster non può essere gestito da due istanze di Astra Control Center</block>
   <block id="1bca7607e51d744e7281a7c4772adc9f" category="inline-link-macro">annullare la gestione del cluster</block>
-  <block id="1f7a30a87f1e03ae9b4e5a75054aea44" category="paragraph">Se si desidera gestire un cluster su un'altra istanza di Astra Control Center, è necessario innanzitutto <block ref="db506b8ca3f9d6b67f586ae44373200f" category="inline-link-macro-rx"></block> dall'istanza in cui viene gestito prima di gestirlo su un'altra istanza. Dopo aver rimosso il cluster dalla gestione, verificare che il cluster non sia gestito eseguendo questo comando:</block>
   <block id="df968f82e7fe0ad4aa9c7e7fa3f7746b" category="paragraph">Non devono essere presenti pod in esecuzione nello spazio dei nomi, altrimenti lo spazio dei nomi non dovrebbe esistere. Se uno di questi è vero, il cluster non viene gestito.</block>
   <block id="a0874f32a1010f0ad9545fec43505eb8" category="section-title">Astra Control Center non è in grado di gestire due cluster con lo stesso nome</block>
   <block id="7a74863a3e751df4941db2bd87309f5f" category="paragraph">Se si tenta di aggiungere un cluster con lo stesso nome di un cluster già esistente, l'operazione non riesce. Questo problema si verifica più spesso in un ambiente Kubernetes standard se non è stato modificato il nome predefinito del cluster nei file di configurazione Kubernetes.</block>
@@ -1039,7 +1034,6 @@
   <block id="0e218bfe2b5ff044cdd9f49b84c26315" category="paragraph">Prima di eseguire il backup o la clonazione delle applicazioni gestite da Astra Control Center, controllare le informazioni del bucket nel sistema di gestione ONTAP o StorageGRID.</block>
   <block id="58d79c3b7603eb5b1b4326c3aa1454a6" category="section-title">Astra Control Center non convalida i dati immessi per il server proxy</block>
   <block id="cfefd1cb11182407b9ad42fef18d6118" category="inline-link-macro">inserire i valori corretti</block>
-  <block id="f99f038781fc48aada5865fc36b1d518" category="paragraph">Assicurati di <block ref="18fbb20c2dec7dc2c270711d5671f275" category="inline-link-macro-rx"></block> quando si stabilisce una connessione.</block>
   <block id="52613a0e2a34040faff2fa3713d61414" category="section-title">Le connessioni esistenti a un pod Postgres causano errori</block>
   <block id="a3e438b957ae4a8b4731d63d2e88365f" category="paragraph">Quando si eseguono operazioni su POD Postgres, non si dovrebbe connettersi direttamente all'interno del pod per utilizzare il comando psql. Astra Control richiede l'accesso a psql per bloccare e scongelare i database. Se è presente una connessione preesistente, lo snapshot, il backup o il clone non avranno esito positivo.</block>
   <block id="c62766292d642e4d3c2f78cc22c7d571" category="section-title">I backup e le snapshot potrebbero non essere conservati durante la rimozione di un'istanza di Astra Control Center</block>
@@ -1073,8 +1067,6 @@
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">Direttiva sulla privacy</block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Open source</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">I file di avviso forniscono informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.</block>
-  <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Licenza API Astra Control</block>
-  <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
   <block id="51d249216b03414f10b242b851af7951" category="doc">Componenti di controllo Astra</block>
   <block id="5ddd50ee81b614308861ff77d7830f09" category="inline-image-macro">Un'immagine concettuale che descrive l'architettura Astra Control e i suoi componenti</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">*Kubernetes Clusters*: Kubernetes è una piattaforma open-source portatile, estensibile per la gestione di carichi di lavoro e servizi containerizzati, che facilita sia la configurazione dichiarativa che l'automazione. Astra fornisce servizi di gestione per le applicazioni ospitate in un cluster Kubernetes.</block>
@@ -1304,7 +1296,6 @@
   <block id="c3443c90c9a8c8ae70d0708cc778b7b2" category="list-text">Una o più applicazioni installate sul cluster. <block ref="9a14b35f09704dd5c457f47f10cb55d6" category="inline-xref-macro-rx"></block>.</block>
   <block id="f336f8b0ae53675b065c0d6186baab21" category="list-text">Spazi dei nomi esistenti nel cluster Kubernetes aggiunto ad Astra Control.</block>
   <block id="6f2886ca9812fade1ff2d6197498a80b" category="inline-link-macro">Risorse Kubernetes supportate</block>
-  <block id="44e843a0117ca07fcd81196eb3d8ccca" category="list-text">(Facoltativo) un'etichetta Kubernetes su qualsiasi <block ref="35cac6ae488aa1ef0053c9b9d6c5461a" category="inline-link-macro-rx"></block>.</block>
   <block id="a24daf3d2d584a2ee6adcd097ffde406" category="inline-link">Consulta la documentazione ufficiale di Kubernetes</block>
   <block id="0de4b069ef42dc2162b352a8d0c79120" category="admonition">Un'etichetta è una coppia chiave/valore che è possibile assegnare agli oggetti Kubernetes per l'identificazione. Le etichette semplificano l'ordinamento, l'organizzazione e la ricerca degli oggetti Kubernetes. Per ulteriori informazioni sulle etichette Kubernetes,<block ref="52425cbbdd8e653f3efe28de3861375f" category="inline-link-rx"></block>.</block>
   <block id="a7d4d20683a8972d07170d4ce5f3329b" category="inline-link-macro">gestione degli spazi dei nomi standard e di sistema</block>
@@ -1506,7 +1497,6 @@
   <block id="00d6e8bbad1611d4dccac7fead48f1ec" category="section-title">Modificare un bucket</block>
   <block id="049863f89bf64849544e3290929262b3" category="paragraph">È possibile modificare le informazioni delle credenziali di accesso per un bucket e modificare se un bucket selezionato è il bucket predefinito.</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="inline-link-macro">Note di rilascio</block>
-  <block id="9d51fe0409675ba8d719678581de46d5" category="admonition">Quando si aggiunge un bucket, selezionare il bucket provider corretto e fornire le credenziali corrette per tale provider. Ad esempio, l'interfaccia utente accetta come tipo NetApp ONTAP S3 e accetta le credenziali StorageGRID; tuttavia, questo causerà l'errore di tutti i backup e ripristini futuri dell'applicazione che utilizzano questo bucket. Vedere <block ref="6635cf1f59c228488d619bdcf0b3bc55" category="inline-link-macro-rx"></block>.</block>
   <block id="9c20c9fb8510a54316336dea236e5317" category="list-text">Dalla barra di navigazione a sinistra, selezionare *Bucket*.</block>
   <block id="e30e39b95a482f5610b5d2f5cc3088bb" category="list-text">Dal menu nella colonna *azioni*, selezionare *Modifica*.</block>
   <block id="a1528454842cc7ec985b647f82dba9ab" category="list-text">Modificare qualsiasi informazione diversa dal tipo di bucket.</block>
@@ -2390,7 +2380,6 @@ Se si avvia un'operazione di backup o snapshot con gli hook di esecuzione associ
   <block id="6b08504cd5426f752bd7eaae83995d90" category="list-text">Creare un AWS Elastic Container Registry (ECR) per ospitare tutte le immagini di Astra Control Center.</block>
   <block id="16c607c45e3322cf6601b7787d1f246f" category="list-text">Trasferire le immagini di Astra Control Center nel registro definito.</block>
   <block id="d8b0322bc209bdfbc78d7797f99b579f" category="list-text">Se si utilizza OCP, Red Hat OpenShift Container Platform (OCP) da 4.11 a 4.13</block>
-  <block id="3d03421efd2f3d3214e202f7d8c4c27c" category="list-text"><block ref="3d03421efd2f3d3214e202f7d8c4c27c" category="inline-link-rx"></block></block>
   <block id="b387f4f6aa69c93f3afbddbe810f081f" category="list-text">Creare un Google Container Registry per ospitare le immagini di Astra Control Center.</block>
   <block id="9acd22968611ca33d2ba472c7feb326d" category="paragraph">Esempio: Le immagini di Astra Control Center possono essere inviate a questo registro inserendo il seguente script:</block>
   <block id="2da3911683fd04e8a1a6e54efd92d4ed" category="list-text"><block ref="95d9d6081bcfe327760924f1dcd7ff53" category="inline-link-rx"></block>.</block>
@@ -2606,8 +2595,6 @@ Dopo che ogni backend è stato sottoposto a peering e aggiunto ad Astra Control,
   <block id="3f23a4c261d25b12e00f6171fdb38359" category="list-text">Assicurarsi che la benna sia di uno dei seguenti tipi:</block>
   <block id="04f795a7ad6dab94d4298117f47fe736" category="cell">Da 1,15 a 1,16 (vedere <block ref="ca85a59b7f183a96161fa125579f74e9" category="inline-xref-macro-rx"></block>)</block>
   <block id="dfee63492fa418d45012f44e9efcecf3" category="list-text">*Requisiti del cluster VMware Tanzu Kubernetes Grid*: Quando si ospita Astra Control Center su un cluster VMware Tanzu Kubernetes Grid (TKG) o Tanzu Kubernetes Grid Integrated Edition (TKGi), tenere presente le seguenti considerazioni.</block>
-  <block id="1c48088dc1732bdac3e27be1a94c191a" category="inline-link">Documentazione del prodotto VMware NSX-T Data Center.</block>
-  <block id="6f2e84a8cc83bea678c051eedf03eda5" category="list-text">Il token del file di configurazione predefinito di VMware TKG e TKGi scade dieci ore dopo l'implementazione. Se si utilizzano prodotti del portfolio Tanzu, è necessario generare un file di configurazione del cluster Tanzu Kubernetes con un token non in scadenza per evitare problemi di connessione tra Astra Control Center e cluster di applicazioni gestiti. Per istruzioni, visitare il sito<block ref="8b2a2640d5e94aaf0de3bd3373313f4b" category="inline-link-rx"></block></block>
   <block id="71aeb6f089406bc5a9abfec5efe995cc" category="list-text">Utilizzare<block ref="3b7e746f7178ae60c65fc979bda0c36b" prefix=" " category="inline-code"></block> per verificare se è già stato configurato un monitor dei servizi per accettare il traffico in entrata. Se ne esiste uno, non installare MetalLB, perché il monitor di servizio esistente sovrascriverà qualsiasi nuova configurazione del bilanciamento del carico.</block>
   <block id="883a74644c0071959dda599b0318b7ca" category="list-text">Disattivare l'applicazione della classe di storage predefinita TKG o TKGi su qualsiasi cluster di applicazioni che deve essere gestito da Astra Control. Per eseguire questa operazione, modificare il<block ref="ce7ec6c8eb08d64132a760a081faa0d0" prefix=" " category="inline-code"></block> risorsa sul cluster dello spazio dei nomi.</block>
   <block id="d3c98057775714af0833471a00e53e8a" category="section-title">Requisiti mesh di servizio</block>
@@ -2922,7 +2909,6 @@ Astra Control è ora in grado di gestire le applicazioni supportate da volumi pe
   <block id="4f27e6f7f8f95f32f55540801c5f6db0" category="list-text">Verificare che l'operatore, la distribuzione e i replicaset siano stati creati.</block>
   <block id="6849b59104c35075b063cf35570fde13" category="admonition">In un cluster Kubernetes dovrebbe esserci solo *un'istanza* dell'operatore. Non creare implementazioni multiple dell'operatore Astra Trident.</block>
   <block id="b88c081e2a4b249f94292c6f7bf16bdc" category="inline-link">Scaricare il programma di installazione di Astra Trident ed estrarlo</block>
-  <block id="f1f44f407a364d092b4a3b446d6593b5" category="list-text"><block ref="5512264baa78f7d10bb082092407833c" category="inline-link-rx"></block>.</block>
   <block id="b53ea1f6729ee2c1c5dc303c5e9bb360" category="list-text">Completa questi passaggi se non hai ancora installato Astra Trident o se hai rimosso l'operatore dall'implementazione originale di Astra Trident:</block>
   <block id="1802fc07d2de18110ae52621540f337e" category="list-text">Creare il CRD:</block>
   <block id="b19df824e7baecb971d0fdd39542c6d6" category="list-text">Creare lo spazio dei nomi tridente <block ref="a40796e67d7096bdb1a461d9369987ae" prefix="(" category="inline-code"></block>) o confermare che lo spazio dei nomi tridente esiste ancora <block ref="929ac53a7aaa18d0ab7bfd29e3b89c45" prefix="(" category="inline-code"></block>). Se lo spazio dei nomi è stato rimosso, crearlo di nuovo.</block>
@@ -3252,9 +3238,7 @@ Se è stata installata una mesh di servizio Istio durante l'installazione di Ast
   <block id="7247d7030b66ad4ed4eaa523ed6676b0" category="doc">[Anteprima tecnica] Gestisci le applicazioni Astra Control utilizzando CRS</block>
   <block id="da13393683a8a904dc50249c70da287d" category="paragraph">Gestisci le tue applicazioni Astra Control usando risorse personalizzate (CR) di Kubernetes. Sono disponibili le seguenti opzioni:</block>
   <block id="fe3d899243edced10a1ad187416682d1" category="inline-link-macro">Definisci un'applicazione usando una risorsa personalizzata di Kubernetes</block>
-  <block id="548367b13fdfb71bd127422bd31f4a23" category="list-text"><block ref="548367b13fdfb71bd127422bd31f4a23" category="inline-link-macro-rx"></block></block>
   <block id="b8e79ddd9fc269248031679199dbd254" category="inline-link-macro">Gestire un bucket utilizzando una risorsa personalizzata</block>
-  <block id="627279ce1f2550c02809339fdab89000" category="list-text"><block ref="627279ce1f2550c02809339fdab89000" category="inline-link-macro-rx"></block></block>
   <block id="facecf9e8e2f937530550ac2ae290916" category="list-text"><block ref="472d718512ba332a2d38860c315707a0" category="inline-link-rx"></block> Accedendo al NetApp Support Site e accedendo alle licenze software nel menu Systems.</block>
   <block id="80d2cdb34a892477ebf224eafba016c0" category="admonition">Assicurarsi che la licenza consenta di utilizzare almeno tutte le unità CPU necessarie. Se il numero di unità CPU gestite da Astra Control Center supera le unità CPU disponibili nella nuova licenza applicata, non sarà possibile applicare la nuova licenza.</block>
   <block id="cafefc5f50506723aef36efe08228ac6" category="list-text"><block ref="cafefc5f50506723aef36efe08228ac6" category="inline-link-macro-rx"></block></block>
@@ -3708,4 +3692,17 @@ Astra Control provisioner viene installato automaticamente nell'ambito del proce
   <block id="ee598b6d30a6fff85e10ec4aa00fb486" category="list-text">*Astra Control*: Astra Control è il servizio di gestione centralizzato per tutti i cluster gestiti, che fornisce carichi di lavoro orchestrati per la protezione e la mobilità delle applicazioni in locale, nonché le seguenti funzionalità:</block>
   <block id="301a1bce6ec5e89d3e225cc1c7d88bb6" category="list-text">Vista combinata di più cluster</block>
   <block id="00b221fbcaad3eecdab529046865c432" category="paragraph">Astra Control è disponibile in un unico modello di distribuzione.</block>
+  <block id="c30252f2d0066b5068c0018598caa179" category="list-text"><block ref="9dd8c260676cdbe799894b1bfaa380f3" category="inline-link-rx"></block>.</block>
+  <block id="b0fd08b16e7b7c94a3bf8b7445bca6fe" category="list-text">Per i cluster GKE, Astra Control Service utilizza <block ref="8665cd3a57554cfca2cb7457cb655a04" category="inline-link-rx"></block> o Google Persistent Disks come backend di archiviazione per i tuoi volumi persistenti.</block>
+  <block id="319c3fec493c64a65148bf0f94ddf14a" category="list-text">Per i cluster AKS, Astra Control Service utilizza <block ref="c8cef11c8f82391ff314149403153759" category="inline-link-rx"></block> o dischi gestiti da Azure come backend di archiviazione per i volumi persistenti.</block>
+  <block id="1e2b1bc63405a140a4387b2e8739eb16" category="list-text"><block ref="2e95ec519b9fe9bcf5a4be85aaffa8d6" category="inline-link-macro-rx"></block>.</block>
+  <block id="7493ebd270b68257f24f8ed58dae67e0" category="list-text"><block ref="7493ebd270b68257f24f8ed58dae67e0" category="inline-link-rx"></block></block>
+  <block id="ddeb3e05aed45d50e7f48754751c93b3" category="inline-link">la documentazione del prodotto VMware NSX-T Data Center</block>
+  <block id="639460c11b1a38b37de388e6094e4e9e" category="list-text">Il token del file di configurazione predefinito di VMware TKG e TKGi scade dieci ore dopo la distribuzione. Se usi i prodotti del portfolio Tanzu, devi generare un file di configurazione del cluster Kubernetes Tanzu con un token senza scadenza per evitare problemi di connessione tra Astra Control Center e i cluster di applicazioni gestiti. Per istruzioni, visita <block ref="38e49605ed0ee8802727916ae2015530" category="inline-link-rx"></block>.</block>
+  <block id="c090e26e12d996a63ebdc9443b1a24bd" category="paragraph">Se vuoi gestire un cluster su un'altra istanza di Astra Control Center, dovresti prima <block ref="10a3ec7ef23f0eeeb87bbd373b7d1bae" category="inline-link-macro-rx"></block> dall'istanza su cui è gestito, prima di gestirlo su un'altra istanza. Dopo aver rimosso il cluster dalla gestione, verifica che il cluster non sia più gestito eseguendo questo comando:</block>
+  <block id="9baf06bed4e0958aca8a391da521f183" category="paragraph">Assicurati di <block ref="f332842401aa508212d4f5a688ca86ce" category="inline-link-macro-rx"></block> quando stabilisci una connessione.</block>
+  <block id="c58281350ba073d90fe63e63b3f80e34" category="list-text"><block ref="c58281350ba073d90fe63e63b3f80e34" category="inline-link-macro-rx"></block></block>
+  <block id="e7b4bce844330e3c5aefb46f8d12db1d" category="list-text"><block ref="e7b4bce844330e3c5aefb46f8d12db1d" category="inline-link-macro-rx"></block></block>
+  <block id="398950e2648d28eed29b2b7bd0952ad5" category="list-text">(Opzionale) Un'etichetta Kubernetes su qualsiasi <block ref="3b1c56fea11b428a3060d7568229534a" category="inline-link-macro-rx"></block>.</block>
+  <block id="eef3fedf7d4e668662e435160c3c5c87" category="admonition">Quando aggiungi un bucket, seleziona il provider di bucket corretto e fornisci le credenziali giuste per quel provider. Ad esempio, l'interfaccia utente accetta NetApp ONTAP S3 come tipo e accetta le credenziali StorageGRID; tuttavia, questo farà sì che tutti i futuri backup e ripristini delle app che usano questo bucket falliscano. Vedi la <block ref="2fa2057c95f20298aba02cf1be9ec7d5" category="inline-link-macro-rx"></block>.</block>
 </blocks>

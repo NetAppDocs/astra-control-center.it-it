@@ -28,12 +28,14 @@ Per istruzioni su come gestire i back-end dello storage utilizzando l'API Astra 
 
 
 
+[[view-storage-backend-details]]
 == Visualizza i dettagli del back-end dello storage
 
 È possibile visualizzare le informazioni di back-end dello storage dalla dashboard o dall'opzione Backend.
 
 
 
+[[view-storage-backend-details-from-the-dashboard]]
 === Visualizza i dettagli del back-end dello storage dalla dashboard
 
 .Fasi
@@ -49,6 +51,7 @@ Per istruzioni su come gestire i back-end dello storage utilizzando l'API Astra 
 
 
 
+[[view-storage-backend-details-from-the-backends-option]]
 === Visualizza i dettagli del back-end dello storage dall'opzione Backend
 
 Visualizza informazioni sullo stato, la capacità e le performance del back-end (throughput IOPS e/o latenza).
@@ -62,6 +65,7 @@ Visualizza informazioni sullo stato, la capacità e le performance del back-end 
 
 
 
+[[edit-storage-backend-authentication-details]]
 == Modificare i dettagli dell'autenticazione back-end dello storage
 
 Centro di controllo Astra offre due modalità di autenticazione di un backend ONTAP.
@@ -93,6 +97,7 @@ NOTE: L'utente di cui si inseriscono le credenziali deve disporre di `ontapi` Me
 
 
 
+[[manage-a-discovered-storage-backend]]
 == Gestire un backend di storage rilevato
 
 È possibile scegliere di gestire un backend di storage non gestito ma rilevato. Quando si gestisce un backend di storage, Astra Control indica se un certificato per l'autenticazione è scaduto.
@@ -108,6 +113,7 @@ NOTE: L'utente di cui si inseriscono le credenziali deve disporre di `ontapi` Me
 
 
 
+[[unmanage-a-storage-backend]]
 == Annullare la gestione di un backend di storage
 
 È possibile annullare la gestione del backend.
@@ -122,6 +128,7 @@ NOTE: L'utente di cui si inseriscono le credenziali deve disporre di `ontapi` Me
 
 
 
+[[remove-a-storage-backend]]
 == Rimuovere un backend di storage
 
 È possibile rimuovere un backend di storage non più in uso. Questa operazione può essere utile per mantenere la configurazione semplice e aggiornata.
@@ -154,6 +161,7 @@ NOTE: L'utente di cui si inseriscono le credenziali deve disporre di `ontapi` Me
 
 
 
+[[find-more-information]]
 == Trova ulteriori informazioni
 
 * https://docs.netapp.com/us-en/astra-automation["Utilizzare l'API di controllo Astra"^]

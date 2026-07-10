@@ -114,6 +114,7 @@ IMPORTANT: Non eliminare l'operatore di Astra Control Center (ad esempio, `kubec
 
 
 
+[[download-and-extract-astra-control-center]]
 == Scarica ed estrai Astra Control Center
 
 Scarica le immagini di Astra Control Center da una delle seguenti posizioni:
@@ -161,12 +162,14 @@ tar -vxzf astra-control-center-[version].tar.gz
 ====
 
 
+[[complete-additional-steps-if-you-use-a-local-registry]]
 == Completare ulteriori passaggi se si utilizza un registro locale
 
 Se si intende inviare il pacchetto Astra Control Center al registro locale, è necessario utilizzare il plugin della riga di comando di NetApp Astra kubectl.
 
 
 
+[[install-the-netapp-astra-kubectl-plugin]]
 === Installare il plug-in NetApp Astra kubectl
 
 Completare questi passaggi per installare il più recente plugin della riga di comando di NetApp Astra kubectl.
@@ -197,6 +200,7 @@ cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 
 
 
+[[add-the-images-to-your-registry]]
 === Aggiungere le immagini al registro
 
 . Se si prevede di inviare il pacchetto Astra Control Center al registro locale, completare la sequenza di passaggi appropriata per il motore del contenitore:
@@ -303,6 +307,7 @@ cd manifests
 
 
 
+[[set-up-namespace-and-secret-for-registries-with-auth-requirements]]
 == Impostare namespace e secret per i registri con requisiti di autenticazione
 
 . Esportare il file kubeconfig per il cluster host Astra Control Center:
@@ -365,6 +370,7 @@ kubectl create secret docker-registry astra-registry-cred -n [netapp-acc or cust
 
 
 
+[[install-the-astra-control-center-operator]]
 == Installare l'operatore del centro di controllo Astra
 
 . (Solo registri locali) se si utilizza un registro locale, completare i seguenti passaggi:
@@ -496,6 +502,7 @@ kubectl get pods -n netapp-acc-operator
 
 
 
+[[configure-astra-control-center]]
 == Configurare Astra Control Center
 
 . Modificare il file delle risorse personalizzate (CR) di Astra Control Center (`astra_control_center.yaml`) per creare account, supporto, registro e altre configurazioni necessarie:
@@ -772,6 +779,7 @@ spec:
 ----
 
 
+[[complete-astra-control-center-and-operator-installation]]
 == Completare l'installazione dell'Astra Control Center e dell'operatore
 
 . Se non lo si è già fatto in un passaggio precedente, creare il `netapp-acc` namespace (o personalizzato):
@@ -817,6 +825,7 @@ IMPORTANT: L'operatore di Astra Control Center esegue un controllo automatico de
 
 
 
+[[verify-system-status]]
 == Verificare lo stato del sistema
 
 È possibile verificare lo stato del sistema utilizzando i comandi kubectl. Se preferisci utilizzare OpenShift, puoi utilizzare comandi oc paragonabili per le fasi di verifica.
@@ -992,6 +1001,7 @@ IMPORTANT: Copiare il valore UUID. La password è `ACC-` Seguito dal valore UUID
 
 
 
+[[set-up-ingress-for-load-balancing]]
 == Impostare l'ingresso per il bilanciamento del carico
 
 È possibile configurare un controller di ingresso Kubernetes che gestisce l'accesso esterno ai servizi. Queste procedure forniscono esempi di configurazione per un controller di ingresso se si utilizza il valore predefinito di `ingressType: "Generic"` Nella risorsa personalizzata di Astra Control Center (`astra_control_center.yaml`). Non è necessario utilizzare questa procedura, se specificato `ingressType: "AccTraefik"` Nella risorsa personalizzata di Astra Control Center (`astra_control_center.yaml`).
@@ -1007,6 +1017,7 @@ Le fasi di installazione variano a seconda del tipo di controller di ingresso ut
 
 
 
+[[steps-for-istio-ingress]]
 === Passaggi per l'ingresso di Istio
 
 . Configurare l'ingresso Istio.
@@ -1099,6 +1110,7 @@ ingress istio astra.example.com 172.16.103.248  80, 443 1h
 
 
 
+[[steps-for-nginx-ingress-controller]]
 === Procedura per il controller di ingresso Nginx
 
 . Creare un segreto di tipo `kubernetes.io/tls` Per una chiave privata TLS e un certificato in `netapp-acc` (o con nome personalizzato) come descritto in https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets["Segreti TLS"].
@@ -1142,6 +1154,7 @@ WARNING: NetApp consiglia di installare il controller nginx come implementazione
 
 
 
+[[steps-for-openshift-ingress-controller]]
 === Procedura per il controller di ingresso OpenShift
 
 . Procurarsi il certificato e ottenere la chiave, il certificato e i file CA pronti per l'uso con il percorso OpenShift.
@@ -1155,6 +1168,7 @@ oc create route edge --service=traefik --port=web -n [netapp-acc or custom names
 
 
 
+[[log-in-to-the-astra-control-center-ui]]
 == Accedere all'interfaccia utente di Astra Control Center
 
 Dopo aver installato Astra Control Center, modificherai la password per l'amministratore predefinito ed effettuerai l'accesso alla dashboard dell'interfaccia utente di Astra Control Center.
@@ -1182,6 +1196,7 @@ NOTE: Se si tratta del primo accesso e si dimentica la password e non sono stati
 
 
 
+[[troubleshoot-the-installation]]
 == Risolvere i problemi di installazione
 
 Se uno dei servizi è in `Error` stato, è possibile esaminare i registri. Cercare i codici di risposta API nell'intervallo da 400 a 500. Questi indicano il luogo in cui si è verificato un guasto.
@@ -1203,6 +1218,7 @@ kubectl get acc -n [netapp-acc or custom namespace] -o yaml
 
 
 
+[[alternative-installation-procedures]]
 == Procedure di installazione alternative
 
 * *Installa con Red Hat OpenShift OperatorHub*: USA questo link:../get-started/acc_operatorhub_install.html["procedura alternativa"] Per installare Astra Control Center su OpenShift utilizzando OperatorHub.
@@ -1211,6 +1227,7 @@ kubectl get acc -n [netapp-acc or custom namespace] -o yaml
 
 
 
+[[whats-next]]
 == Cosa succederà
 
 * (Opzionale) a seconda dell'ambiente, completare la post-installazione link:configure-after-install.html["fasi di configurazione"].

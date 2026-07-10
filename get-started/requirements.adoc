@@ -16,6 +16,7 @@ Inizia verificando la preparazione del tuo ambiente operativo, dei cluster di ap
 
 
 
+[[supported-host-cluster-kubernetes-environments]]
 == Ambienti Kubernetes cluster host supportati
 
 Astra Control Center è stato validato con i seguenti ambienti host Kubernetes:
@@ -45,6 +46,7 @@ RKE 2: Versioni 1.24.17, 1.25.14, 1.26.9 con Rancher Manager 2.7.9
 |===
 
 
+[[host-cluster-resource-requirements]]
 == Requisiti delle risorse del cluster host
 
 Astra Control Center richiede le seguenti risorse oltre ai requisiti delle risorse dell'ambiente:
@@ -56,7 +58,7 @@ NOTE: Questi requisiti presuppongono che Astra Control Center sia l'unica applic
 * *Nodi di lavoro*: Almeno 3 nodi di lavoro in totale, con 4 core CPU e 12 GB di RAM ciascuno
 * *Requisiti del cluster VMware Tanzu Kubernetes Grid*: Quando si ospita Astra Control Center su un cluster VMware Tanzu Kubernetes Grid (TKG) o Tanzu Kubernetes Grid Integrated Edition (TKGi), tenere presente le seguenti considerazioni.
 +
-** Il token del file di configurazione predefinito di VMware TKG e TKGi scade dieci ore dopo l'implementazione. Se si utilizzano prodotti del portfolio Tanzu, è necessario generare un file di configurazione del cluster Tanzu Kubernetes con un token non in scadenza per evitare problemi di connessione tra Astra Control Center e cluster di applicazioni gestiti. Per istruzioni, visitare il sito https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html["Documentazione del prodotto VMware NSX-T Data Center."^]
+** Il token del file di configurazione predefinito di VMware TKG e TKGi scade dieci ore dopo la distribuzione. Se usi i prodotti del portfolio Tanzu, devi generare un file di configurazione del cluster Kubernetes Tanzu con un token senza scadenza per evitare problemi di connessione tra Astra Control Center e i cluster di applicazioni gestiti. Per istruzioni, visita  https://techdocs.broadcom.com/us/en/vmware-cis/nsx/vmware-nsx/4-2.html["la documentazione del prodotto VMware NSX-T Data Center"^].
 ** Utilizzare `kubectl get nsxlbmonitors -A` per verificare se è già stato configurato un monitor dei servizi per accettare il traffico in entrata. Se ne esiste uno, non installare MetalLB, perché il monitor di servizio esistente sovrascriverà qualsiasi nuova configurazione del bilanciamento del carico.
 ** Disattivare l'applicazione della classe di storage predefinita TKG o TKGi su qualsiasi cluster di applicazioni che deve essere gestito da Astra Control. Per eseguire questa operazione, modificare il `TanzuKubernetesCluster` risorsa sul cluster dello spazio dei nomi.
 ** Quando implementi Astra Control Center in un ambiente TKG o TKGi, tieni presente i requisiti specifici di Astra Control Provisioner:
@@ -72,6 +74,7 @@ NOTE: Questi requisiti presuppongono che Astra Control Center sia l'unica applic
 
 
 
+[[service-mesh-requirements]]
 == Requisiti mesh di servizio
 
 Si consiglia vivamente di installare una versione vanilla supportata della mesh del servizio Istio sul cluster host Astra Control Center. Fare riferimento a. https://istio.io/latest/docs/releases/supported-releases/["versioni supportate"^] Per le versioni supportate di Istio. Le versioni con marchio di Istio Service Mesh, come OpenShift Service Mesh, non sono validate con Astra Control Center.
@@ -83,12 +86,14 @@ NOTE: L'installazione e l'utilizzo di Astra Control Center senza la configurazio
 
 
 
+[[astra-trident]]
 == Astra Trident
 
 Se intendi utilizzare Astra Trident al posto di Astra Control Provivisioner con questa release, sono supportate Astra Trident 23,04 e versioni successive. Astra Control Center richiede <<Astra Control provisioner>> nelle versioni future.
 
 
 
+[[astra-control-provisioner]]
 == Astra Control provisioner
 
 Per utilizzare le funzionalità di storage avanzate di Astra Control Provivisioner, devi installare Astra Trident 23,10 o versioni successive e abilitare link:../get-started/enable-acp.html["Funzionalità Astra Control Provisioner"]. Per utilizzare la funzionalità più recente di Astra Control Provisioner, avrai bisogno delle versioni più recenti di Astra Trident e Astra Control Center.
@@ -98,6 +103,7 @@ Per utilizzare le funzionalità di storage avanzate di Astra Control Provivision
 
 
 
+[[ontap-configuration-with-astra-trident]]
 === Configurazione di ONTAP con Astra Trident
 
 * *Storage class*: Configurare almeno una classe di archiviazione nel cluster. Se viene configurata una classe di storage predefinita, assicurarsi che sia l'unica classe di storage con la designazione predefinita.
@@ -113,6 +119,7 @@ Per utilizzare le funzionalità di storage avanzate di Astra Control Provivision
 
 
 
+[[storage-backends]]
 == Back-end dello storage
 
 Assicurarsi di disporre di un backend supportato con capacità sufficiente.
@@ -141,6 +148,7 @@ Assicurarsi di disporre di un backend supportato con capacità sufficiente.
 
 
 
+[[ontap-licenses]]
 === Licenze ONTAP
 
 Per utilizzare il centro di controllo Astra, verificare di disporre delle seguenti licenze ONTAP, a seconda delle operazioni da eseguire:
@@ -154,6 +162,7 @@ Per verificare se il sistema ONTAP dispone delle licenze richieste, fare riferim
 
 
 
+[[netapp-metrocluster]]
 === NetApp MetroCluster
 
 Quando utilizzi NetApp MetroCluster come back-end dello storage, devi quanto segue:
@@ -170,6 +179,7 @@ Per configurare la LIF MetroCluster, fai riferimento a queste opzioni ed esempi 
 
 
 
+[[astra-control-center-license]]
 == Licenza Astra Control Center
 
 Astra Control Center richiede una licenza Astra Control Center. Quando si installa Astra Control Center, viene già attivata una licenza di valutazione integrata di 90 giorni per 4,800 unità CPU. Se hai bisogno di una maggiore capacità o di termini di valutazione diversi, o se desideri passare a una licenza completa, puoi ottenere una licenza di valutazione o una licenza completa diversa da NetApp. Hai bisogno di una licenza per proteggere le tue applicazioni e i tuoi dati.
@@ -182,6 +192,7 @@ Per ulteriori informazioni sul funzionamento delle licenze, fare riferimento a. 
 
 
 
+[[networking-requirements]]
 == Requisiti di rete
 
 Configura il tuo ambiente operativo per garantire che Astra Control Center possa comunicare correttamente. Sono necessarie le seguenti configurazioni di rete:
@@ -215,6 +226,7 @@ NOTE: Puoi implementare Astra Control Center in un cluster Kubernetes dual-stack
 |===
 
 
+[[ingress-for-on-premises-kubernetes-clusters]]
 == Ingresso per cluster Kubernetes on-premise
 
 È possibile scegliere il tipo di ingresso di rete utilizzato da Astra Control Center. Per impostazione predefinita, Astra Control Center implementa il gateway Astra Control Center (servizio/traefik) come risorsa a livello di cluster. Astra Control Center supporta anche l'utilizzo di un servizio di bilanciamento del carico, se consentito nel tuo ambiente. Se si preferisce utilizzare un servizio di bilanciamento del carico e non ne si dispone già di uno configurato, è possibile utilizzare il bilanciamento del carico MetalLB per assegnare automaticamente un indirizzo IP esterno al servizio. Nella configurazione del server DNS interno, puntare il nome DNS scelto per Astra Control Center sull'indirizzo IP con bilanciamento del carico.
@@ -226,18 +238,21 @@ Per ulteriori informazioni, fare riferimento a. link:../get-started/install_acc.
 
 
 
+[[google-anthos-ingress-requirements]]
 === Requisiti di ingresso di Google anthos
 
 Quando si ospita Astra Control Center su un cluster Google anthos, Google anthos include il bilanciamento del carico MetalLB e il servizio di ingresso Istio per impostazione predefinita, consentendo di utilizzare semplicemente le funzionalità di ingresso generiche di Astra Control Center durante l'installazione. Fare riferimento a. link:install_acc.html#configure-astra-control-center["Documentazione di installazione di Astra Control Center"] per ulteriori informazioni.
 
 
 
+[[supported-web-browsers]]
 == Browser Web supportati
 
 Astra Control Center supporta versioni recenti di Firefox, Safari e Chrome con una risoluzione minima di 1280 x 720.
 
 
 
+[[additional-requirements-for-application-clusters]]
 == Requisiti aggiuntivi per i cluster di applicazioni
 
 Se si prevede di utilizzare queste funzionalità di Astra Control Center, tenere presenti questi requisiti:
@@ -252,6 +267,7 @@ Se si prevede di utilizzare queste funzionalità di Astra Control Center, tenere
 
 
 
+[[whats-next]]
 == Cosa succederà
 
 Visualizzare il link:quick-start.html["avvio rapido"] panoramica.

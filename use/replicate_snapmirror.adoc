@@ -42,6 +42,7 @@ Utilizzando Astra Control, è possibile eseguire le seguenti attività relative 
 
 
 
+[[replication-prerequisites]]
 == Prerequisiti per la replica
 
 La replica dell'applicazione Astra Control richiede che i seguenti prerequisiti siano soddisfatti prima di iniziare:
@@ -99,6 +100,7 @@ IMPORTANT: La replica di Astra Control supporta le applicazioni che utilizzano u
 
 
 
+[[set-up-a-replication-relationship]]
 == Impostare una relazione di replica
 
 L'impostazione di una relazione di replica comporta quanto segue:
@@ -161,6 +163,7 @@ Scopri di più sugli stati e sullo stato della replica alla fine di questo argom
 
 
 
+[[bring-a-replicated-app-online-on-the-destination-cluster-failover]]
 == Portare online un'applicazione replicata sul cluster di destinazione (failover)
 
 Utilizzando Astra Control, è possibile eseguire il failover delle applicazioni replicate in un cluster di destinazione. Questa procedura interrompe la relazione di replica e porta l'applicazione online sul cluster di destinazione. Questa procedura non interrompe l'applicazione sul cluster di origine se era operativa.
@@ -185,6 +188,7 @@ Le seguenti azioni si verificano in seguito alla procedura di failover:
 
 
 
+[[resync-a-failed-over-replication]]
 == Risincronizzare una replica con esito negativo
 
 L'operazione di risincronizzazione ristabilisce la relazione di replica. È possibile scegliere l'origine della relazione per conservare i dati nel cluster di origine o di destinazione. Questa operazione ristabilisce le relazioni di SnapMirror per avviare la replica del volume nella direzione desiderata.
@@ -217,6 +221,7 @@ CAUTION: Scegliere con attenzione l'origine di risincronizzazione, in quanto i d
 
 
 
+[[reverse-application-replication]]
 == Replica inversa delle applicazioni
 
 Si tratta dell'operazione pianificata per spostare l'applicazione nel back-end dello storage di destinazione continuando a replicare nel back-end dello storage di origine. Astra Control arresta l'applicazione di origine e replica i dati nella destinazione prima di eseguire il failover nell'applicazione di destinazione.
@@ -243,6 +248,7 @@ Le seguenti azioni si verificano in seguito alla replica inversa:
 
 
 
+[[fail-back-applications-to-the-original-source-cluster]]
 == Eseguire il failback delle applicazioni nel cluster di origine originale
 
 Utilizzando Astra Control, è possibile ottenere il "failback" dopo un'operazione di failover utilizzando la seguente sequenza di operazioni. In questo flusso di lavoro per ripristinare la direzione di replica originale, Astra Control replica (risincronizza) le modifiche dell'applicazione nell'applicazione di origine prima di invertire la direzione di replica.
@@ -270,6 +276,7 @@ Questo combina i risultati delle operazioni di "risincronizzazione" e "reverse r
 
 
 
+[[delete-an-application-replication-relationship]]
 == Eliminare una relazione di replica dell'applicazione
 
 L'eliminazione della relazione comporta due applicazioni separate senza alcuna relazione tra di esse.
@@ -289,12 +296,14 @@ Le seguenti azioni si verificano in seguito all'eliminazione di una relazione di
 
 
 
+[[replication-relationship-health-status-and-relationship-life-cycle-states]]
 == stato di salute della relazione di replica e stati del ciclo di vita della relazione
 
 Astra Control visualizza lo stato della relazione e gli stati del ciclo di vita della relazione di replica.
 
 
 
+[[replication-relationship-health-statuses]]
 === Stati di integrità delle relazioni di replica
 
 I seguenti stati indicano lo stato della relazione di replica:
@@ -312,6 +321,7 @@ I seguenti stati indicano lo stato della relazione di replica:
 
 
 
+[[replication-life-cycle-states]]
 === stati del ciclo di vita della replica
 
 I seguenti stati riflettono le diverse fasi del ciclo di vita della replica:

@@ -45,6 +45,7 @@ A seconda del tipo di archivio che si desidera ripristinare, effettuare le segue
 
 
 
+[[restore-data-from-backup-or-snapshot-using-the-web-ui]]
 == Ripristinare i dati dal backup o dallo snapshot utilizzando l'interfaccia utente Web
 
 Puoi ripristinare i dati utilizzando l'interfaccia utente web di Astra Control.
@@ -112,6 +113,7 @@ NOTE: Per ulteriori informazioni sulla configurazione delle regole di inclusione
 
 
 
+[[tech-preview-restore-from-backup-using-a-custom-resource-cr]]
 == [Tech preview] Ripristino da backup utilizzando una risorsa personalizzata (CR)
 
 È possibile ripristinare i dati da un backup utilizzando un file di risorse personalizzato (CR) in uno spazio dei nomi diverso o nello spazio dei nomi di origine originale.
@@ -258,6 +260,7 @@ kubectl apply -f astra-control-backup-ipr-cr.yaml
 ====
 
 
+[[tech-preview-restore-from-snapshot-using-a-custom-resource-cr]]
 == [Anteprima tecnica] Ripristino da snapshot utilizzando una risorsa personalizzata (CR)
 
 È possibile ripristinare i dati da uno snapshot utilizzando un file di risorse personalizzato (CR) in uno spazio dei nomi diverso o nello spazio dei nomi di origine originale.
@@ -413,6 +416,7 @@ IMPORTANT: Qualsiasi utente membro con vincoli di spazio dei nomi in base al nom
 
 
 
+[[filter-resources-during-an-application-restore]]
 == Filtrare le risorse durante il ripristino di un'applicazione
 
 È possibile aggiungere una regola di filtro a un link:../use/restore-apps.html["ripristinare"] operazione che specifica le risorse applicative esistenti da includere o escludere dall'applicazione ripristinata. È possibile includere o escludere risorse in base a uno spazio dei nomi, un'etichetta o un GVK (GroupVersionKind) specificati.
@@ -471,6 +475,7 @@ TIP: È possibile creare tutte le regole di inclusione ed esclusione delle risor
 
 
 
+[[in-place-restore-complications-for-an-app-that-shares-resources-with-another-app]]
 == Problemi di ripristino in-place per un'applicazione che condivide le risorse con un'altra applicazione
 
 È possibile eseguire un'operazione di ripristino in-place su un'applicazione che condivide le risorse con un'altra applicazione e produce risultati non desiderati. Tutte le risorse condivise tra le applicazioni vengono sostituite quando viene eseguito un ripristino in-place su una delle applicazioni.

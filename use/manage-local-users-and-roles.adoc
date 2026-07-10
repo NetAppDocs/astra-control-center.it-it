@@ -18,6 +18,7 @@ summary: Gestisci utenti e ruoli nel tuo sistema Astra Control Center.
 
 
 
+[[use-ldap]]
 == Utilizzare LDAP
 
 LDAP è un protocollo standard di settore per l'accesso alle informazioni di directory distribuite e una scelta popolare per l'autenticazione aziendale. È possibile collegare Astra Control Center a un server LDAP per eseguire l'autenticazione per gli utenti Astra Control selezionati. Ad alto livello, la configurazione prevede l'integrazione di Astra con LDAP e la definizione degli utenti e dei gruppi Astra Control corrispondenti alle definizioni LDAP. È possibile utilizzare l'API Astra Control o l'interfaccia utente Web per configurare l'autenticazione LDAP e gli utenti e i gruppi LDAP. Per ulteriori informazioni, consultare la seguente documentazione:
@@ -29,6 +30,7 @@ LDAP è un protocollo standard di settore per l'accesso alle informazioni di dir
 
 
 
+[[add-users]]
 == Aggiungere utenti
 
 Gli account Owner e gli amministratori possono aggiungere altri utenti all'installazione di Astra Control Center.
@@ -61,12 +63,14 @@ Per ulteriori informazioni sull'aggiunta di vincoli, fare riferimento a. link:ma
 
 
 
+[[manage-passwords]]
 == Gestire le password
 
 Puoi gestire le password per gli account utente in Astra Control Center.
 
 
 
+[[change-your-password]]
 === Modificare la password
 
 È possibile modificare la password dell'account utente in qualsiasi momento.
@@ -82,6 +86,7 @@ Puoi gestire le password per gli account utente in Astra Control Center.
 
 
 
+[[reset-another-users-password]]
 === Reimpostare la password di un altro utente
 
 Se l'account dispone delle autorizzazioni di ruolo Amministratore o Proprietario, è possibile reimpostare le password per altri account utente e per i propri. Quando si reimposta una password, si assegna una password temporanea che l'utente dovrà modificare al momento dell'accesso.
@@ -101,6 +106,7 @@ NOTE: Al successivo accesso, all'utente verrà richiesto di modificare la passwo
 
 
 
+[[remove-users]]
 == Rimuovere gli utenti
 
 Gli utenti con il ruolo Owner (Proprietario) o Admin (Amministratore) possono rimuovere altri utenti dall'account in qualsiasi momento.
@@ -117,12 +123,14 @@ Astra Control Center rimuove l'utente dall'account.
 
 
 
+[[manage-roles]]
 == Gestire i ruoli
 
 È possibile gestire i ruoli aggiungendo vincoli dello spazio dei nomi e limitando i ruoli utente a tali vincoli. In questo modo è possibile controllare l'accesso alle risorse all'interno dell'organizzazione. È possibile utilizzare l'interfaccia utente di Astra Control o. https://docs.netapp.com/us-en/astra-automation["API di controllo Astra"^] per gestire i ruoli.
 
 
 
+[[add-a-namespace-constraint-to-a-role]]
 === Aggiungere un vincolo dello spazio dei nomi a un ruolo
 
 Un utente Admin o Owner può aggiungere vincoli di spazio dei nomi ai ruoli Member o Viewer.
@@ -157,6 +165,7 @@ NOTE: Se si abilitano i vincoli per un ruolo e si seleziona *Conferma* senza agg
 
 
 
+[[remove-a-namespace-constraint-from-a-role]]
 === Rimuovere un vincolo dello spazio dei nomi da un ruolo
 
 Un utente Admin o Owner può rimuovere un vincolo dello spazio dei nomi da un ruolo.
@@ -175,6 +184,7 @@ La finestra di dialogo *Modifica ruolo* visualizza i vincoli attivi per il ruolo
 
 
 
+[[for-more-information]]
 == Per ulteriori informazioni
 
 * link:../concepts/user-roles-namespaces.html["Ruoli e spazi dei nomi degli utenti"]

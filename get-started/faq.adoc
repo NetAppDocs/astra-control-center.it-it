@@ -16,12 +16,14 @@ Queste FAQ possono essere utili se stai cercando una risposta rapida a una doman
 
 
 
+[[overview]]
 == Panoramica
 
 Le sezioni seguenti forniscono risposte ad alcune domande aggiuntive che potrebbero essere presentate durante l'utilizzo di Astra Control Center. Per ulteriori chiarimenti, contatta il sito astra.feedback@netapp.com
 
 
 
+[[access-to-astra-control-center]]
 == Accesso al centro di controllo Astra
 
 .Che cos'è l'URL di Astra Control?
@@ -31,6 +33,7 @@ Per l'URL, in un browser, immettere il nome di dominio completo (FQDN) impostato
 
 
 
+[[licensing]]
 == Licensing
 
 .Utilizzo una licenza di valutazione. Come faccio a passare alla licenza completa?
@@ -49,6 +52,7 @@ Sì, è possibile testare la funzionalità di gestione delle applicazioni con un
 
 
 
+[[registering-kubernetes-clusters]]
 == Registrazione dei cluster Kubernetes
 
 .Devo aggiungere nodi di lavoro al mio cluster Kubernetes dopo l'aggiunta a Astra Control. Cosa devo fare?
@@ -56,7 +60,7 @@ Sì, è possibile testare la funzionalità di gestione delle applicazioni con un
 
 .Come si annulla la gestione corretta di un cluster?
 . link:../use/unmanage.html["Annulla la gestione delle applicazioni da Astra Control"].
-. link:../use/unmanage.html#stop-managing-compute["Annullare la gestione del cluster da Astra Control"].
+. link:../use/unmanage.html#unmanage-a-cluster["Annullare la gestione del cluster da Astra Control"].
 
 
 .Cosa accade alle applicazioni e ai dati dopo aver rimosso il cluster Kubernetes da Astra Control?
@@ -70,6 +74,7 @@ Quando annulli la gestione di un cluster da Astra Control Center, Astra Control 
 
 
 
+[[managing-applications]]
 == Gestione delle applicazioni
 
 .Astra Control è in grado di implementare un'applicazione?
@@ -89,6 +94,7 @@ No, la salute dei pod non influisce sulla gestione delle app.
 
 
 
+[[data-management-operations]]
 == Operazioni di gestione dei dati
 
 .La mia applicazione utilizza diversi PVS. Astra Control effettuerà snapshot e backup di questi PVS?
@@ -99,6 +105,7 @@ No Snapshot e backup creati da Astra Control possono essere gestiti solo con Ast
 
 
 
+[[astra-control-provisioner]]
 == Astra Control provisioner
 
 .In che modo le funzionalità di provisioning dello storage di Astra Control Provivisioner sono diverse da quelle di Astra Trident?
@@ -116,6 +123,7 @@ Sì, puoi eseguire l'aggiornamento a Astra Control Provisioner e utilizzarne le 
 .In che modo posso passare dall'essere un utente Astra Trident esistente a Astra Control per utilizzare la funzionalità avanzata di provisioning e gestione dello storage?
 Se sei già un utente Astra Trident (compresi gli utenti di Astra Trident nel cloud pubblico), devi prima acquistare una licenza Astra Control. Dopo che avrai fatto, puoi scaricare il bundle Astra Control Provivisioner, eseguire l'upgrade di Astra Trident e. link:../get-started/enable-acp.html["Attiva la funzionalità Astra Control Provisioner"].
 
+[[running-acp-check]]
 .Come faccio a sapere se Astra Control Provivisioner ha sostituito Astra Trident nel mio cluster?
 Dopo l'installazione di Astra Control Provisioner, il cluster host nell'interfaccia utente di Astra Control mostrerà un `ACP version` piuttosto che `Trident version` campo e numero della versione installata corrente.
 

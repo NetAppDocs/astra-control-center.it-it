@@ -56,12 +56,13 @@ NOTE: I bucket S3 in Astra Control Center non riportano la capacità disponibile
 
 
 
+[[edit-a-bucket]]
 == Modificare un bucket
 
 È possibile modificare le informazioni delle credenziali di accesso per un bucket e modificare se un bucket selezionato è il bucket predefinito.
 
 
-NOTE: Quando si aggiunge un bucket, selezionare il bucket provider corretto e fornire le credenziali corrette per tale provider. Ad esempio, l'interfaccia utente accetta come tipo NetApp ONTAP S3 e accetta le credenziali StorageGRID; tuttavia, questo causerà l'errore di tutti i backup e ripristini futuri dell'applicazione che utilizzano questo bucket. Vedere link:../release-notes/known-issues.html#selecting-a-bucket-provider-type-with-credentials-for-another-type-causes-data-protection-failures["Note di rilascio"].
+NOTE: Quando aggiungi un bucket, seleziona il provider di bucket corretto e fornisci le credenziali giuste per quel provider. Ad esempio, l'interfaccia utente accetta NetApp ONTAP S3 come tipo e accetta le credenziali StorageGRID; tuttavia, questo farà sì che tutti i futuri backup e ripristini delle app che usano questo bucket falliscano. Vedi la link:../release-notes/known-issues.html["Note di rilascio"].
 
 .Fasi
 . Dalla barra di navigazione a sinistra, selezionare *Bucket*.
@@ -76,6 +77,7 @@ TIP: Impossibile modificare il tipo di bucket.
 
 
 
+[[set-the-default-bucket]]
 == Impostare il bucket predefinito
 
 Quando si esegue un clone tra i cluster, Astra Control richiede un bucket predefinito. Seguire questi passaggi per impostare un bucket predefinito per tutti i cluster.
@@ -90,12 +92,14 @@ Quando si esegue un clone tra i cluster, Astra Control richiede un bucket predef
 
 
 
+[[rotate-or-remove-bucket-credentials]]
 == Ruotare o rimuovere le credenziali bucket
 
 Astra Control utilizza le credenziali bucket per ottenere l'accesso e fornire chiavi segrete per un bucket S3 in modo che Astra Control Center possa comunicare con il bucket.
 
 
 
+[[rotate-bucket-credentials]]
 === Ruotare le credenziali del bucket
 
 Se si ruotano le credenziali, ruotarle durante una finestra di manutenzione quando non sono in corso backup (pianificati o on-demand).
@@ -109,6 +113,7 @@ Se si ruotano le credenziali, ruotarle durante una finestra di manutenzione quan
 
 
 
+[[remove-bucket-credentials]]
 === Rimuovere le credenziali bucket
 
 È necessario rimuovere le credenziali bucket solo se sono state applicate nuove credenziali a un bucket o se il bucket non è più utilizzato attivamente.
@@ -123,6 +128,7 @@ Per istruzioni su come rimuovere le credenziali S3 utilizzando l'API Astra Contr
 
 
 
+[[remove-a-bucket]]
 == Rimuovere una benna
 
 È possibile rimuovere un bucket che non è più in uso o che non è integro. Questa operazione può essere utile per mantenere la configurazione dell'archivio di oggetti semplice e aggiornata.
@@ -157,6 +163,7 @@ NOTE: Astra Control garantisce innanzitutto che non vi siano policy di pianifica
 
 
 
+[[tech-preview-manage-a-bucket-using-a-custom-resource]]
 == [Anteprima tecnica] Gestione di un bucket utilizzando una risorsa personalizzata
 
 È possibile aggiungere un bucket utilizzando una risorsa personalizzata (CR) Astra Control sul cluster di applicazioni. L'aggiunta di provider di bucket di archivi di oggetti è essenziale se si desidera eseguire il backup delle applicazioni e dello storage persistente o se si desidera clonare le applicazioni tra cluster. Astra Control memorizza i backup o i cloni nei bucket dell'archivio di oggetti definiti dall'utente. Se si utilizza il metodo di risorsa personalizzato, la funzionalità snapshot applicazione richiede un bucket.
@@ -239,12 +246,13 @@ kubectl apply -f astra-appvault.yaml -n astra-connector
 ----
 +
 
-NOTE: Quando si aggiunge un bucket, Astra Control contrassegna un bucket con l'indicatore bucket predefinito. Il primo bucket creato diventa quello predefinito. Con l'aggiunta di bucket, è possibile decidere in un secondo momento link:../use/manage-buckets.html#set-the-default-bucket["impostare un altro bucket predefinito"^].
+NOTE: Quando si aggiunge un bucket, Astra Control contrassegna un bucket con l'indicatore bucket predefinito. Il primo bucket creato diventa quello predefinito. Con l'aggiunta di bucket, è possibile decidere in un secondo momento link:../use/manage-buckets.html#set-the-default-bucket["impostare un altro bucket predefinito"].
 
 
 
 
 
+[[find-more-information]]
 == Trova ulteriori informazioni
 
 * https://docs.netapp.com/us-en/astra-automation["Utilizzare l'API di controllo Astra"^]

@@ -45,6 +45,7 @@ Se stai abilitando Astra Control provisioner, esegui prima quanto segue:
 ====
 
 
+[[step-1-get-the-astra-control-provisioner-image]]
 == (Fase 1) ottenere l'immagine di Astra Control provisioner
 
 Gli utenti di Astra Control Center possono ottenere l'immagine di Astra Control Provisioner utilizzando il Registro di sistema di Astra Control o il metodo del sito di supporto di NetApp. Gli utenti di Astra Trident che desiderano utilizzare Astra Control Protivisioner senza Astra Control devono utilizzare il metodo del Registro di sistema.
@@ -162,6 +163,7 @@ docker push <my_custom_registry>/trident-acp:24.02.0
 ====
 
 
+[[step-2-enable-astra-control-provisioner-in-astra-trident]]
 == (Fase 2) attiva Astra Control Provisioner in Astra Trident
 
 Determinare se il metodo di installazione originale ha utilizzato un https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method["Operatore (manualmente o con Helm) o tridentctl"^] e completare i passaggi appropriati in base al metodo originale.
@@ -170,7 +172,7 @@ Determinare se il metodo di installazione originale ha utilizzato un https://doc
 ====
 .Operatore Astra Trident
 --
-. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["Scaricare il programma di installazione di Astra Trident ed estrarlo"^].
+. https://docs.netapp.com/us-en/trident/trident-install/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["Scaricare il programma di installazione di Astra Trident ed estrarlo"^].
 . Completa questi passaggi se non hai ancora installato Astra Trident o se hai rimosso l'operatore dall'implementazione originale di Astra Trident:
 +
 .. Creare il CRD:
@@ -416,6 +418,7 @@ Se hai problemi nell'implementazione di Trident utilizzando Helm, esegui questo 
 ====
 
 
+[[result]]
 == Risultato
 
 La funzionalità Astra Control Provisioner è abilitata ed è possibile utilizzare qualsiasi funzionalità disponibile per la versione in esecuzione.

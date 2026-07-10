@@ -16,6 +16,7 @@ Dopo aver aggiunto i cluster da gestire da Astra Control Center, è possibile vi
 
 
 
+[[view-cluster-health-and-details]]
 == Visualizzare lo stato e i dettagli del cluster
 
 È possibile visualizzare i dettagli del cluster, ad esempio la posizione, i nodi di lavoro, i volumi persistenti e le classi di storage.
@@ -41,6 +42,7 @@ NOTE: È inoltre possibile visualizzare le informazioni sul cluster partendo da 
 
 
 
+[[change-the-default-storage-class]]
 == Modificare la classe di storage predefinita
 
 È possibile modificare la classe di storage predefinita per un cluster. Quando Astra Control gestisce un cluster, tiene traccia della classe di storage predefinita del cluster.

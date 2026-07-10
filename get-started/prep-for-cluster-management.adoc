@@ -72,6 +72,7 @@ insecure-skip-tls-verify: true
 
 
 
+[[run-eligibility-checks]]
 == Eseguire i controlli di idoneità
 
 Eseguire i seguenti controlli di idoneità per assicurarsi che il cluster sia pronto per essere aggiunto ad Astra Control Center.
@@ -131,6 +132,7 @@ ontap-gold (default)  csi.trident.netapp.io  Delete         Immediate          t
 
 
 
+[[create-a-cluster-role-kubeconfig]]
 == Creare un ruolo cluster kubeconfig
 
 Per i cluster gestiti utilizzando kubeconfig, è possibile creare un'autorizzazione limitata o un ruolo di amministratore di autorizzazioni esteso per Astra Control Center. Questa procedura non è necessaria per la configurazione di Astra Control Center, in quanto è già stata configurata una configurazione come parte di link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["processo di installazione"].

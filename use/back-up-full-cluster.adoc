@@ -16,6 +16,7 @@ summary: Proteggi le tue applicazioni pianificando un backup completo del cluste
 
 
 
+[[how-it-works]]
 == Come funziona
 
 Quando si configura e installa il flusso di lavoro del backup completo del cluster, un processo cron viene eseguito periodicamente e protegge qualsiasi namespace non ancora gestito, creando automaticamente criteri di protezione in base alle pianificazioni scelte durante l'installazione.
@@ -32,6 +33,7 @@ Per una maggiore granularità, è possibile utilizzare il flusso di lavoro basat
 
 
 
+[[create-a-scheduled-backup-of-all-namespaces]]
 == Creare un backup pianificato di tutti gli spazi dei nomi
 
 È possibile creare un backup pianificato di tutti i namespace in un cluster utilizzando il flusso di lavoro di backup completo del cluster.
@@ -48,6 +50,7 @@ Per una maggiore granularità, è possibile utilizzare il flusso di lavoro basat
 
 
 
+[[create-a-scheduled-backup-of-specific-namespaces]]
 == Creare un backup pianificato di spazi dei nomi specifici
 
 È possibile creare un backup pianificato di spazi dei nomi specifici mediante le relative etichette utilizzando il flusso di lavoro di backup basato su etichette.

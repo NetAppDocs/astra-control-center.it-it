@@ -28,6 +28,7 @@ La pagina *account* > *licenze* visualizza le informazioni sulla licenza, la dat
 
 
 
+[[for-more-information]]
 == Per ulteriori informazioni
 
 * link:../concepts/licensing.html["Licenza Astra Control Center"]

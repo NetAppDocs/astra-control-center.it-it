@@ -6,6 +6,7 @@ image:astra-architecture-diagram-v7.png["Un'immagine concettuale che descrive l'
 
 
 
+[[astra-control-components]]
 == Componenti di controllo Astra
 
 * *Kubernetes Clusters*: Kubernetes è una piattaforma open-source portatile, estensibile per la gestione di carichi di lavoro e servizi containerizzati, che facilita sia la configurazione dichiarativa che l'automazione. Astra fornisce servizi di gestione per le applicazioni ospitate in un cluster Kubernetes.
@@ -31,6 +32,7 @@ image:astra-architecture-diagram-v7.png["Un'immagine concettuale che descrive l'
 
 
 
+[[astra-control-interfaces]]
 == Interfacce di controllo Astra
 
 È possibile completare le attività utilizzando diverse interfacce:
@@ -43,6 +45,7 @@ Astra Control Center consente inoltre di gestire, migrare e proteggere i cluster
 
 
 
+[[for-more-information]]
 == Per ulteriori informazioni
 
 * https://docs.netapp.com/us-en/astra/index.html["Documentazione del servizio Astra Control"^]

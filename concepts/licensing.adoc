@@ -27,12 +27,14 @@ NOTE: Assicurarsi che la licenza consenta di utilizzare almeno tutte le unità C
 
 
 
+[[evaluation-licenses-and-full-licenses]]
 == Licenze di valutazione e licenze complete
 
 Una licenza di valutazione integrata viene fornita con una nuova installazione di Astra Control Center. Una licenza di valutazione offre le stesse funzionalità e funzionalità di una licenza completa per un periodo limitato (90 giorni). Dopo il periodo di valutazione, è necessaria una licenza completa per continuare con le funzionalità complete.
 
 
 
+[[license-expiration]]
 == Scadenza della licenza
 
 Se la licenza di Astra Control Center attiva scade, le funzionalità UI e API per le seguenti funzioni non sono disponibili:
@@ -47,6 +49,7 @@ Se la licenza di Astra Control Center attiva scade, le funzionalità UI e API pe
 
 
 
+[[how-license-consumption-is-calculated]]
 == Come viene calcolato il consumo delle licenze
 
 Quando si aggiunge un nuovo cluster ad Astra Control Center, non viene contato per ottenere licenze consumate fino a quando almeno un'applicazione in esecuzione sul cluster non viene gestita da Astra Control Center.
@@ -58,6 +61,7 @@ NOTE: I nodi dell'infrastruttura Red Hat OpenShift non consumano licenze in Astr
 
 
 
+[[find-more-information]]
 == Trova ulteriori informazioni
 
 * link:../get-started/add-license.html["Aggiungere una licenza quando si imposta Astra Control Center per la prima volta"]

@@ -39,6 +39,7 @@ Proteggi tutte le app eseguendo snapshot e backup utilizzando una policy di prot
 
 
 
+[[configure-a-protection-policy]]
 == Configurare un criterio di protezione
 
 Una policy di protezione protegge un'applicazione creando snapshot, backup o entrambi in base a una pianificazione definita. È possibile scegliere di creare snapshot e backup ogni ora, ogni giorno, ogni settimana e ogni mese, nonché specificare il numero di copie da conservare. È possibile definire un criterio di protezione utilizzando l'interfaccia utente Web Astra Control o un file di risorse personalizzato (CR).
@@ -136,6 +137,7 @@ Astra Control implementa la policy di protezione dei dati creando e conservando 
 
 
 
+[[create-a-snapshot]]
 == Creare un'istantanea
 
 Puoi creare uno snapshot on-demand in qualsiasi momento.
@@ -208,6 +210,7 @@ Viene avviato il processo di snapshot. Un'istantanea ha successo quando lo stato
 
 
 
+[[create-a-backup]]
 == Creare un backup
 
 Puoi eseguire il backup di un'app in qualsiasi momento.
@@ -288,6 +291,7 @@ Astra Control crea un backup dell'applicazione.
 ====
 
 
+[[enable-backup-and-restore-for-ontap-nas-economy-operations]]
 == Abilita backup e ripristino per le operazioni economiche a ontap-nas
 
 Astra Control Provivisioner fornisce funzionalità di backup e ripristino che possono essere abilitate per i backend di storage che stanno utilizzando `ontap-nas-economy` classe di storage.
@@ -351,6 +355,7 @@ L'applicazione è pronta per il backup e il ripristino utilizzando Astra Control
 
 
 
+[[create-an-immutable-backup]]
 == Creare un backup immutabile
 
 Un backup immutabile non può essere modificato, eliminato o sovrascritto se la politica di conservazione nel bucket che archivia il backup lo vieta. Puoi creare backup immutabili eseguendo il backup delle applicazioni in bucket che hanno configurato un criterio di conservazione. Fare riferimento a. link:../concepts/data-protection.html#immutable-backups["Protezione dei dati"] per informazioni importanti sull'utilizzo dei backup immutabili.
@@ -396,6 +401,7 @@ Astra Control crea un backup immutabile dell'app.
 ====
 
 
+[[view-snapshots-and-backups]]
 == Visualizzare snapshot e backup
 
 È possibile visualizzare le istantanee e i backup di un'applicazione dalla scheda Data Protection (protezione dati).
@@ -414,6 +420,7 @@ Le istantanee vengono visualizzate per impostazione predefinita.
 
 
 
+[[delete-snapshots]]
 == Eliminare le istantanee
 
 Eliminare le snapshot pianificate o on-demand non più necessarie.
@@ -433,6 +440,7 @@ Astra Control elimina lo snapshot.
 
 
 
+[[cancel-backups]]
 == Annullare i backup
 
 È possibile annullare un backup in corso.
@@ -453,6 +461,7 @@ NOTE: Non è possibile annullare un backup immutabile in esecuzione.
 
 
 
+[[delete-backups]]
 == Eliminare i backup
 
 Eliminare i backup pianificati o on-demand non più necessari. Non è possibile eliminare un backup eseguito in un bucket immutabile finché il criterio di conservazione del bucket non lo consente.

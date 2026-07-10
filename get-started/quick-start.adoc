@@ -74,6 +74,7 @@ Una volta completata la configurazione di Astra Control Center, utilizzare l'int
 
 
 
+[[for-more-information]]
 == Per ulteriori informazioni
 
 * https://docs.netapp.com/us-en/astra-automation["Utilizzare l'API di controllo Astra"^]

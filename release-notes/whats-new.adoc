@@ -16,6 +16,7 @@ Siamo lieti di annunciare l'ultima release di Astra Control Center.
 
 
 
+[[15-march-2024-24-02-0]]
 == 15 marzo 2024 (24.02.0)
 
 .Nuove funzionalità e supporto
@@ -44,6 +45,7 @@ Dopo l'installazione di link:../get-started/install-astra-connector.html["Connet
 
 
 
+[[7-november-2023-23-10-0]]
 == 7 novembre 2023 (23.10.0)
 
 [[nas-eco-backup-restore]]
@@ -82,6 +84,7 @@ Astra Control è ora in grado di gestire le applicazioni supportate da volumi pe
 
 
 
+[[31-july-2023-23-07-0]]
 == 31 luglio 2023 (23.07.0)
 
 .Nuove funzionalità e supporto
@@ -100,6 +103,7 @@ Astra Control è ora in grado di gestire le applicazioni supportate da volumi pe
 
 
 
+[[18-may-2023-23-04-2]]
 == 18 maggio 2023 (23.04.2)
 
 Questa patch release (23.04.2) per Astra Control Center (23.04.0) fornisce supporto per https://newreleases.io/project/github/kubernetes-csi/external-snapshotter/release/v6.1.0["Kubernetes CSI snapshotter esterno v6.1.0"^] e corregge quanto segue:
@@ -110,6 +114,7 @@ Questa patch release (23.04.2) per Astra Control Center (23.04.0) fornisce suppo
 
 
 
+[[25-april-2023-23-04-0]]
 == 25 aprile 2023 (23.04.0)
 
 .Nuove funzionalità e supporto
@@ -128,6 +133,7 @@ Questa patch release (23.04.2) per Astra Control Center (23.04.0) fornisce suppo
 
 
 
+[[22-november-2022-22-11-0]]
 == 22 novembre 2022 (22.11.0)
 
 .Nuove funzionalità e supporto
@@ -145,12 +151,14 @@ Questa patch release (23.04.2) per Astra Control Center (23.04.0) fornisce suppo
 
 
 
+[[8-september-2022-22-08-1]]
 == 8 settembre 2022 (22.08.1)
 
 Questa release di patch (22.08.1) per Astra Control Center (22.08.0) corregge piccoli bug nella replica delle applicazioni utilizzando NetApp SnapMirror.
 
 
 
+[[10-august-2022-22-08-0]]
 == 10 agosto 2022 (22.08.0)
 
 .Nuove funzionalità e supporto
@@ -173,6 +181,7 @@ NOTE: I ganci di esecuzione predefiniti forniti da NetApp per le applicazioni sp
 
 
 
+[[26-april-2022-22-04-0]]
 == 26 aprile 2022 (22.04.0)
 
 .Nuove funzionalità e supporto
@@ -190,6 +199,7 @@ NOTE: I ganci di esecuzione predefiniti forniti da NetApp per le applicazioni sp
 
 
 
+[[14-december-2021-21-12]]
 == 14 dicembre 2021 (21.12)
 
 .Nuove funzionalità e supporto
@@ -212,6 +222,7 @@ NOTE: I ganci di esecuzione predefiniti forniti da NetApp per le applicazioni sp
 
 
 
+[[5-august-2021-21-08]]
 == 5 agosto 2021 (21.08)
 
 Release iniziale di Astra Control Center.
@@ -228,6 +239,7 @@ Release iniziale di Astra Control Center.
 
 
 
+[[find-more-information]]
 == Trova ulteriori informazioni
 
 * link:../release-notes/known-issues.html["Problemi noti per questa release"]

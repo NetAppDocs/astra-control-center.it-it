@@ -82,6 +82,7 @@ docker login cr.astra.netapp.io -u <account-id> -p <api-token>
 
 
 
+[[access-the-operator-install-page]]
 == Accedere alla pagina di installazione dell'operatore
 
 . Completare la procedura corrispondente per OpenShift Container Platform o Ecosystem Catalog:
@@ -118,6 +119,7 @@ image:red_hat_catalog.png["Questa immagine mostra la pagina panoramica di Astra 
 
 
 
+[[uninstall-the-existing-operator]]
 == Disinstallare l'operatore esistente
 
 . Dalla pagina *netapp-acc-operator*, selezionare *Disinstalla* per rimuovere l'operatore esistente.
@@ -133,6 +135,7 @@ NOTE: Questa operazione elimina il netapp-acc-operator, ma conserva lo spazio de
 
 
 
+[[install-the-latest-operator]]
 == Installare l'operatore più recente
 
 . Passare a. `netapp-acc` pagina operatore di nuovo.
@@ -163,6 +166,7 @@ NOTE: Se è stata selezionata una strategia di approvazione manuale, verrà rich
 
 
 
+[[upgrade-astra-control-center]]
 == Aggiornare Astra Control Center
 
 . Dalla scheda dell'operatore Astra Control Center, selezionare Astra Control Center che rimane dall'installazione precedente e selezionare *Edit AstraControlCenter*.

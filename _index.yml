@@ -53,20 +53,20 @@ indexpage:
   - title: Descrizioni delle soluzioni
     links:
     - title: PostgreSQL DBaaS con Astra Control
-      url: https://cloud.netapp.com/hubfs/SB-4122-0221-PostgresSQL-DBaaS-with-Astra%20(2).pdf
+      url: https://www.netapp.com/pdf.html?item=/media/86656-sb-4122-postgres-sql-dbaa-s-with-astra.pdf
     - title: MySQL DBaaS con Astra Control
-      url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
+      url: https://www.netapp.com/pdf.html?item=/media/86420-sb-4110-my-sql-astra.pdf
     - title: Semplificare la gestione del ciclo di vita di Jenkins
-      url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
+      url: https://www.netapp.com/pdf.html?item=/media/86393-sb-4124-simplify-jenkins.pdf
   - title: Blog e community
     links:
     - title: Discordare il canale
       url: https://discord.gg/NetApp
     - title: Blog di Astra Control
-      url: https://cloud.netapp.com/blog/topic/astra
+      url: https://www.netapp.com/blog/astra-control-selective-restore/
     - title: Community NetApp
       url: https://community.netapp.com/
     - title: Hub Kubernetes
-      url: https://cloud.netapp.com/kubernetes-hub
+      url: https://www.netapp.com/kubernetes/
     - title: Dove ottenere aiuto
       url: "/support/get-help.html"

@@ -49,9 +49,10 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni non support
 
 
 
+[[the-same-cluster-cannot-be-managed-by-two-astra-control-center-instances]]
 == Lo stesso cluster non può essere gestito da due istanze di Astra Control Center
 
-Se si desidera gestire un cluster su un'altra istanza di Astra Control Center, è necessario innanzitutto link:../use/unmanage.html#stop-managing-compute["annullare la gestione del cluster"] dall'istanza in cui viene gestito prima di gestirlo su un'altra istanza. Dopo aver rimosso il cluster dalla gestione, verificare che il cluster non sia gestito eseguendo questo comando:
+Se vuoi gestire un cluster su un'altra istanza di Astra Control Center, dovresti prima link:../use/unmanage.html#unmanage-a-cluster["annullare la gestione del cluster"] dall'istanza su cui è gestito, prima di gestirlo su un'altra istanza. Dopo aver rimosso il cluster dalla gestione, verifica che il cluster non sia più gestito eseguendo questo comando:
 
 [listing]
 ----
@@ -61,6 +62,7 @@ Non devono essere presenti pod in esecuzione nello spazio dei nomi, altrimenti l
 
 
 
+[[astra-control-center-cannot-manage-two-identically-named-clusters]]
 == Astra Control Center non è in grado di gestire due cluster con lo stesso nome
 
 Se si tenta di aggiungere un cluster con lo stesso nome di un cluster già esistente, l'operazione non riesce. Questo problema si verifica più spesso in un ambiente Kubernetes standard se non è stato modificato il nome predefinito del cluster nei file di configurazione Kubernetes.
@@ -97,18 +99,21 @@ current-context: kubernetes-admin@kubernetes
 
 
 
+[[a-user-with-namespace-rbac-constraints-can-add-and-unmanage-a-cluster]]
 == Un utente con vincoli RBAC dello spazio dei nomi può aggiungere e annullare la gestione di un cluster
 
 Un utente con vincoli RBAC dello spazio dei nomi non deve essere autorizzato ad aggiungere o annullare la gestione dei cluster. A causa di un limite corrente, Astra non impedisce a tali utenti di annullare la gestione dei cluster.
 
 
 
+[[a-member-with-namespace-constraints-cannot-access-the-cloned-or-restored-apps-until-admin-adds-the-namespace-to-the-constraint]]
 == Un membro con vincoli dello spazio dei nomi non può accedere alle applicazioni clonate o ripristinate fino a quando admin non aggiunge lo spazio dei nomi al vincolo
 
 Qualsiasi `member` Gli utenti con vincoli RBAC in base al nome/ID dello spazio dei nomi possono clonare o ripristinare un'applicazione in un nuovo spazio dei nomi nello stesso cluster o in qualsiasi altro cluster nell'account dell'organizzazione. Tuttavia, lo stesso utente non può accedere all'applicazione clonata o ripristinata nel nuovo namespace. Dopo che un'operazione di clonazione o ripristino crea un nuovo spazio dei nomi, l'amministratore/proprietario dell'account può modificare `member` account utente e limitazioni del ruolo di aggiornamento per consentire all'utente interessato di concedere l'accesso al nuovo spazio dei nomi.
 
 
 
+[[restrictive-role-constraints-can-be-ignored-for-resources-on-non-connector-clusters]]
 == I vincoli di ruolo restrittivi possono essere ignorati per le risorse su cluster non di connettori
 
 * *Se le risorse a cui si accede appartengono ai cluster in cui è installato l'ultimo connettore Astra*: Quando a un utente vengono assegnati più ruoli tramite l'appartenenza al gruppo LDAP, i vincoli dei ruoli vengono combinati. Ad esempio, se un utente con un ruolo Visualizzatore locale unisce tre gruppi associati al ruolo membro, l'utente dispone ora dell'accesso al ruolo Visualizzatore alle risorse originali e dell'accesso al ruolo membro alle risorse acquisite tramite l'appartenenza al gruppo.
@@ -117,24 +122,28 @@ Qualsiasi `member` Gli utenti con vincoli RBAC in base al nome/ID dello spazio d
 
 
 
+[[multiple-applications-in-a-single-namespace-cannot-be-restored-collectively-to-a-different-namespace]]
 == Non è possibile ripristinare collettivamente più applicazioni in un singolo namespace in un namespace diverso
 
 Se si gestiscono più applicazioni in un singolo namespace (creando più definizioni di applicazioni in Astra Control), non è possibile ripristinare tutte le applicazioni in un singolo namespace diverso. È necessario ripristinare ogni applicazione nel proprio spazio dei nomi separato.
 
 
 
+[[astra-control-does-not-support-apps-that-use-multiple-storage-classes-per-namespace]]
 == Astra Control non supporta applicazioni che utilizzano più classi di storage per spazio dei nomi
 
 Astra Control supporta applicazioni che utilizzano una singola classe di storage per spazio dei nomi. Quando Aggiungi un'applicazione a uno spazio dei nomi, assicurati che l'applicazione abbia la stessa classe di storage delle altre applicazioni nello spazio dei nomi.
 
 
 
+[[astra-control-does-not-automatically-assign-default-buckets-for-cloud-instances]]
 == Astra Control non assegna automaticamente i bucket predefiniti per le istanze cloud
 
 Astra Control non assegna automaticamente un bucket predefinito per nessuna istanza di cloud. È necessario impostare manualmente un bucket predefinito per un'istanza di cloud. Se non viene impostato un bucket predefinito, non sarà possibile eseguire operazioni di cloni tra due cluster.
 
 
 
+[[clones-of-apps-installed-using-pass-by-reference-operators-can-fail]]
 == I cloni delle applicazioni installate utilizzando operatori pass-by-reference possono fallire
 
 Astra Control supporta le applicazioni installate con operatori con ambito namespace. Questi operatori sono generalmente progettati con un'architettura "pass-by-value" piuttosto che "pass-by-reference". Di seguito sono riportate alcune applicazioni per operatori che seguono questi modelli:
@@ -155,24 +164,28 @@ NOTE: Durante le operazioni di cloni, le applicazioni che necessitano di una ris
 
 
 
+[[in-place-restore-operations-of-apps-that-use-a-certificate-manager-are-not-supported]]
 == Le operazioni di ripristino in-place delle applicazioni che utilizzano un gestore dei certificati non sono supportate
 
 Questa versione di Astra Control Center non supporta il ripristino in-place delle applicazioni con i gestori dei certificati. Sono supportate le operazioni di ripristino su uno spazio dei nomi diverso e le operazioni di clonazione.
 
 
 
+[[olm-enabled-and-cluster-scoped-operator-deployed-apps-not-supported]]
 == Le applicazioni implementate dall'operatore CON ambito cluster e abilitato OLM non sono supportate
 
 Astra Control Center non supporta le attività di gestione delle applicazioni con operatori con ambito cluster.
 
 
 
+[[apps-deployed-with-helm-2-are-not-supported]]
 == Le app implementate con Helm 2 non sono supportate
 
 Se utilizzi Helm per implementare le app, Astra Control Center richiede Helm versione 3. La gestione e la clonazione delle applicazioni implementate con Helm 3 (o aggiornate da Helm 2 a Helm 3) sono completamente supportate. Per ulteriori informazioni, fare riferimento a. link:../get-started/requirements.html["Requisiti di Astra Control Center"].
 
 
 
+[[snapshots-might-fail-for-kubernetes-1-25-or-later-clusters-with-certain-snapshot-controller-versions]]
 == Gli snapshot potrebbero non funzionare per i cluster Kubernetes 1.25 o versioni successive con determinate versioni di snapshot controller
 
 Le snapshot per i cluster Kubernetes che eseguono la versione 1.25 o successiva possono non riuscire se sul cluster è installata la versione v1beta1 delle API del controller di snapshot.
@@ -188,18 +201,21 @@ Per risolvere il problema, eseguire le seguenti operazioni quando si aggiornano 
 
 
 
+[[backups-and-snapshots-might-not-be-retained-during-removal-of-an-astra-control-center-instance]]
 == I backup e le snapshot potrebbero non essere conservati durante la rimozione di un'istanza di Astra Control Center
 
 Se si dispone di una licenza di valutazione, assicurarsi di memorizzare l'ID account per evitare la perdita di dati in caso di guasto di Astra Control Center se non si inviano ASUP.
 
 
 
+[[in-place-restore-operations-to-ontap-nas-economy-storage-classes-fail]]
 == Le operazioni di ripristino in-place alle classi di storage economiche ontap-nas falliscono
 
 Se si esegue un ripristino sul posto di un'applicazione (ripristinando l'applicazione nello spazio dei nomi originale) e la classe di archiviazione dell'applicazione utilizza `ontap-nas-economy` driver, l'operazione di ripristino può non riuscire se la directory dello snapshot non è nascosta. Prima di eseguire il ripristino sul posto, seguire le istruzioni riportate in link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["Abilita backup e ripristino per le operazioni economiche a ontap-nas"] per nascondere la directory dell'istantanea.
 
 
 
+[[ldap-user-and-group-limitations]]
 == Limitazioni di utenti e gruppi LDAP
 
 Astra Control Center supporta fino a 5,000 gruppi remoti e 10,000 utenti remoti.
@@ -208,36 +224,42 @@ Astra Control non supporta un'entità LDAP (utente o gruppo) con un DN contenent
 
 
 
+[[s3-buckets-in-astra-control-center-do-not-report-available-capacity]]
 == I bucket S3 in Astra Control Center non riportano la capacità disponibile
 
 Prima di eseguire il backup o la clonazione delle applicazioni gestite da Astra Control Center, controllare le informazioni del bucket nel sistema di gestione ONTAP o StorageGRID.
 
 
 
+[[astra-control-center-does-not-validate-the-details-you-enter-for-your-proxy-server]]
 == Astra Control Center non convalida i dati immessi per il server proxy
 
-Assicurati di link:../use/monitor-protect.html#add-a-proxy-server["inserire i valori corretti"] quando si stabilisce una connessione.
+Assicurati di link:../use/monitor-protect.html#add-a-proxy-server-for-connections-to-the-netapp-support-site["inserire i valori corretti"] quando stabilisci una connessione.
 
 
 
+[[existing-connections-to-a-postgres-pod-causes-failures]]
 == Le connessioni esistenti a un pod Postgres causano errori
 
 Quando si eseguono operazioni su POD Postgres, non si dovrebbe connettersi direttamente all'interno del pod per utilizzare il comando psql. Astra Control richiede l'accesso a psql per bloccare e scongelare i database. Se è presente una connessione preesistente, lo snapshot, il backup o il clone non avranno esito positivo.
 
 
 
+[[the-activity-page-displays-up-to-100000-events]]
 == La pagina Activity (attività) visualizza fino a 100000 eventi
 
 La pagina Astra Control Activity (attività di controllo Astra) può visualizzare fino a 100,000 eventi. Per visualizzare tutti gli eventi registrati, recuperare gli eventi utilizzando https://docs.netapp.com/us-en/astra-automation/index.html["API di controllo Astra"^].
 
 
 
+[[snapmirror-does-not-support-applications-using-nvme-over-tcp-for-storage-backends]]
 == SnapMirror non supporta le applicazioni che utilizzano NVMe su TCP per backend di storage
 
 Astra Control Center non supporta la replica SnapMirror di NetApp per backend di storage che utilizzano il protocollo NVMe over TCP.
 
 
 
+[[find-more-information]]
 == Trova ulteriori informazioni
 
 * link:../release-notes/known-issues.html["Problemi noti"]

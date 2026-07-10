@@ -18,6 +18,7 @@ Questi non sono solo numeri statici o stati, ma puoi eseguire il drill-down da c
 
 
 
+[[applications-tile]]
 == Sezione applicazioni
 
 La sezione *applicazioni* consente di identificare quanto segue:
@@ -33,12 +34,14 @@ Idealmente, questo numero sarebbe pari a zero perché, una volta scoperte, gesti
 
 
 
+[[clusters-tile]]
 == Riquadro dei cluster
 
 Il riquadro *Clusters* fornisce dettagli simili sullo stato dei cluster gestiti tramite Astra Control Center e consente di analizzare più dettagli come con un'applicazione.
 
 
 
+[[storage-backends-tile]]
 == Riquadro backend storage
 
 Il riquadro *Storage backend* fornisce informazioni utili per identificare lo stato dei back-end dello storage, tra cui:

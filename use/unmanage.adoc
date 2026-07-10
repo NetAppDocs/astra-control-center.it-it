@@ -16,6 +16,7 @@ Rimuovi le app o i cluster che non vuoi più gestire da Astra Control Center.
 
 
 
+[[unmanage-an-app]]
 == Annullare la gestione di un'applicazione
 
 Smetta di gestire le app che non vuoi più eseguire il backup, lo snapshot o la clonazione da Astra Control Center.
@@ -40,6 +41,7 @@ Astra Control Center interrompe la gestione dell'applicazione.
 
 
 
+[[unmanage-a-cluster]]
 == Annullare la gestione di un cluster
 
 Interrompere la gestione del cluster che non si desidera più gestire da Astra Control Center.

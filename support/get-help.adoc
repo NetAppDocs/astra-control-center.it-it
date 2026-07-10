@@ -21,6 +21,7 @@ Devi prima link:../get-started/add-license.html["Attivare il supporto per il num
 
 
 
+[[self-support-options]]
 == Opzioni di supporto automatico
 
 È possibile accedere alle opzioni di supporto dall'interfaccia utente di Astra Control Center selezionando la scheda *Support* (supporto) dal menu principale.
@@ -36,12 +37,14 @@ Queste opzioni sono disponibili gratuitamente, 24 ore su 24, 7 giorni su 7:
 
 
 
+[[enable-daily-scheduled-support-bundle-upload-to-netapp-support]]
 == Abilita il caricamento giornaliero del bundle di supporto pianificato sul supporto NetApp
 
 Durante l'installazione di Astra Control Center, se specificato `enrolled: true` per `autoSupport` Nel file CR (Custom Resource) di Astra Control Center (`astra_control_center.yaml`), i pacchetti di supporto giornalieri vengono caricati automaticamente su https://mysupport.netapp.com/site/["Sito di supporto NetApp"^].
 
 
 
+[[generate-support-bundle-to-provide-to-netapp-support]]
 == Generare bundle di supporto da fornire al supporto NetApp
 
 Astra Control Center consente all'utente amministratore di generare bundle, che includono informazioni utili al supporto NetApp, inclusi registri, eventi per tutti i componenti dell'implementazione Astra, metriche e informazioni sulla topologia dei cluster e delle applicazioni in gestione. Se si è connessi a Internet, è possibile caricare pacchetti di supporto sul NetApp Support Site (NSS) direttamente dall'interfaccia utente di Astra Control Center.
@@ -87,6 +90,7 @@ TIP: L'icona delle notifiche nella parte superiore destra dell'interfaccia utent
 
 
 
+[[if-you-have-an-air-gapped-installation]]
 === Se si dispone di un'installazione con aria compressa
 
 Se si dispone di un'installazione con aria compressa, attenersi alla seguente procedura dopo la generazione del pacchetto di supporto. Quando il bundle è disponibile per il download, l'icona Download viene visualizzata accanto a *generate* nella sezione *Support Bundle* della pagina *Support*.
