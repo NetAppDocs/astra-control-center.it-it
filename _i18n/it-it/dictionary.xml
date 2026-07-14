@@ -2223,7 +2223,6 @@
   <block id="478393a7bc00211c00b84b91bd7270e1" category="list-text"><block ref="ae36d1cdd520df7c3eaefc0ce2deb814" category="inline-link-rx"></block>.</block>
   <block id="a9b10c3e99be35f3f8a9c7dc7fadd754" category="inline-link">Installare gli snapshot CRD e lo snapshot controller</block>
   <block id="e5b001692c70f874108d4c3517741181" category="inline-link">Installare la versione più recente di Astra Trident</block>
-  <block id="a303c00b0d0d4a1b4adf9ac86b7be2cc" category="list-text"><block ref="6b04d2c2cadce52e000fe64978797f65" category="inline-link-rx"></block>.</block>
   <block id="48d0b044dd9368b2691ff16393a31d86" category="inline-link">Creare una classe VolumeSnapshotClass</block>
   <block id="0fa487fe8680011a1e8590273692a729" category="list-text"><block ref="7780c580e1dcefaf97af849cafb81d68" category="inline-link-rx"></block>.</block>
   <block id="f48fcbd3913b071dd3dde66b31c0287b" category="admonition">Se l'applicazione utilizza una classe di storage supportata da<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> driver, impossibile creare snapshot. Utilizzare una classe di storage alternativa per gli snapshot.</block>
@@ -2912,7 +2911,6 @@ Astra Control è ora in grado di gestire le applicazioni supportate da volumi pe
   <block id="b53ea1f6729ee2c1c5dc303c5e9bb360" category="list-text">Completa questi passaggi se non hai ancora installato Astra Trident o se hai rimosso l'operatore dall'implementazione originale di Astra Trident:</block>
   <block id="1802fc07d2de18110ae52621540f337e" category="list-text">Creare il CRD:</block>
   <block id="b19df824e7baecb971d0fdd39542c6d6" category="list-text">Creare lo spazio dei nomi tridente <block ref="a40796e67d7096bdb1a461d9369987ae" prefix="(" category="inline-code"></block>) o confermare che lo spazio dei nomi tridente esiste ancora <block ref="929ac53a7aaa18d0ab7bfd29e3b89c45" prefix="(" category="inline-code"></block>). Se lo spazio dei nomi è stato rimosso, crearlo di nuovo.</block>
-  <block id="6942401e8cfb1a0fc7b82ec1dcda7d32" category="list-text"><block ref="b0e92e3807bd982cc8fd58230062a04f" category="inline-link-rx"></block>.</block>
   <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">Se disponi già di un Astra Trident, disinstallarlo dal cluster che lo ospita</block>
   <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>.</block>
   <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">Installa Astra Trident con Astra Control Provisioner abilitato <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>):</block>
@@ -3705,4 +3703,6 @@ Astra Control provisioner viene installato automaticamente nell'ambito del proce
   <block id="e7b4bce844330e3c5aefb46f8d12db1d" category="list-text"><block ref="e7b4bce844330e3c5aefb46f8d12db1d" category="inline-link-macro-rx"></block></block>
   <block id="398950e2648d28eed29b2b7bd0952ad5" category="list-text">(Opzionale) Un'etichetta Kubernetes su qualsiasi <block ref="3b1c56fea11b428a3060d7568229534a" category="inline-link-macro-rx"></block>.</block>
   <block id="eef3fedf7d4e668662e435160c3c5c87" category="admonition">Quando aggiungi un bucket, seleziona il provider di bucket corretto e fornisci le credenziali giuste per quel provider. Ad esempio, l'interfaccia utente accetta NetApp ONTAP S3 come tipo e accetta le credenziali StorageGRID; tuttavia, questo farà sì che tutti i futuri backup e ripristini delle app che usano questo bucket falliscano. Vedi la <block ref="2fa2057c95f20298aba02cf1be9ec7d5" category="inline-link-macro-rx"></block>.</block>
+  <block id="5b1ab0fe5df34787bb6e83e783c2d46f" category="list-text"><block ref="299939be75f9a3e7d44493947c6b6dbe" category="inline-link-rx"></block>.</block>
+  <block id="079f04a542e1f643fc541d9607a55d47" category="list-text"><block ref="1a55a38d49368309956301956beb2671" category="inline-link-rx"></block>.</block>
 </blocks>
